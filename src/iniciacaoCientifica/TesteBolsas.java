@@ -3,7 +3,7 @@ package iniciacaoCientifica;
 public class TesteBolsas {
     public static void main(String[] args) {
         // Criar objetos
-        Aluno aluno = new Aluno("Allex Silva", "Sistemas de Informação", 12345, new String[] {"RG", "CPF"}, new Double[] {5.0, 6.0, 2.0, 9.0});
+        Aluno aluno = new Aluno("Allex Silva", "Sistemas de Informação", 12345, new String[] {"RG", "CPF"}, new Double[] {9.0, 6.0, 9.0, 9.0});
         Bolsa bolsa = new Bolsa("Iniciação Científica", 1000.0, new String[] {"Coeficiente de Rendimento >= 8.0"});
         // (DEBUG) Checar coeficiente de rendimento
         double cr = aluno.getCoeficienteRendimento();
