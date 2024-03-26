@@ -1,5 +1,7 @@
 package IniciacaoCientifica;
 
+import java.util.List;
+
 // Classe principal que contém o método main para executar o sistema
 public class ClassePrincipal {
 	public static void main(String[] args) {
@@ -22,5 +24,7 @@ public class ClassePrincipal {
 		// Exemplo de solicitação de bolsa
 		Bolsa bolsa1 = new Bolsa("Bolsa de Estudo", aluno1, false, 500.00);
 		sistema.solicitarBolsa(bolsa1);
+		
+
 	}
 }
