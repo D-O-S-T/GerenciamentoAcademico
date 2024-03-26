@@ -7,9 +7,15 @@ public class ClassePrincipal {
 		SistemaGestaoAcademica sistema = new SistemaGestaoAcademica();
 
 		// Exemplo de uso do sistema
-		Aluno aluno1 = new Aluno("Fulano", "123.456.789-00", "Rua A", "fulano@example.com");
+		Aluno aluno1 = new Aluno(
+				"Fulano", 
+				"123.456.789-00", 
+				"Rua A", 
+				"fulano@example.com"
+		);
 		sistema.cadastrarAluno(aluno1);
 
+		// Cadastramento de curso
 		Curso curso1 = new Curso("Engenharia de Software", 240);
 		sistema.cadastrarCurso(curso1);
 
