@@ -18,4 +18,27 @@ class Disciplina {
 	}
 
 	// Getters e setters
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getCargaHoraria() {
+		return cargaHoraria;
+	}
+
+	public void setCargaHoraria(int cargaHoraria) {
+		this.cargaHoraria = cargaHoraria;
+	}
+
+	public List<Aluno> getAlunosMatriculados() {
+		return alunosMatriculados;
+	}
+
+	public void setAlunosMatriculados(List<Aluno> alunosMatriculados) {
+		this.alunosMatriculados = alunosMatriculados;
+	}
 } 
