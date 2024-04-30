@@ -1,7 +1,7 @@
 package iniciacaoCientifica;
 
-
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -13,18 +13,19 @@ import java.awt.event.ActionEvent;
 import java.awt.Cursor;
 
 
-public class recursos extends JFrame{
+public class atividades extends JFrame{
+	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void recursos() {
+	public static void atividades() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					recursos frame = new recursos();
+					atividades frame = new atividades();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,10 +37,10 @@ public class recursos extends JFrame{
 	/**
 	 * Create the frame.
 	 */
-	public recursos() {
-		setTitle("Recursos Financeiros");
+	public atividades() {
+		setTitle("Atividades");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 530, 620);
+		setBounds(100, 100, 523, 620);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -55,17 +56,17 @@ public class recursos extends JFrame{
 		});
 		voltar.setContentAreaFilled(false);
 		voltar.setBorderPainted(false);
-		voltar.setBounds(0, 11, 106, 41);
+		voltar.setBounds(10, 27, 102, 40);
 		contentPane.add(voltar);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		//Aqui vai o caminho da imagem da aba recursos no seu computador / computador da undf
-		lblNewLabel.setIcon(new ImageIcon("../imagens/layout recursos.png"));
-		lblNewLabel.setBounds(0, 0, 529, 585);
+		// Aqui vai o caminho da imagem da aba atividades no seu computador/computador da undf
+		lblNewLabel.setIcon(new ImageIcon("src/imagens/layout_atividades.png"));
+		lblNewLabel.setBounds(0, 0, 513, 589);
 		contentPane.add(lblNewLabel);
 		
 		
 	}
-
 }
+
 

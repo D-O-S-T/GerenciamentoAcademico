@@ -1,7 +1,7 @@
 package iniciacaoCientifica;
 
-import java.awt.EventQueue;
 
+import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -13,18 +13,18 @@ import java.awt.event.ActionEvent;
 import java.awt.Cursor;
 
 
-public class cronograma extends JFrame {
+public class recursos extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void cronograma() {
+	public static void recursos() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					cronograma frame = new cronograma();
+					recursos frame = new recursos();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,10 +36,10 @@ public class cronograma extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public cronograma() {
-		setTitle("Cronograma");
+	public recursos() {
+		setTitle("Recursos Financeiros");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 528, 620);
+		setBounds(100, 100, 530, 620);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -55,13 +55,13 @@ public class cronograma extends JFrame {
 		});
 		voltar.setContentAreaFilled(false);
 		voltar.setBorderPainted(false);
-		voltar.setBounds(10, 0, 108, 44);
+		voltar.setBounds(0, 11, 106, 41);
 		contentPane.add(voltar);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		// aqui vai o caminho da imagem da aba cronograma no seu computador/ computador da undf
-		lblNewLabel.setIcon(new ImageIcon("../imagens/layout cronograma.png"));
-		lblNewLabel.setBounds(0, 0, 518, 570);
+		//Aqui vai o caminho da imagem da aba recursos no seu computador / computador da undf
+		lblNewLabel.setIcon(new ImageIcon("src/imagens/layout_recursos.png"));
+		lblNewLabel.setBounds(0, 0, 529, 585);
 		contentPane.add(lblNewLabel);
 		
 		

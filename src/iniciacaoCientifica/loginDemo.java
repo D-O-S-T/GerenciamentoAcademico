@@ -79,12 +79,13 @@ public class loginDemo extends JFrame{
 		senhaTextfield = new JPasswordField();
 		senhaTextfield.setBounds(156, 310, 224, 30);
 		contentPane.add(senhaTextfield);
-		
+		System.out.println("Current Directory: " + System.getProperty("user.dir"));
+
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setBounds(0, 0, 589, 432);
 		// Aqui vai o caminho da imagem da tela de login no seu computador/ computador na undf
-		lblNewLabel.setIcon(new ImageIcon("../imagens/layout login.png"));
+		lblNewLabel.setIcon(new ImageIcon("src/imagens/layout_login.png"));
 		contentPane.add(lblNewLabel);
 		
 		

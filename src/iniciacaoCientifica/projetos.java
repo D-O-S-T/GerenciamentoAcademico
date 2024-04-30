@@ -12,18 +12,18 @@ import java.awt.event.ActionEvent;
 import java.awt.Cursor;
 
 
-public class comunicacao extends JFrame{
+public class projetos extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void comunicacao() {
+	public static void projetos() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					comunicacao frame = new comunicacao();
+					projetos frame = new projetos();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,10 +35,10 @@ public class comunicacao extends JFrame{
 	/**
 	 * Create the frame.
 	 */
-	public comunicacao() {
-		setTitle("Comunicação");
+	public projetos() {
+		setTitle("Projetos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 528, 620);
+		setBounds(100, 100, 529, 620);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -49,21 +49,21 @@ public class comunicacao extends JFrame{
 		voltar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		voltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
-			}
+				dispose();			}
 		});
 		voltar.setContentAreaFilled(false);
 		voltar.setBorderPainted(false);
-		voltar.setBounds(0, 0, 108, 40);
+		voltar.setBounds(10, 0, 114, 52);
 		contentPane.add(voltar);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		// Aqui vai o caminho da imagem da aba comunicação no seu computador / computador da undf
-		lblNewLabel.setIcon(new ImageIcon("../imagens/layout comunicação.png"));
-		lblNewLabel.setBounds(0, -21, 539, 602);
+		//Aqui vai o caminho da imagem da aba projetos no seu computador / computador da undf
+		lblNewLabel.setIcon(new ImageIcon("src/imagens/layout_projetos.png"));
+		lblNewLabel.setBounds(0, 0, 519, 581);
 		contentPane.add(lblNewLabel);
 		
 		
 	}
+
 }
 

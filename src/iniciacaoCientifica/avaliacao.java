@@ -8,22 +8,23 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import java.awt.Cursor;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Cursor;
 
-public class notificacoes extends JFrame{
+
+public class avaliacao extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void notificacoes() {
+	public static void avaliacao() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					notificacoes frame = new notificacoes();
+					avaliacao frame = new avaliacao();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,10 +36,10 @@ public class notificacoes extends JFrame{
 	/**
 	 * Create the frame.
 	 */
-	public notificacoes() {
-		setTitle("Notificações e Relatórios");
-	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    setBounds(100, 100, 529, 620);
+	public avaliacao() {
+		setTitle("Avaliação e Feedback");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 531, 620);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -46,24 +47,25 @@ public class notificacoes extends JFrame{
 		contentPane.setLayout(null);
 		
 		JButton voltar = new JButton("");
+		voltar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		voltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
-		voltar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		voltar.setContentAreaFilled(false);
 		voltar.setBorderPainted(false);
-		voltar.setBounds(10, 0, 111, 47);
+		voltar.setBounds(0, 0, 99, 40);
 		contentPane.add(voltar);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		// Aqui vai o caminho da imagem da aba notificações no seu computador/ computador da undf
-		lblNewLabel.setIcon(new ImageIcon("../imagens/layout notificações.png"));
-		lblNewLabel.setBounds(0, 0, 553, 570);
+		//Aqui vai o caminho da imagem da aba avaliação no seu computador/ computador da undf
+		lblNewLabel.setIcon(new ImageIcon("src/imagens/layout_avaliacao.png"));
+		lblNewLabel.setBounds(0, -17, 539, 598);
 		contentPane.add(lblNewLabel);
 		
 		
 	}
+
 }
 

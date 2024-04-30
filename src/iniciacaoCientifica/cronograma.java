@@ -13,18 +13,18 @@ import java.awt.event.ActionEvent;
 import java.awt.Cursor;
 
 
-public class avaliacao extends JFrame{
+public class cronograma extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void avaliacao() {
+	public static void cronograma() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					avaliacao frame = new avaliacao();
+					cronograma frame = new cronograma();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,10 +36,10 @@ public class avaliacao extends JFrame{
 	/**
 	 * Create the frame.
 	 */
-	public avaliacao() {
-		setTitle("Avaliação e Feedback");
+	public cronograma() {
+		setTitle("Cronograma");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 531, 620);
+		setBounds(100, 100, 528, 620);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -55,13 +55,13 @@ public class avaliacao extends JFrame{
 		});
 		voltar.setContentAreaFilled(false);
 		voltar.setBorderPainted(false);
-		voltar.setBounds(0, 0, 99, 40);
+		voltar.setBounds(10, 0, 108, 44);
 		contentPane.add(voltar);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		//Aqui vai o caminho da imagem da aba avaliação no seu computador/ computador da undf
-		lblNewLabel.setIcon(new ImageIcon("../imagens/layout avaliação.png"));
-		lblNewLabel.setBounds(0, -17, 539, 598);
+		// aqui vai o caminho da imagem da aba cronograma no seu computador/ computador da undf
+		lblNewLabel.setIcon(new ImageIcon("src/imagens/layout_cronograma.png"));
+		lblNewLabel.setBounds(0, 0, 518, 570);
 		contentPane.add(lblNewLabel);
 		
 		
