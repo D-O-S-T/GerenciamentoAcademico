@@ -60,7 +60,7 @@ public class avaliacao extends JFrame{
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		//Aqui vai o caminho da imagem da aba avaliação no seu computador/ computador da undf
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\Imagens\\layout avaliação.png"));
+		lblNewLabel.setIcon(new ImageIcon("../imagens/layout avaliação.png"));
 		lblNewLabel.setBounds(0, -17, 539, 598);
 		contentPane.add(lblNewLabel);
 		

@@ -59,7 +59,7 @@ public class comunicacao extends JFrame{
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		// Aqui vai o caminho da imagem da aba comunicação no seu computador / computador da undf
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\Imagens\\layout comunicação.png"));
+		lblNewLabel.setIcon(new ImageIcon("../imagens/layout comunicação.png"));
 		lblNewLabel.setBounds(0, -21, 539, 602);
 		contentPane.add(lblNewLabel);
 		

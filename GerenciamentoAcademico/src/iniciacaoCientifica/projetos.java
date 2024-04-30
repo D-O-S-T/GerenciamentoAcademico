@@ -58,7 +58,7 @@ public class projetos extends JFrame{
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		//Aqui vai o caminho da imagem da aba projetos no seu computador / computador da undf
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\Imagens\\layout projetos.png"));
+		lblNewLabel.setIcon(new ImageIcon("../imagens/layout projetos.png"));
 		lblNewLabel.setBounds(0, 0, 519, 581);
 		contentPane.add(lblNewLabel);
 		

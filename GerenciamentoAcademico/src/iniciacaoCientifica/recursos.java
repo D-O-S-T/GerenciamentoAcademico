@@ -60,7 +60,7 @@ public class recursos extends JFrame{
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		//Aqui vai o caminho da imagem da aba recursos no seu computador / computador da undf
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\Imagens\\layout recursos.png"));
+		lblNewLabel.setIcon(new ImageIcon("../imagens/layout recursos.png"));
 		lblNewLabel.setBounds(0, 0, 529, 585);
 		contentPane.add(lblNewLabel);
 		

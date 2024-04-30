@@ -165,7 +165,7 @@ public class frameInicio extends JFrame{
 		JLabel lblNewLabel = new JLabel();
 		lblNewLabel.setBounds(10, 10, 566, 566);
 		//Aqui vai o caminho da imagem da tela de início no seu computador/computador da undf
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\anapa\\Downloads\\inicio layout.png"));
+		lblNewLabel.setIcon(new ImageIcon("../imagens/inicio layout.png"));
 		contentPane.add(lblNewLabel);	
 		
 	}

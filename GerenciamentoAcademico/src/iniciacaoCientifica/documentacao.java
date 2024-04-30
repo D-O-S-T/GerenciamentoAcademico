@@ -61,7 +61,7 @@ public class documentacao extends JFrame{
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		// Aqui vai o caminho da imagem da aba documentação no seu computador / computador da undf
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\Imagens\\layout documentos.png"));
+		lblNewLabel.setIcon(new ImageIcon("../imagens/layout documentos.png"));
 		lblNewLabel.setBounds(0, 0, 539, 570);
 		contentPane.add(lblNewLabel);
 		

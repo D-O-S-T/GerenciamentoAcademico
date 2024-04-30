@@ -61,7 +61,7 @@ public class atividades extends JFrame{
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		// Aqui vai o caminho da imagem da aba atividades no seu computador/computador da undf
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\Imagens\\layout atividades.png"));
+		lblNewLabel.setIcon(new ImageIcon("../imagens/layout atividades.png"));
 		lblNewLabel.setBounds(0, 0, 513, 589);
 		contentPane.add(lblNewLabel);
 		

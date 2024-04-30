@@ -60,7 +60,7 @@ public class cronograma extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		// aqui vai o caminho da imagem da aba cronograma no seu computador/ computador da undf
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\Imagens\\layout cronograma.png"));
+		lblNewLabel.setIcon(new ImageIcon("../imagens/layout cronograma.png"));
 		lblNewLabel.setBounds(0, 0, 518, 570);
 		contentPane.add(lblNewLabel);
 		
