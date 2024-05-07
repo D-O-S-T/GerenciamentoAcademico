@@ -37,7 +37,8 @@ public class notificacoes extends JFrame{
 	 */
 	public notificacoes() {
 		setTitle("Notificações e Relatórios");
-	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	    setResizable(false);
 	    setBounds(100, 100, 529, 620);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

@@ -38,7 +38,8 @@ public class avaliacao extends JFrame{
 	 */
 	public avaliacao() {
 		setTitle("Avaliação e Feedback");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setResizable(false);
 		setBounds(100, 100, 531, 620);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

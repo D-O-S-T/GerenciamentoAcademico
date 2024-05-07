@@ -43,7 +43,8 @@ public class loginDemo extends JFrame{
 	 */
 	public loginDemo() {
 		setTitle("Login Sistema Iniciação Científica");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setResizable(false);
 		setBounds(100, 100, 555, 472);
 		contentPane = new JPanel();
 		contentPane.setToolTipText("");
