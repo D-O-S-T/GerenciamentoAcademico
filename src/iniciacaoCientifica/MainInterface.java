@@ -67,7 +67,7 @@ public class MainInterface extends JFrame {
 		contentPane.add(btnCoordenacao);
 		
 		
-		JButton btnProfessor = new JButton("professor");
+		JButton btnProfessor = new JButton("Professor");
 		btnProfessor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AbaProfessor ap = new AbaProfessor();
@@ -106,7 +106,7 @@ public class MainInterface extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\gabri\\OneDrive\\Imagens\\12 Sem Título_20240513205924 (1).PNG"));
+		lblNewLabel_2.setIcon(new ImageIcon("src/imagens/undf_logo.png"));
 		lblNewLabel_2.setBounds(269, 147, 415, 400);
 		contentPane.add(lblNewLabel_2);
 		
