@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.Cursor;
+import com.formdev.flatlaf.FlatLightLaf;
 
 public class MainInterface extends JFrame {
 
@@ -41,7 +42,8 @@ public class MainInterface extends JFrame {
 	 * Create the frame.
 	 */
 	public MainInterface() {
-		setTitle("Início Gerenciamento Iniciação científica");
+		FlatLightLaf.setup();
+		setTitle("Iniciação Científica");
 		setName("");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 650);
