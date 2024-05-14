@@ -13,6 +13,7 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import java.awt.Cursor;
 
 public class MainInterface extends JFrame {
 
@@ -57,6 +58,7 @@ public class MainInterface extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnCoordenacao = new JButton("Coordenação");
+		btnCoordenacao.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnCoordenacao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AbaCoordenacao ac = new AbaCoordenacao();
@@ -68,6 +70,7 @@ public class MainInterface extends JFrame {
 		
 		
 		JButton btnProfessor = new JButton("Professor");
+		btnProfessor.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnProfessor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AbaProfessor ap = new AbaProfessor();
@@ -78,6 +81,7 @@ public class MainInterface extends JFrame {
 		contentPane.add(btnProfessor);
 		
 		btnAluno = new JButton("Aluno");
+		btnAluno.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnAluno.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AbaAlunos ab = new AbaAlunos();
