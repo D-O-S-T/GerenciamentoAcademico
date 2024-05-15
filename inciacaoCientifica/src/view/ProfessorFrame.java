@@ -6,12 +6,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import com.formdev.flatlaf.FlatLightLaf;
+
 
 public class ProfessorFrame extends JPanel{
 
     private static final long serialVersionUID = 1L;
 
     public ProfessorFrame() {
+        FlatLightLaf.setup();
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("Nome");
         model.addColumn("Descrição");

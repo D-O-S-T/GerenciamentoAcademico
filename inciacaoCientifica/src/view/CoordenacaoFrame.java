@@ -10,6 +10,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import com.formdev.flatlaf.FlatLightLaf;
 
 import controller.GerenciamentoProjetos;
 
@@ -37,11 +38,14 @@ public class CoordenacaoFrame extends JFrame {
         gerenciamentoProjetos = new GerenciamentoProjetos();
         setTitle("Coordenação");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        FlatLightLaf.setup();
         setBounds(100, 100, 450, 300);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
+        setResizable(false);
+		setLocationRelativeTo(null);
 
         JLabel lblID = new JLabel("ID:");
         lblID.setBounds(20, 30, 70, 15);
