@@ -1,4 +1,4 @@
-package view;
+package edu.undf.SGA.IC.view;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,7 +12,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import com.formdev.flatlaf.FlatLightLaf;
 
-import controller.GerenciamentoProjetos;
+import edu.undf.SGA.IC.controller.GerenciamentoProjetos;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -37,7 +37,7 @@ public class CoordenacaoFrame extends JFrame {
     public CoordenacaoFrame() {
         gerenciamentoProjetos = new GerenciamentoProjetos();
         setTitle("Coordenação");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         FlatLightLaf.setup();
         setBounds(100, 100, 450, 300);
         contentPane = new JPanel();

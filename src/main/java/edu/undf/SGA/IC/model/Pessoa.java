@@ -1,4 +1,4 @@
-package model;
+package edu.undf.SGA.IC.model;
 
 public abstract class Pessoa {
     String nome;

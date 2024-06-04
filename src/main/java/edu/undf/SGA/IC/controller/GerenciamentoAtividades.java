@@ -1,4 +1,4 @@
-package controller;
+package edu.undf.SGA.IC.controller;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Atividades;
+import edu.undf.SGA.IC.model.Atividades;
 
 public class GerenciamentoAtividades {
 private List<Atividades>atividades;
@@ -15,7 +15,7 @@ private List<Atividades>atividades;
 		this.atividades = new ArrayList<>();
 	}
 	
-	public void adivionarProjeto(Atividades atividade) {
+	public void adicionarProjeto(Atividades atividade) {
 		atividades.add(atividade);
 	}
 	

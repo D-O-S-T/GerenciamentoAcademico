@@ -1,14 +1,9 @@
-package view;
+package edu.undf.SGA.IC.view;
 
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,28 +11,23 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import controller.GerenciamentoProjetos;
 import com.formdev.flatlaf.FlatLightLaf;
 
 
 public class MainFrame extends JFrame {
 
     private static final long serialVersionUID = 1L;
-    private JPanel contentPane;
 
     /**
      * Launch the application.
      */
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    GerenciamentoProjetos gestaoProjetos = new GerenciamentoProjetos();
-                    JFrame frame = new MainFrame(gestaoProjetos);
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        EventQueue.invokeLater(() -> {
+            try {
+                JFrame frame = new MainFrame();
+                frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
     }
@@ -45,32 +35,27 @@ public class MainFrame extends JFrame {
     /**
      * Create the frame.
      */
-    public MainFrame(GerenciamentoProjetos gestaoProjetos) {
+    public MainFrame() {
     	FlatLightLaf.setup();
 		setTitle("Iniciação Científica");
 		setName("");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 650);
-		contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
 		contentPane.setName("");
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setResizable(false);
 		setLocationRelativeTo(null);
-        
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-        
-        GridBagConstraints gbc = new GridBagConstraints();
         
         // Button Coordenador
         JButton btnCoordenador = new JButton("Coordenador");
         btnCoordenador.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 		btnCoordenador.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnCoordenador.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                CoordenacaoFrame coordenacaoFrame = new CoordenacaoFrame();
-                coordenacaoFrame.setVisible(true);
-            }
+        btnCoordenador.addActionListener(e -> {
+            CoordenacaoFrame coordenacaoFrame = new CoordenacaoFrame();
+            coordenacaoFrame.setVisible(true);
         });
         btnCoordenador.setBounds(20, 147, 280, 49);
 		contentPane.add(btnCoordenador);
@@ -79,11 +64,9 @@ public class MainFrame extends JFrame {
         JButton btnProfessor = new JButton("Professor");
         btnProfessor.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 		btnProfessor.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnProfessor.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                ProfessorFrame professorFrame = new ProfessorFrame();
-                professorFrame.setVisible(true);
-            }
+        btnProfessor.addActionListener(e -> {
+            ProfessorFrame professorFrame = new ProfessorFrame();
+            professorFrame.setVisible(true);
         });
         btnProfessor.setBounds(20, 404, 280, 49);
 		contentPane.add(btnProfessor);
@@ -92,11 +75,9 @@ public class MainFrame extends JFrame {
         JButton btnAluno = new JButton("Aluno");
         btnAluno.setFont(new Font("Malgun Gothic Semilight", Font.BOLD, 20));
 		btnAluno.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnAluno.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                AlunoFrame alunoFrame = new AlunoFrame();
-                alunoFrame.setVisible(true);
-            }
+        btnAluno.addActionListener(e -> {
+            AlunoFrame alunoFrame = new AlunoFrame();
+            alunoFrame.setVisible(true);
         });
         btnAluno.setBounds(20, 281, 280, 49);
 		contentPane.add(btnAluno);
@@ -120,7 +101,7 @@ public class MainFrame extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("undflogo.PNG"));
+		lblNewLabel_2.setIcon(new ImageIcon("imagens/undflogo.png"));
 		lblNewLabel_2.setBounds(269, 147, 415, 400);
 		contentPane.add(lblNewLabel_2);
 		

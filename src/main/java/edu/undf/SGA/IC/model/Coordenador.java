@@ -1,4 +1,4 @@
-package model;
+package edu.undf.SGA.IC.model;
 
 public class Coordenador extends Pessoa{
     String cargo;

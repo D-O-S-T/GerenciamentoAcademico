@@ -1,6 +1,4 @@
-package view;
-
-import java.awt.EventQueue;
+package edu.undf.SGA.IC.view;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -8,7 +6,8 @@ import javax.swing.border.EmptyBorder;
 
 import com.formdev.flatlaf.FlatLightLaf;
 
-import controller.GerenciamentoAtividades;
+import edu.undf.SGA.IC.controller.GerenciamentoAtividades;
+import edu.undf.SGA.IC.controller.GerenciamentoProjetos;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -37,7 +36,7 @@ public class AlunoFrame extends JFrame {
 	public AlunoFrame() {
 		gerenciamentoAtividades = new GerenciamentoAtividades();
         FlatLightLaf.setup();
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -94,7 +93,11 @@ public class AlunoFrame extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 enviarAtividades();
-            }
+				dispose();
+
+				JFrame frame = new MainFrame();
+				frame.setVisible(true);
+			}
         });
 	}
 		private void enviarAtividades() {

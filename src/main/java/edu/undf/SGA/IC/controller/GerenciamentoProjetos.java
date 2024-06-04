@@ -1,4 +1,4 @@
-package controller;
+package edu.undf.SGA.IC.controller;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.ProjetoPesquisa;
+import edu.undf.SGA.IC.model.ProjetoPesquisa;
 
 public class GerenciamentoProjetos {
 	private List<ProjetoPesquisa>projetos;
