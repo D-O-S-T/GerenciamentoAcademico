@@ -1,0 +1,6 @@
+Atividade1, A primeira atividade de algum dos projetos., 25/04/2024, Anael
+Atividade2, A segunda atividade de um outro projeto., 24/07/2023, Ciclano; Beltrano
+Atividade3, Concluido, 27/02/2023, Alex Silva
+Cerrado, Concluido, 27/06/2024, Ana
+Atlântico, Em progresso, 05/12/2023, Alex Silva
+Antártida, Em progresso, 01/02/2024, Alex Silva
