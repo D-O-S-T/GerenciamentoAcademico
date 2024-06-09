@@ -1,6 +1,0 @@
-1, Projeto1, Esse é o primeiro projeto., Gunter, Allex
-2, Projeto2, Esse é o segundo projeto., Antonio, Ana Paula
-3, Projeto Web, Esse é o terceiro projeto., Ricardo, Anael
-4, Projeto4, Esse é o projeto 4, Luiza, Alice
-5, Projeto5, Um projeto de teste., Abner, Natan Diniz
-6, Projeto6, Esse é o projeto 6., Fulano, Beltrano
