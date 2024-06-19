@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+
 @WebServlet("/UsuarioControllerServlet")
 public class UsuarioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -88,9 +90,22 @@ public class UsuarioServlet extends HttpServlet {
 		listUsuarios(request, response);
 	}
 
-	private void loadUsuario(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// Implementation for loading a user
+	private void loadUsuario(HttpServletRequest request, HttpServletResponse response)
+	        throws Exception {
+	    // 1. Recupera o ID do usuário a partir do parâmetro da solicitação
+	    int usuarioId = Integer.parseInt(request.getParameter("id"));
+
+	    // 2. Obtém o usuário do banco de dados (utilizando DatabaseUtil)
+	    Usuario theUsuario = databaseUtil.getUsuario(usuarioId);
+
+	    // 3. Coloca o usuário no request como um atributo
+	    request.setAttribute("THE_USUARIO", theUsuario);
+
+	    // 4. Envia para a página JSP: update-usuario-form.jsp
+	    RequestDispatcher dispatcher = request.getRequestDispatcher("/update-usuario-form.jsp");
+	    dispatcher.forward(request, response);
 	}
+
 
 	private void updateUsuario(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// Implementation for updating a user

@@ -48,6 +48,37 @@ public class DatabaseUtil {
             exc.printStackTrace();
         }
     }
+    
+    public Usuario getUsuario(int usuarioId) {
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRs = null;
+
+        try {
+            myConn = getConexao();
+            String sql = "SELECT * FROM usuario WHERE id = ?";
+            myStmt = myConn.prepareStatement(sql);
+            myStmt.setInt(1, usuarioId);
+            myRs = myStmt.executeQuery();
+
+            if (myRs.next()) {
+                String login = myRs.getString("login");
+                String email = myRs.getString("email");
+                String senha = myRs.getString("senha");
+                String tipoUsuario = myRs.getString("tipo_usuario");
+
+                return new Usuario(usuarioId, login, email, senha, tipoUsuario);
+            } else {
+                throw new SQLException("Não foi possível encontrar o usuário com ID: " + usuarioId);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            close(myConn, myStmt, myRs);
+        }
+    }
+
 
     public List<Usuario> getUsuarios() {
         List<Usuario> usuarios = new ArrayList<>();
