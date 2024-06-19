@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Lista de Usuários</h1>
+    <a href="UsuarioControllerServlet?command=ADD">Adicionar Usuário</a>
     <table border="1">
         <thead>
             <tr>

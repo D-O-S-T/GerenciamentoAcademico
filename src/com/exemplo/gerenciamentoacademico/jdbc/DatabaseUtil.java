@@ -157,6 +157,30 @@ public class DatabaseUtil {
             close(myConn, myStmt, null);
         }
     }
+    
+    public void updateUsuario(Usuario usuario) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = getConexao();
+            String sql = "UPDATE usuario SET login=?, email=?, senha=?, tipo_usuario=? WHERE id=?";
+            stmt = conn.prepareStatement(sql);
+
+            stmt.setString(1, usuario.getLogin());
+            stmt.setString(2, usuario.getEmail());
+            stmt.setString(3, usuario.getSenha());
+            stmt.setString(4, usuario.gettipoUsuario());
+            stmt.setInt(5, usuario.getId());
+
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            close(conn, stmt, null);
+        }
+    }
+    
 
     public static void main(String[] args) {
         // Testar a conexão no método main
@@ -173,4 +197,6 @@ public class DatabaseUtil {
             System.out.println("Falha ao conectar com o banco de dados.");
         }
     }
+
+    
 }

@@ -24,30 +24,39 @@ public class UsuarioServlet extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		try {
-			String theCommand = request.getParameter("command");
+	        throws ServletException, IOException {
+	    try {
+	        String theCommand = request.getParameter("command");
 
-			if (theCommand == null) {
-				theCommand = "LIST";
-			}
+	        if (theCommand == null) {
+	            theCommand = "LIST";
+	        }
 
-			switch (theCommand) {
-			case "LIST":
-				listUsuarios(request, response);
-				break;
-			case "LOAD":
-				loadUsuario(request, response);
-				break;
-			case "DELETE":
-				deleteUsuario(request, response);
-				break;
-			default:
-				listUsuarios(request, response);
-			}
-		} catch (Exception exc) {
-			throw new ServletException(exc);
-		}
+	        switch (theCommand) {
+	            case "LIST":
+	                listUsuarios(request, response);
+	                break;
+	            case "LOAD":
+	                loadUsuario(request, response);
+	                break;
+	            case "DELETE":
+	                deleteUsuario(request, response);
+	                break;
+	            case "ADD": // Adicionar este case para o comando ADD
+	                showFormAdicionarUsuario(request, response);
+	                break;
+	            default:
+	                listUsuarios(request, response);
+	        }
+	    } catch (Exception exc) {
+	        throw new ServletException(exc);
+	    }
+	}
+
+	private void showFormAdicionarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    // Pode redirecionar para o seu formulário de adicionar usuário aqui
+	    // Por exemplo:
+	    response.sendRedirect(request.getContextPath() + "/usuario-form.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -108,7 +117,21 @@ public class UsuarioServlet extends HttpServlet {
 
 
 	private void updateUsuario(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// Implementation for updating a user
+	    // 1. Recuperar os parâmetros do formulário
+	    int id = Integer.parseInt(request.getParameter("id"));
+	    String login = request.getParameter("login");
+	    String email = request.getParameter("email");
+	    String senha = request.getParameter("senha");
+	    String tipoUsuario = request.getParameter("tipoUsuario");
+
+	    // 2. Criar um objeto Usuario com os novos dados
+	    Usuario usuarioAtualizado = new Usuario(id, login, email, senha, tipoUsuario);
+
+	    // 3. Chamar o método para atualizar o usuário no banco de dados
+	    databaseUtil.updateUsuario(usuarioAtualizado);
+
+	    // 4. Redirecionar para a página de listagem de usuários após a atualização
+	    response.sendRedirect(request.getContextPath() + "/UsuarioControllerServlet?command=LIST");
 	}
 
 
