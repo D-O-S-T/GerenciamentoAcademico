@@ -54,13 +54,6 @@ public class AlunoServlet extends HttpServlet {
         }
     }
 
-    private void showFormAdicionarAluno(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        // Pode redirecionar para o seu formulário de adicionar aluno aqui
-        // Por exemplo:
-        response.sendRedirect(request.getContextPath() + "/aluno-form.jsp");
-    }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
@@ -87,6 +80,13 @@ public class AlunoServlet extends HttpServlet {
         request.setAttribute("ALUNO_LIST", alunos);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/aluno-list.jsp");
         dispatcher.forward(request, response);
+    }
+
+    private void showFormAdicionarAluno(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // Pode redirecionar para o seu formulário de adicionar aluno aqui
+        // Por exemplo:
+        response.sendRedirect(request.getContextPath() + "/aluno-form.jsp");
     }
 
     private void addAluno(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -125,6 +125,7 @@ public class AlunoServlet extends HttpServlet {
         String lattes = request.getParameter("lattes");
 
         Aluno alunoAtualizado = new Aluno(id, matricula, curso, nome, email, lattes);
+
         AlunoDAO alunoDao = new AlunoDAO();
         alunoDao.updateAluno(alunoAtualizado);
 

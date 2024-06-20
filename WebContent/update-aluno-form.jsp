@@ -12,6 +12,10 @@
         <input type="hidden" name="command" value="UPDATE">
         <input type="hidden" name="id" value="${THE_ALUNO.id}">
         
+        <label>Usuário ID:</label>
+        <input type="text" name="usuarioId" value="${THE_ALUNO.usuarioId}" readonly>
+        <br>
+        
         <label>Matrícula:</label>
         <input type="text" name="matricula" value="${THE_ALUNO.matricula}">
         <br>
