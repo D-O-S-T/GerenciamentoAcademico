@@ -1,4 +1,4 @@
-package com.exemplo.gerenciamentoacademico.jdbc;
+package com.exemplo.gerenciamentoacademico.jdbc.model;
 
 public class Usuario {
 	private int id;

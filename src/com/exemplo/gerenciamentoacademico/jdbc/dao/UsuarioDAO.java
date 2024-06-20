@@ -1,8 +1,9 @@
-package com.exemplo.gerenciamentoacademico.jdbc;
+package com.exemplo.gerenciamentoacademico.jdbc.dao;
 
 
 
 import com.exemplo.gerenciamentoacademico.jdbc.DatabaseUtil;
+import com.exemplo.gerenciamentoacademico.jdbc.model.Usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

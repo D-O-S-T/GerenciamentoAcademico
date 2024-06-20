@@ -1,10 +1,9 @@
-package com.exemplo.gerenciamentoacademico.jdbc;
+package com.exemplo.gerenciamentoacademico.jdbc.model;
 
-public class Aluno {
+public class Professor {
 	private int id;
     private int usuarioId;
-    private String matricula;
-    private String curso;
+    private String areaAtuacao;
     private String nome;
     private String email;
     private String lattes;
@@ -25,20 +24,12 @@ public class Aluno {
         this.usuarioId = usuarioId;
     }
 
-    public String getMatricula() {
-        return matricula;
+    public String getAreaAtuacao() {
+        return areaAtuacao;
     }
 
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
-    public String getCurso() {
-        return curso;
-    }
-
-    public void setCurso(String curso) {
-        this.curso = curso;
+    public void setAreaAtuacao(String areaAtuacao) {
+        this.areaAtuacao = areaAtuacao;
     }
 
     public String getNome() {
@@ -65,21 +56,19 @@ public class Aluno {
         this.lattes = lattes;
     }
 
-    public Aluno(int id, int usuarioId, String matricula, String curso, String nome, String email, String lattes) {
+    public Professor(int id, int usuarioId, String areaAtuacao, String nome, String email, String lattes) {
         super();
         this.id = id;
         this.usuarioId = usuarioId;
-        this.matricula = matricula;
-        this.curso = curso;
+        this.areaAtuacao = areaAtuacao;
         this.nome = nome;
         this.email = email;
         this.lattes = lattes;
     }
 
-    public Aluno(int usuarioId, String matricula, String curso, String nome, String email, String lattes) {
+    public Professor(int usuarioId, String areaAtuacao, String nome, String email, String lattes) {
         super();
-        this.matricula = matricula;
-        this.curso = curso;
+        this.areaAtuacao = areaAtuacao;
         this.nome = nome;
         this.email = email;
         this.lattes = lattes;
@@ -87,7 +76,7 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno [id=" + id + ", usuarioId=" + usuarioId + ", matricula=" + matricula + ", curso=" + curso
-                + ", nome=" + nome + ", email=" + email + ", lattes=" + lattes + "]";
+        return "Professor [id=" + id + ", usuarioId=" + usuarioId + ", areaAtuacao=" + areaAtuacao + ", nome=" + nome
+                + ", email=" + email + ", lattes=" + lattes + "]";
     }
 }
