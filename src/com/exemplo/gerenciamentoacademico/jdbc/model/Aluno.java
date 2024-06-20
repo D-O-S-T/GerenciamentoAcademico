@@ -65,10 +65,9 @@ public class Aluno {
         this.lattes = lattes;
     }
 
-    public Aluno(int id, int usuarioId, String matricula, String curso, String nome, String email, String lattes) {
+    public Aluno(int id, String matricula, String curso, String nome, String email, String lattes) {
         super();
         this.id = id;
-        this.usuarioId = usuarioId;
         this.matricula = matricula;
         this.curso = curso;
         this.nome = nome;
@@ -76,7 +75,7 @@ public class Aluno {
         this.lattes = lattes;
     }
 
-    public Aluno(int usuarioId, String matricula, String curso, String nome, String email, String lattes) {
+    public Aluno(String matricula, String curso, String nome, String email, String lattes) {
         super();
         this.matricula = matricula;
         this.curso = curso;
