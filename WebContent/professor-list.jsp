@@ -1,84 +1,42 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.util.List" %>
-<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.Professor" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Lista de Professores</title>
-    <style>
-        table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-        .add-btn {
-            display: block;
-            width: 150px;
-            margin: 20px auto;
-            padding: 10px;
-            text-align: center;
-            background-color: #5cb85c;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .add-btn:hover {
-            background-color: #4cae4c;
-        }
-    </style>
 </head>
 <body>
-
-<h2 style="text-align: center;">Lista de Professores</h2>
-
-<a href="professor-form.jsp" class="add-btn">Adicionar Professor</a>
-
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>√Årea de Atua√ß√£o</th>
-            <th>Email</th>
-            <th>Lattes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <%
-            List<Professor> professores = (List<Professor>) request.getAttribute("professores");
-            if (professores != null) {
-                for (Professor professor : professores) {
-        %>
-        <tr>
-            <td><%= professor.getId() %></td>
-            <td><%= professor.getNome() %></td>
-            <td><%= professor.getAreaAtuacao() %></td>
-            <td><%= professor.getEmail() %></td>
-            <td><%= professor.getLattes() %></td>
-        </tr>
-        <%
-                }
-            }
-        %>
-    </tbody>
-</table>
-
+    <h1>Lista de Professores</h1>
+    <a href="ProfessorControllerServlet?command=ADD">Adicionar Professor</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ID do Usu·rio</th>
+                <th>¡rea de AtuaÁ„o</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Lattes</th>
+                <th>AÁıes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach var="professor" items="${PROFESSOR_LIST}">
+                <tr>
+                    <td>${professor.id}</td>
+                    <td>${professor.usuarioId}</td>
+                    <td>${professor.areaAtuacao}</td>
+                    <td>${professor.nome}</td>
+                    <td>${professor.email}</td>
+                    <td>${professor.lattes}</td>
+                    <td>
+                        <a href="ProfessorControllerServlet?command=LOAD&id=${professor.id}">Editar</a>
+                        <a href="ProfessorControllerServlet?command=DELETE&id=${professor.id}" 
+                           onclick="return confirm('Tem certeza que deseja excluir este professor?');">Excluir</a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
 </body>
 </html>

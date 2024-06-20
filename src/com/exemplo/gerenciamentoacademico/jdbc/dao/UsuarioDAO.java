@@ -78,7 +78,41 @@ public class UsuarioDAO {
 			databaseUtil.close(myConn, myStmt, myRs);
         }
 
-        return null;
+        return usuarios;
+    }
+    
+    
+    public Usuario getUsuarioByLoginAndPassword(String login, String senha) throws Exception {
+        Usuario usuario = null;
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRs = null;
+        try { 
+            myConn = DatabaseUtil.getConexao();
+            String sql = "SELECT * FROM usuario WHERE login = ? AND senha = ?";
+            myStmt = myConn.prepareStatement(sql);
+            
+            // Definindo os parâmetros antes de executar a consulta
+            myStmt.setString(1, login);
+            myStmt.setString(2, senha);
+
+            // Executando a consulta após definir os parâmetros
+            myRs = myStmt.executeQuery();
+
+            if (myRs.next()) {
+                int id = myRs.getInt("id");
+                String email = myRs.getString("email");
+                String tipoUsuario = myRs.getString("tipo_usuario");
+                usuario = new Usuario(id, login, email, senha, tipoUsuario);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DatabaseUtil databaseUtil = new DatabaseUtil();
+			databaseUtil.close(myConn, myStmt, myRs);
+        }
+
+        return usuario;
     }
 
     // Método para adicionar um novo usuário
