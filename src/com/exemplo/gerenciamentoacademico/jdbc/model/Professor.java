@@ -66,7 +66,7 @@ public class Professor {
         this.lattes = lattes;
     }
 
-    public Professor(int usuarioId, String areaAtuacao, String nome, String email, String lattes) {
+    public Professor(String areaAtuacao, String nome, String email, String lattes) {
         super();
         this.areaAtuacao = areaAtuacao;
         this.nome = nome;
