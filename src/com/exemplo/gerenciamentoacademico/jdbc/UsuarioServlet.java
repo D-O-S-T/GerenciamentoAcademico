@@ -80,7 +80,8 @@ public class UsuarioServlet extends HttpServlet {
 	}
 
 	private void listUsuarios(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		List<Usuario> usuarios = databaseUtil.getUsuarios();
+		 UsuarioDAO usuarioDao = new UsuarioDAO();
+		List<Usuario> usuarios = usuarioDao.getUsuarios();
 		request.setAttribute("USUARIO_LIST", usuarios);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/usuario-list.jsp");
 		dispatcher.forward(request, response);
@@ -93,8 +94,9 @@ public class UsuarioServlet extends HttpServlet {
 		String tipoUsuario = request.getParameter("tipoUsuario");
 
 		Usuario newUsuario = new Usuario(login, email, senha, tipoUsuario);
-
-		databaseUtil.addUsuario(newUsuario);
+		
+		 UsuarioDAO usuarioDao = new UsuarioDAO();
+		 usuarioDao.addUsuario(newUsuario);
 
 		listUsuarios(request, response);
 	}
@@ -103,9 +105,10 @@ public class UsuarioServlet extends HttpServlet {
 	        throws Exception {
 	    // 1. Recupera o ID do usuário a partir do parâmetro da solicitação
 	    int usuarioId = Integer.parseInt(request.getParameter("id"));
-
+	    
+	    UsuarioDAO usuarioDao = new UsuarioDAO();
 	    // 2. Obtém o usuário do banco de dados (utilizando DatabaseUtil)
-	    Usuario theUsuario = databaseUtil.getUsuario(usuarioId);
+	    Usuario theUsuario = usuarioDao.getUsuario(usuarioId);
 
 	    // 3. Coloca o usuário no request como um atributo
 	    request.setAttribute("THE_USUARIO", theUsuario);
@@ -126,9 +129,9 @@ public class UsuarioServlet extends HttpServlet {
 
 	    // 2. Criar um objeto Usuario com os novos dados
 	    Usuario usuarioAtualizado = new Usuario(id, login, email, senha, tipoUsuario);
-
+	    UsuarioDAO usuarioDao = new UsuarioDAO();
 	    // 3. Chamar o método para atualizar o usuário no banco de dados
-	    databaseUtil.updateUsuario(usuarioAtualizado);
+	    usuarioDao.updateUsuario(usuarioAtualizado);
 
 	    // 4. Redirecionar para a página de listagem de usuários após a atualização
 	    response.sendRedirect(request.getContextPath() + "/UsuarioControllerServlet?command=LIST");
@@ -143,7 +146,8 @@ public class UsuarioServlet extends HttpServlet {
 	        int usuarioId = Integer.parseInt(request.getParameter("id"));
 
 	        // 2. Chamada ao método do DAO para excluir o usuário
-	        databaseUtil.deletarUsuario(usuarioId);
+	        UsuarioDAO usuarioDao = new UsuarioDAO();
+	        usuarioDao.deletarUsuario(usuarioId);
 
 	        // 3. Atualiza a lista de usuários e redireciona para a página de listagem
 	        listUsuarios(request, response);
