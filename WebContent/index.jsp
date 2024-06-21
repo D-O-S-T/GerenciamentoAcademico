@@ -9,13 +9,20 @@
 <body>
     <h1>Bem-vindo!</h1>
     <p>Por favor, selecione o tipo de usuário:</p>
-    <form action="selecaoUsuario.jsp" method="post">
-        <input type="radio" id="professor" name="tipoUsuario" value="professor">
-        <label for="professor">Professor</label><br>
-        <input type="radio" id="coordenador" name="tipoUsuario" value="coordenador">
-        <label for="coordenador">Coordenador</label><br>
-        <input type="radio" id="aluno" name="tipoUsuario" value="aluno">
-        <label for="aluno">Aluno</label><br><br>
+    <form action="IndexServlet" method="post">
+        <label for="tipoUsuario">Tipo de Usuário:</label>
+        <select id="tipoUsuario" name="tipoUsuario">
+            <option value="professor">Professor</option>
+            <option value="coordenador">Coordenador</option>
+            <option value="aluno">Aluno</option>
+        </select><br><br>
+        
+        <label for="login">Login:</label>
+        <input type="text" id="login" name="login"><br><br>
+        
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha"><br><br>
+        
         <input type="submit" value="Enviar">
     </form>
 </body>
