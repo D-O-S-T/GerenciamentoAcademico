@@ -1,25 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Formul�rio do Aluno</title>
+    <title>Formulário de Aluno</title>
 </head>
 <body>
-    <h1>Formul�rio do Aluno</h1>
-    <form action="processAlunoForm.jsp" method="post">
-        <label for="matricula">Matr�cula:</label><br>
-        <input type="text" id="matricula" name="matricula"><br>
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome"><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br>
-        <label for="lattes">Lattes:</label><br>
-        <input type="text" id="lattes" name="lattes"><br>
-        <label for="login">Login:</label><br>
-        <input type="text" id="login" name="login"><br>
-        <label for="senha">Senha:</label><br>
-        <input type="password" id="senha" name="senha"><br><br>
-        <input type="submit" value="Enviar">
-    </form>
+    <h2>Formulário de Aluno</h2>
+  	<form action="AlunoServlet?action=inserir" method="post">
+    <%-- Matrícula --%>
+    <label for="matricula">Matrícula:</label><br>
+    <input type="text" id="matricula" name="matricula" required><br><br>
+    
+    <%-- Nome --%>
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" required><br><br>
+    
+    <%-- E-mail --%>
+    <label for="email">E-mail:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    
+    <%-- Lattes --%>
+    <label for="lattes">Lattes:</label><br>
+    <input type="text" id="lattes" name="lattes" required><br><br>
+    
+    <%-- Login --%>
+    <label for="login">Login:</label><br>
+    <input type="text" id="login" name="login" required><br><br>
+    
+    <%-- Senha --%>
+    <label for="senha">Senha:</label><br>
+    <input type="password" id="senha" name="senha" required><br><br>
+    
+    <%-- Botão para enviar o formulário --%>
+    <input type="submit" value="Salvar">
+</form>
+  	
 </body>
 </html>
