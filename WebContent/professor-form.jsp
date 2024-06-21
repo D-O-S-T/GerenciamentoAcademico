@@ -19,6 +19,8 @@
         <input type="text" id="login" name="login"><br>
         <label for="senha">Senha:</label><br>
         <input type="password" id="senha" name="senha"><br><br>
+        <label for="senha">Area de Atuação:</label><br>
+        <input type="text" id="areaAtuacao" name="areaAtuacao"><br><br>
         <input type="submit" value="Enviar">
     </form>
 </body>
