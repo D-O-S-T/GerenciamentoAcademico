@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Formulário do Professor</h1>
-    <form action="processProfessorForm.jsp" method="post">
+    <form action="cadastrarProfessor" method="post">
         <label for="nome">Nome:</label><br>
         <input type="text" id="nome" name="nome"><br>
         <label for="email">Email:</label><br>

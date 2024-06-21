@@ -82,30 +82,54 @@ public class ProfessorDAO {
 	    }
 
 	    // Método para adicionar um novo professor
-	    public void addProfessor(Professor professor) throws SQLException {
-	        Connection myConn = null;
-	        PreparedStatement myStmt = null;
-
+//	    public void insertProfessor(Professor professor) throws SQLException {
+//	    	String sql = "INSERT INTO PROFESSOR VALUES (?,?,?,?,?)";
+//	        try (Connection connection = DatabaseUtil.getConexao();
+//	             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+//	            preparedStatement.setString(1, professor.getNome());
+//	            preparedStatement.setString(2, professor.getEmail());
+//	            preparedStatement.setString(3, professor.getLattes());
+//	            preparedStatement.setString(4, professor.getLogin());
+//	            preparedStatement.setString(5, professor.getSenha());
+//	            preparedStatement.executeUpdate();
+//	        } catch (SQLException e) {
+//	            printSQLException(e);
+//	        }
+//	    }
+	    
+	    public void insertProfessor(Professor professor) throws SQLException {
+	        Connection connection = null;
+	        PreparedStatement preparedStatement = null;
+	        String sql = "INSERT INTO PROFESSOR VALUES (?,?,?,?,?)";
+	        
 	        try {
-	            myConn = DatabaseUtil.getConexao();
-	            String sql = "INSERT INTO professor (nome, email, lattes, login, senha) VALUES (?, ?, ?, ?, ?)";
-	            myStmt = myConn.prepareStatement(sql);
-
-	            myStmt.setString(1, professor.getNome());
-	            myStmt.setString(2, professor.getEmail());
-	            myStmt.setString(3, professor.getLattes());
-	            myStmt.setString(4, professor.getLogin());
-	            myStmt.setString(5, professor.getSenha());
-
-	            myStmt.executeUpdate();
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	            throw e;
+	            connection = DatabaseUtil.getConexao();
+	            preparedStatement = connection.prepareStatement(sql);
+	            preparedStatement.setString(1, professor.getNome());
+	            preparedStatement.setString(2, professor.getEmail());
+	            preparedStatement.setString(3, professor.getLattes());
+	            preparedStatement.setString(4, professor.getLogin());
+	            preparedStatement.setString(5, professor.getSenha());
+	            
+	            preparedStatement.executeUpdate();
 	        } finally {
-	            DatabaseUtil databaseUtil = new DatabaseUtil();
-	            databaseUtil.close(myConn, myStmt, null);
+	            close(connection, preparedStatement);
 	        }
 	    }
+
+	    private void close(Connection myConn, PreparedStatement myStmt) {
+	        try {
+	            if (myStmt != null) {
+	                myStmt.close();
+	            }
+	            if (myConn != null) {
+	                myConn.close();
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	
 
 	    // Método para deletar um professor pelo ID
 	    public void deletarProfessor(int professorId) {
@@ -150,6 +174,23 @@ public class ProfessorDAO {
 	        } finally {
 	            DatabaseUtil databaseUtil = new DatabaseUtil();
 	            databaseUtil.close(myConn, myStmt, null);
+	        }
+	    }
+	    
+	    
+	    public void printSQLException(SQLException ex) {
+	        for (Throwable e : ex) {
+	            if (e instanceof SQLException) {
+	                e.printStackTrace(System.err);
+	                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
+	                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
+	                System.err.println("Message: " + e.getMessage());
+	                Throwable t = ex.getCause();
+	                while (t != null) {
+	                    System.out.println("Cause: " + t);
+	                    t = t.getCause();
+	                }
+	            }
 	        }
 	    }
 	}
