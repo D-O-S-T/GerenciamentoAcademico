@@ -9,7 +9,15 @@ public class Professor {
     private String senha;
     private String areaAtuacao;
 
-    // Construtor com todos os campos
+    
+    
+    public Professor(int id, String nome) {
+		super();
+		this.id = id;
+		this.nome = nome;
+	}
+
+	// Construtor com todos os campos
     public Professor(int id, String nome, String email, String lattes, String login, String senha, String areaAtuacao) {
         this.id = id;
         this.nome = nome;

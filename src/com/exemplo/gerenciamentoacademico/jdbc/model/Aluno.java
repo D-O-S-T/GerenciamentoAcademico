@@ -35,6 +35,13 @@ public class Aluno {
     	this.email = email;
     	this.lattes = lattes;
     }
+    
+    
+    public Aluno(int id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+
 
     // Getters e Setters
     public int getId() {

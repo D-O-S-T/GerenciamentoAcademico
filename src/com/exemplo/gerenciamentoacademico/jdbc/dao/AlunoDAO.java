@@ -27,6 +27,7 @@ public class AlunoDAO {
             e.printStackTrace();
         }
     }
+    
 
     public List<Aluno> getTodosAlunos() {
         String sql = "SELECT * FROM aluno";

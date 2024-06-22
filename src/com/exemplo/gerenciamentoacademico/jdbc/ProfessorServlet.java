@@ -1,15 +1,16 @@
 package com.exemplo.gerenciamentoacademico.jdbc;
 
-import com.exemplo.gerenciamentoacademico.jdbc.dao.ProfessorDAO;
-import com.exemplo.gerenciamentoacademico.jdbc.model.Professor;
+import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
+
+import com.exemplo.gerenciamentoacademico.jdbc.dao.ProfessorDAO;
+import com.exemplo.gerenciamentoacademico.jdbc.model.Professor;
 
 @WebServlet("/ProfessorServlet")
 public class ProfessorServlet extends HttpServlet {
@@ -18,7 +19,12 @@ public class ProfessorServlet extends HttpServlet {
     private ProfessorDAO professorDAO;
 
     public void init() {
+       
+    	
         professorDAO = new ProfessorDAO();
+        
+
+       
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
