@@ -3,8 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.Professor" %>
+<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.Projeto" %>
 <%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.Aluno" %>
 <%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.ProfessorDAO" %>
+<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.ProjetoDAO" %>
 <%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.AlunoDAO" %>
 <!DOCTYPE html>
 <html>
@@ -34,14 +36,19 @@
         <%-- Data Final --%>
         <label for="dataFinal">Data Final:</label><br>
         <input type="date" id="dataFinal" name="dataFinal" value="${atividade.dataFinal}" required><br><br>
-
-        <%-- Projeto (combobox) --%>
+ <%-- Projeto (combobox) --%>
         <label for="projetoId">Projeto:</label><br>
         <select id="projetoId" name="projetoId" required>
             <option value="">Selecione um Projeto</option>
-            <c:forEach var="projeto" items="${listaProjetos}">
-                <option value="${projeto.id}" <c:if test="${projeto.id eq projeto.projeto.id}">selected</c:if>>${projeto.titulo}</option>
-            </c:forEach>
+            <%
+                ProjetoDAO projetoDAO = new ProjetoDAO();
+                List<Projeto> listaProjetos = projetoDAO.getTodosProjetos();
+                for (Projeto projeto : listaProjetos) {
+            %>
+                <option value="<%= projeto.getId() %>"><%= projeto.getTitulo() %></option>
+            <%
+                }
+            %>
         </select><br><br>
 
         <%-- Botão para enviar o formulário --%>
