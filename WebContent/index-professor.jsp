@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-    <h1>Bem-vindo sdad, ${sessionScope.usuarioNome}!</h1>
+    <h1>Bem-vindo, ${sessionScope.usuarioNome}!</h1>
 
     <div class="button-container">
         <button onclick="window.location.href='inserirFeedback.jsp'">Inserir Feedback</button>
