@@ -4,6 +4,9 @@ public class FeedbackAluno {
 
 
 
+	
+
+
 	private int id;
 	private String titulo;
 	private String feedback;
@@ -18,6 +21,7 @@ public class FeedbackAluno {
 	}
 	
 	
+
 	
 	public FeedbackAluno(String titulo, String feedback, int alunoId) {
 		super();

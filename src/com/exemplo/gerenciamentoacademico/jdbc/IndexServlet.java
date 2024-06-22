@@ -24,7 +24,6 @@ public class IndexServlet extends HttpServlet {
         IndexDAO indexDAO = new IndexDAO();
         Usuario usuario = null;
 
-        // Validar o login e senha de acordo com o tipo de usuário selecionado
         switch (tipoUsuario) {
             case "professor":
                 usuario = indexDAO.validarProfessor(login, senha);
@@ -38,29 +37,24 @@ public class IndexServlet extends HttpServlet {
         }
 
         if (usuario != null) {
-            // Definir o id e o nome na sessão
             HttpSession session = request.getSession();
             session.setAttribute("usuarioId", usuario.getId());
             session.setAttribute("usuarioNome", usuario.getNome());
             
-            // Redirecionar para a página apropriada
-            switch (tipoUsuario) {
-                case "professor":
-                    response.sendRedirect("index-professor.jsp");
-                    break;
-                case "aluno":
-                    response.sendRedirect("index-aluno.jsp");
-                    break;
-                case "coordenador":
-                    response.sendRedirect("index-coordenador.jsp");
-                    break;
+            ////lembre-se, settar o atributo com o nome que vai usar nas req do front->>>>>>>
+            session.setAttribute("professorId", usuario.getId());
+
+            if ("professor".equals(tipoUsuario)) {
+                response.sendRedirect("index-professor.jsp"); // Redireciona para página do professor
+            } else if ("aluno".equals(tipoUsuario)) {
+                response.sendRedirect("index-aluno.jsp"); // Redireciona para página do aluno
+            } else if ("coordenador".equals(tipoUsuario)) {
+                response.sendRedirect("index-coordenador.jsp"); // Redireciona para página do coordenador
             }
         } else {
-            // Definir a mensagem de erro e encaminhar de volta para index.jsp
             request.setAttribute("erroLogin", "Senha, login ou tipo de usuário está errado.");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
 }
-
 
