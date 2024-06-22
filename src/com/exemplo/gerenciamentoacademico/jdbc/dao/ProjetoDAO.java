@@ -30,6 +30,59 @@ public class ProjetoDAO {
         }
     }
     
+    public List<Projeto> getProjetosPorProfessor(int professorId) {
+        String sql = "SELECT * FROM projeto WHERE professor_id = ?";
+        List<Projeto> projetos = new ArrayList<>();
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, professorId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Projeto projeto = new Projeto(
+                            rs.getInt("id"),
+                            rs.getString("titulo"),
+                            rs.getDate("dataInicial").toLocalDate(),
+                            rs.getDate("dataFinal").toLocalDate(),
+                            rs.getInt("professor_id")
+                    );
+                    projetos.add(projeto);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return projetos;
+    }
+    
+    
+    public Projeto getProjetoPorProfessorId(int professorId) {
+        String sql = "SELECT * FROM projeto WHERE professor_id = ?";
+        Projeto projeto = null;
+
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, professorId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    projeto = new Projeto(
+                            rs.getInt("id"),
+                            rs.getString("titulo"),
+                            rs.getString("conteudo"),
+                            rs.getDate("dataInicial").toLocalDate(),
+                            rs.getDate("dataFinal").toLocalDate(),
+                            rs.getInt("professor_id"),
+                            rs.getInt("alunoBolsista_id"),
+                            rs.getInt("alunoVoluntario_id")
+                    );
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return projeto;
+    }
+
+    
     public List<Projeto> getTodosProjetos() {
         String sql = "SELECT a.*, p.nome AS professorNome, ab.nome AS alunoBolsistaNome, av.nome AS alunoVoluntarioNome " +
                      "FROM projeto a " +

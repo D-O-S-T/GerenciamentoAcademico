@@ -22,13 +22,6 @@ public class Atividade {
         this.dataFinal = dataFinal;
         this.projetoId = projetoId;
     }
-
-  
-    
-
-  
-    
-    
     
 	public Atividade(int id, String titulo, String conteudo, LocalDate dataInicial, LocalDate dataFinal, int projetoId,
 			String projetoTitulo) {

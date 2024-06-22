@@ -1,6 +1,7 @@
 package com.exemplo.gerenciamentoacademico.jdbc.model;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Projeto {
     private int id;
@@ -51,7 +52,16 @@ public class Projeto {
         this.alunoVoluntarioId = alunoVoluntarioId;
     }
 
-    public int getId() {
+    public Projeto(int int1, String string, LocalDate localDate, LocalDate localDate2, int int2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Projeto(int int1, String string, String string2, LocalDate localDate, LocalDate localDate2, int int2,
+			int int3, int int4) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getId() {
         return id;
     }
 
