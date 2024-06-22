@@ -1,45 +1,55 @@
 package com.exemplo.gerenciamentoacademico.jdbc.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Projeto {
     private int id;
     private String titulo;
+    private String conteudo;
     private Date dataInicial;
     private Date dataFinal;
-    private Professor professor;
-    private Aluno alunoBolsista;
-    private Aluno alunoVoluntario;
+    private int professorId;
+    private int alunoBolsistaId;
+    private int alunoVoluntarioId;
     
+    private String professorNome;
+    private String alunoBolsistaNome;
+    private String alunoVoluntarioNome;
     
-    // Constructor for inserting a new projeto without ID
-    public Projeto(String titulo, Date dataInicial, Date dataFinal, Professor professor, Aluno alunoBolsista, Aluno alunoVoluntario) {
-        this.titulo = titulo;
-        this.dataInicial = dataInicial;
-        this.dataFinal = dataFinal;
-        this.professor = professor;
-        this.alunoBolsista = alunoBolsista;
-        this.alunoVoluntario = alunoVoluntario;
-    }
-
-    public Projeto(String titulo, Date dataInicial, Date dataFinal, Professor professor) {
-        this.titulo = titulo;
-        this.dataInicial = dataInicial;
-        this.dataFinal = dataFinal;
-        this.professor = professor;
-    }
-
-    public Projeto(int id, String titulo, Date dataInicial, Date dataFinal, Professor professor, Aluno alunoBolsista, Aluno alunoVoluntario) {
+    public Projeto(int id, String titulo, String conteudo, Date dataInicial, Date dataFinal, int professorId, int alunoBolsistaId, int alunoVoluntarioId, String professorNome, String alunoBolsistaNome, String alunoVoluntarioNome) {
         this.id = id;
         this.titulo = titulo;
+        this.conteudo = conteudo;
         this.dataInicial = dataInicial;
         this.dataFinal = dataFinal;
-        this.professor = professor;
-        this.alunoBolsista = alunoBolsista;
-        this.alunoVoluntario = alunoVoluntario;
+        this.professorId = professorId;
+        this.alunoBolsistaId = alunoBolsistaId;
+        this.alunoVoluntarioId = alunoVoluntarioId;
+        this.professorNome = professorNome;
+        this.alunoBolsistaNome = alunoBolsistaNome;
+        this.alunoVoluntarioNome = alunoVoluntarioNome;
     }
 
-    // Getters e setters para os atributos
+    public Projeto(int id, String titulo, String conteudo, Date dataInicial, Date dataFinal, int professorId, int alunoBolsistaId, int alunoVoluntarioId) {
+        this.id = id;
+        this.titulo = titulo;
+        this.conteudo = conteudo;
+        this.dataInicial = dataInicial;
+        this.dataFinal = dataFinal;
+        this.professorId = professorId;
+        this.alunoBolsistaId = alunoBolsistaId;
+        this.alunoVoluntarioId = alunoVoluntarioId;
+    }
+
+    public Projeto(String titulo, String conteudo, Date dataInicial, Date dataFinal, int professorId, int alunoBolsistaId, int alunoVoluntarioId) {
+        this.titulo = titulo;
+        this.conteudo = conteudo;
+        this.dataInicial = dataInicial;
+        this.dataFinal = dataFinal;
+        this.professorId = professorId;
+        this.alunoBolsistaId = alunoBolsistaId;
+        this.alunoVoluntarioId = alunoVoluntarioId;
+    }
 
     public int getId() {
         return id;
@@ -55,6 +65,14 @@ public class Projeto {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public String getConteudo() {
+        return conteudo;
+    }
+
+    public void setConteudo(String conteudo) {
+        this.conteudo = conteudo;
     }
 
     public Date getDataInicial() {
@@ -73,36 +91,67 @@ public class Projeto {
         this.dataFinal = dataFinal;
     }
 
-    public Professor getProfessor() {
-        return professor;
-    }
-    
-    
-
-    public void setProfessor(Professor professor) {
-        this.professor = professor;
+    public int getProfessorId() {
+        return professorId;
     }
 
-    public Aluno getAlunoBolsista() {
-        return alunoBolsista;
+    public void setProfessorId(int professorId) {
+        this.professorId = professorId;
     }
 
-    public void setAlunoBolsista(Aluno alunoBolsista) {
-        this.alunoBolsista = alunoBolsista;
+    public int getAlunoBolsistaId() {
+        return alunoBolsistaId;
     }
 
-    public Aluno getAlunoVoluntario() {
-        return alunoVoluntario;
+    public void setAlunoBolsistaId(int alunoBolsistaId) {
+        this.alunoBolsistaId = alunoBolsistaId;
     }
 
-    public void setAlunoVoluntario(Aluno alunoVoluntario) {
-        this.alunoVoluntario = alunoVoluntario;
+    public int getAlunoVoluntarioId() {
+        return alunoVoluntarioId;
+    }
+
+    public void setAlunoVoluntarioId(int alunoVoluntarioId) {
+        this.alunoVoluntarioId = alunoVoluntarioId;
+    }
+
+    public String getProfessorNome() {
+        return professorNome;
+    }
+
+    public void setProfessorNome(String professorNome) {
+        this.professorNome = professorNome;
+    }
+
+    public String getAlunoBolsistaNome() {
+        return alunoBolsistaNome;
+    }
+
+    public void setAlunoBolsistaNome(String alunoBolsistaNome) {
+        this.alunoBolsistaNome = alunoBolsistaNome;
+    }
+
+    public String getAlunoVoluntarioNome() {
+        return alunoVoluntarioNome;
+    }
+
+    public void setAlunoVoluntarioNome(String alunoVoluntarioNome) {
+        this.alunoVoluntarioNome = alunoVoluntarioNome;
     }
 
     @Override
     public String toString() {
-        return "Projeto [id=" + id + ", titulo=" + titulo + ", dataInicial=" + dataInicial + ", dataFinal=" + dataFinal
-                + ", professor=" + professor + ", alunoBolsista=" + alunoBolsista + ", alunoVoluntario=" + alunoVoluntario + "]";
+        return "Projeto{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", conteudo='" + conteudo + '\'' +
+                ", dataInicial=" + dataInicial +
+                ", dataFinal=" + dataFinal +
+                ", professorId=" + professorId +
+                ", alunoBolsistaId=" + alunoBolsistaId +
+                ", alunoVoluntarioId=" + alunoVoluntarioId +
+                '}';
     }
 }
 
+   
