@@ -9,6 +9,7 @@
 </head>
 <body>
     <h2>Listagem de Projetos</h2>
+    <button onclick="window.location.href='projeto-form.jsp'">Adicionar Novo Projeto</button>
     
     <table border="1">
         <thead>
@@ -45,7 +46,7 @@
     </table>
     
     <br>
-    <a href="projeto-form.jsp">Adicionar Novo Projeto</a>
+    <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
 </body>
 </html>
 

@@ -9,6 +9,7 @@
 </head>
 <body>
     <h2>Listagem de Coordenadores</h2>
+    <button onclick="window.location.href='coordenador-form.jsp'">Adicionar Novo Coordenador</button>
     
     <table border="1">
         <thead>
@@ -37,6 +38,6 @@
     </table>
     
     <br>
-    <a href="coordenador-form.jsp">Adicionar Novo Coordenador</a>
+    <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
 </body>
 </html>

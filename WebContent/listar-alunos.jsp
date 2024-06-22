@@ -9,7 +9,7 @@
 </head>
 <body>
     <h2>Listagem de Alunos</h2>
-    
+    <button onclick="window.location.href='aluno-form.jsp'">Adicionar Novo Aluno</button>
     <table border="1">
         <thead>
             <tr>
@@ -41,6 +41,6 @@
     </table>
     
     <br>
-    <a href="aluno-form.jsp">Adicionar Novo Aluno</a>
+    <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
 </body>
 </html>

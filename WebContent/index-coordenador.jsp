@@ -36,11 +36,11 @@
     <div class="button-container">
         <button onclick="window.location.href='relatorios-analises-form.jsp'">Relatórios e Análises</button>
         <button onclick="window.location.href='acompanhamentoProjetos.jsp'">Acompanhamento dos Projetos</button>
-        <button onclick="window.location.href='gestaoAlunos.jsp'">Gestão de Alunos</button>
-        <button onclick="window.location.href='gestaoProjetos.jsp'">Gestão de Projetos</button>
-        <button onclick="window.location.href='gestaoProfessores.jsp'">Gestão de Professores</button>
-        <button onclick="window.location.href='gestaoCoordenadores.jsp'">Gestão de Coordenadores</button>
-        <button onclick="window.location.href='inserirRelatorio.jsp'">Inserir Relatório</button>
+        <button onclick="window.location.href='AlunoServlet?action=listar'" onclick="window.location.href='listar-alunos.jsp'">Gestão de Alunos</button>
+        <button onclick="window.location.href='ProjetoServlet?action=listar'" onclick="window.location.href='listar-projetos.jsp'">Gestão de Projetos</button>
+        <button onclick="window.location.href='ProfessorServlet?action=listar'" onclick="window.location.href='index-professor.jsp'">Gestão de Professores</button>
+        <button onclick="window.location.href='CoordenadorServlet?action=listar'" onclick="window.location.href='listar-coordenadores.jsp'">Gestão de Coordenadores</button>
+        <button onclick="window.location.href='RelatorioCoordenadorServlet?action=listar'" onclick="window.location.href='listar-relatoriocoordenador.jsp'">Inserir Relatório</button>
     </div>
 </body>
 </html>

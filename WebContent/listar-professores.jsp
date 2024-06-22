@@ -9,6 +9,7 @@
 </head>
 <body>
     <h2>Listagem de Professores</h2>
+    <button onclick="window.location.href='professor-form.jsp'">Adicionar Novo Professor</button>
     
     <table border="1">
         <thead>
@@ -39,6 +40,6 @@
     </table>
     
     <br>
-    <a href="professor-form.jsp">Adicionar Novo Professor</a>
+    <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
 </body>
 </html>
