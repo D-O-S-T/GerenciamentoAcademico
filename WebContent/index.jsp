@@ -9,6 +9,12 @@
 <body>
     <h1>Bem-vindo!</h1>
     <p>Por favor, selecione o tipo de usuário:</p>
+
+    <!-- Verificar se existe uma mensagem de erro e exibi-la -->
+    <c:if test="${not empty erroLogin}">
+        <p style="color:red;">${erroLogin}</p>
+    </c:if>
+
     <form action="IndexServlet" method="post">
         <label for="tipoUsuario">Tipo de Usuário:</label>
         <select id="tipoUsuario" name="tipoUsuario">
