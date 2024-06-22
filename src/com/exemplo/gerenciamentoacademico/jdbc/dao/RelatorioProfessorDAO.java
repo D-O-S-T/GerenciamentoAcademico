@@ -25,21 +25,24 @@ public class RelatorioProfessorDAO {
         }
     }
 
-    public List<RelatorioProfessor> getTodosRelatoriosProfessor() {
-        String sql = "SELECT * FROM relatorioprofessor";
+    public List<RelatorioProfessor> getTodosRelatoriosProfessor(int professorId) {
+        String sql = "SELECT * FROM relatorioprofessor WHERE professor_id = ?";
         List<RelatorioProfessor> relatorios = new ArrayList<>();
         try (Connection conn = DatabaseUtil.getConexao();
-             PreparedStatement stmt = conn.prepareStatement(sql);
-             ResultSet rs = stmt.executeQuery()) {
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            while (rs.next()) {
-                RelatorioProfessor relatorioProfessor = new RelatorioProfessor(
-                        rs.getInt("id"),
-                        rs.getString("titulo"),
-                        rs.getString("relatorio"),
-                        rs.getInt("professor_id")
-                );
-                relatorios.add(relatorioProfessor);
+            stmt.setInt(1, professorId);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    RelatorioProfessor relatorioProfessor = new RelatorioProfessor(
+                            rs.getInt("id"),
+                            rs.getString("titulo"),
+                            rs.getString("relatorio"),
+                            rs.getInt("professor_id")
+                    );
+                    relatorios.add(relatorioProfessor);
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();

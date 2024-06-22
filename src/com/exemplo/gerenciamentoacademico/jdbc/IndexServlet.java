@@ -42,7 +42,7 @@ public class IndexServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("usuarioId", usuario.getId());
             session.setAttribute("usuarioNome", usuario.getNome());
-
+            
             // Redirecionar para a página apropriada
             switch (tipoUsuario) {
                 case "professor":

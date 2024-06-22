@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -58,21 +60,42 @@ public class RelatorioProfessorServlet extends HttpServlet {
 
     private void listarRelatoriosProfessores(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<RelatorioProfessor> listaRelatorios = relatorioProfessorDAO.getTodosRelatoriosProfessor();
-        request.setAttribute("listaRelatorios", listaRelatorios);
-        request.getRequestDispatcher("listar-relatorioprofessor.jsp").forward(request, response);
+        // Obter o id do professor a partir da sessão
+        HttpSession session = request.getSession();
+        Object usuarioIdObj = session.getAttribute("usuarioId");
+
+        if (usuarioIdObj != null && usuarioIdObj instanceof Integer) {
+            int professorId = (Integer) usuarioIdObj;
+            List<RelatorioProfessor> listaRelatorios = relatorioProfessorDAO.getTodosRelatoriosProfessor(professorId);
+            request.setAttribute("listaRelatorios", listaRelatorios);
+            request.getRequestDispatcher("listar-relatorioprofessor.jsp").forward(request, response);
+        } else {
+            // Lidar com o caso em que o usuário não está autenticado
+            response.sendRedirect("index.jsp"); // ou redirecionar para a página de login novamente
+        }
     }
 
     private void inserirRelatorioProfessor(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String titulo = request.getParameter("titulo");
         String relatorio = request.getParameter("relatorio");
-        int professorId = Integer.parseInt(request.getParameter("professor_id"));
 
-        RelatorioProfessor novoRelatorio = new RelatorioProfessor(titulo, relatorio, professorId);
-        relatorioProfessorDAO.adicionarRelatorioProfessor(novoRelatorio);
+        // Obter o id do professor a partir da sessão
+        HttpSession session = request.getSession();
+        Object usuarioIdObj = session.getAttribute("usuarioId");
 
-        response.sendRedirect("RelatorioProfessorServlet?action=listar");
+        if (usuarioIdObj != null && usuarioIdObj instanceof Integer) {
+            int professorId = (Integer) usuarioIdObj;
+
+            // Criar o objeto RelatorioProfessor
+            RelatorioProfessor novoRelatorio = new RelatorioProfessor(titulo, relatorio, professorId);
+            relatorioProfessorDAO.adicionarRelatorioProfessor(novoRelatorio);
+
+            response.sendRedirect("RelatorioProfessorServlet?action=listar");
+        } else {
+            // Lidar com o caso em que o usuário não está autenticado
+            response.sendRedirect("index.jsp"); // ou redirecionar para a página de login novamente
+        }
     }
 
     private void editarRelatorioProfessor(HttpServletRequest request, HttpServletResponse response)

@@ -8,8 +8,9 @@
     <title>Listagem de Relatórios de Professores</title>
 </head>
 <body>
-    <h2>Listagem de Relatórios de Professores</h2>
-    
+    <h2>Listagem de Relatórios de Professores</h2> 
+ 
+    <button onclick="window.location.href='relatorioprofessor-form.jsp'">Adicionar Novo Relatório</button>
     <table border="1">
         <thead>
             <tr>
@@ -37,6 +38,7 @@
     </table>
     
     <br>
-    <a href="relatorioprofessor-form.jsp">Adicionar Novo Relatório</a>
+    <button onclick="window.location.href='index-professor.jsp'">Voltar a Página Inicial</button>
 </body>
 </html>
+
