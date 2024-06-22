@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -18,9 +17,7 @@
                 <th>Conteúdo</th>
                 <th>Data Inicial</th>
                 <th>Data Final</th>
-                <th>Professor</th>
-                <th>Aluno Bolsista</th>
-                <th>Aluno Voluntário</th>
+                <th>Projeto</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -32,9 +29,7 @@
                     <td>${atividade.conteudo}</td>
                     <td>${atividade.dataInicial}</td>
                     <td>${atividade.dataFinal}</td>
-                    <td>${atividade.professorNome}</td>
-                    <td>${atividade.alunoBolsistaNome}</td>
-                    <td>${atividade.alunoVoluntarioNome}</td>
+                    <td>${atividade.projetoTitulo}</td>
                     <td>
                         <a href="AtividadeServlet?action=editar&id=${atividade.id}">Editar</a>
                         <a href="AtividadeServlet?action=excluir&id=${atividade.id}">Excluir</a>

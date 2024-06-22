@@ -1,57 +1,58 @@
 package com.exemplo.gerenciamentoacademico.jdbc.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 public class Atividade {
     private int id;
     private String titulo;
     private String conteudo;
-    private Date dataInicial;
-    private Date dataFinal;
-    private int professorId;
-    private int alunoBolsistaId;
-    private int alunoVoluntarioId;
-    
-    private String professorNome;
-    private String alunoBolsistaNome;
-    private String alunoVoluntarioNome;
-    
-    public Atividade(int id, String titulo, String conteudo, Date dataInicial, Date dataFinal, int professorId, int alunoBolsistaId, int alunoVoluntarioId, String professorNome, String alunoBolsistaNome, String alunoVoluntarioNome) {
+    private LocalDate dataInicial;
+    private LocalDate dataFinal;
+    private int projetoId;
+    private String projetoTitulo; // Nome do projeto, não persistido no banco
+
+    public Atividade() {
+    }
+
+    public Atividade(int id, String titulo, String conteudo, LocalDate dataInicial, LocalDate dataFinal, int projetoId) {
         this.id = id;
         this.titulo = titulo;
         this.conteudo = conteudo;
         this.dataInicial = dataInicial;
         this.dataFinal = dataFinal;
-        this.professorId = professorId;
-        this.alunoBolsistaId = alunoBolsistaId;
-        this.alunoVoluntarioId = alunoVoluntarioId;
-        this.professorNome = professorNome;
-        this.alunoBolsistaNome = alunoBolsistaNome;
-        this.alunoVoluntarioNome = alunoVoluntarioNome;
+        this.projetoId = projetoId;
     }
 
-    public Atividade(int id, String titulo, String conteudo, Date dataInicial, Date dataFinal, int professorId, int alunoBolsistaId, int alunoVoluntarioId) {
-        this.id = id;
-        this.titulo = titulo;
-        this.conteudo = conteudo;
-        this.dataInicial = dataInicial;
-        this.dataFinal = dataFinal;
-        this.professorId = professorId;
-        this.alunoBolsistaId = alunoBolsistaId;
-        this.alunoVoluntarioId = alunoVoluntarioId;
-    }
+  
+    
 
-    public Atividade(String titulo, String conteudo, Date dataInicial, Date dataFinal, int professorId, int alunoBolsistaId, int alunoVoluntarioId) {
-        this.titulo = titulo;
-        this.conteudo = conteudo;
-        this.dataInicial = dataInicial;
-        this.dataFinal = dataFinal;
-        this.professorId = professorId;
-        this.alunoBolsistaId = alunoBolsistaId;
-        this.alunoVoluntarioId = alunoVoluntarioId;
-    }
+  
+    
+    
+    
+	public Atividade(int id, String titulo, String conteudo, LocalDate dataInicial, LocalDate dataFinal, int projetoId,
+			String projetoTitulo) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.conteudo = conteudo;
+		this.dataInicial = dataInicial;
+		this.dataFinal = dataFinal;
+		this.projetoId = projetoId;
+		this.projetoTitulo = projetoTitulo;
+	}
 
-    public int getId() {
+	public Atividade(String titulo, String conteudo, LocalDate dataInicial, LocalDate dataFinal, int projetoId) {
+		super();
+		this.titulo = titulo;
+		this.conteudo = conteudo;
+		this.dataInicial = dataInicial;
+		this.dataFinal = dataFinal;
+		this.projetoId = projetoId;
+		
+	}
+
+	public int getId() {
         return id;
     }
 
@@ -75,72 +76,39 @@ public class Atividade {
         this.conteudo = conteudo;
     }
 
-    public Date getDataInicial() {
+    public LocalDate getDataInicial() {
         return dataInicial;
     }
 
-    public void setDataInicial(Date dataInicial) {
+    public void setDataInicial(LocalDate dataInicial) {
         this.dataInicial = dataInicial;
     }
 
-    public Date getDataFinal() {
+    public LocalDate getDataFinal() {
         return dataFinal;
     }
 
-    public void setDataFinal(Date dataFinal) {
+    public void setDataFinal(LocalDate dataFinal) {
         this.dataFinal = dataFinal;
     }
 
-    public int getProfessorId() {
-        return professorId;
+    public int getProjetoId() {
+        return projetoId;
     }
 
-    public void setProfessorId(int professorId) {
-        this.professorId = professorId;
+    public void setProjetoId(int projetoId) {
+        this.projetoId = projetoId;
     }
 
-    public int getAlunoBolsistaId() {
-        return alunoBolsistaId;
+    public String getProjetoTitulo() {
+        return projetoTitulo;
     }
 
-    public void setAlunoBolsistaId(int alunoBolsistaId) {
-        this.alunoBolsistaId = alunoBolsistaId;
+    public void setProjetoTitulo(String projetoTitulo) {
+        this.projetoTitulo = projetoTitulo;
     }
 
-    public int getAlunoVoluntarioId() {
-        return alunoVoluntarioId;
-    }
-
-    public void setAlunoVoluntarioId(int alunoVoluntarioId) {
-        this.alunoVoluntarioId = alunoVoluntarioId;
-    }
-    
-
-    public String getProfessorNome() {
-		return professorNome;
-	}
-
-	public void setProfessorNome(String professorNome) {
-		this.professorNome = professorNome;
-	}
-
-	public String getAlunoBolsistaNome() {
-		return alunoBolsistaNome;
-	}
-
-	public void setAlunoBolsistaNome(String alunoBolsistaNome) {
-		this.alunoBolsistaNome = alunoBolsistaNome;
-	}
-
-	public String getAlunoVoluntarioNome() {
-		return alunoVoluntarioNome;
-	}
-
-	public void setAlunoVoluntarioNome(String alunoVoluntarioNome) {
-		this.alunoVoluntarioNome = alunoVoluntarioNome;
-	}
-
-	@Override
+    @Override
     public String toString() {
         return "Atividade{" +
                 "id=" + id +
@@ -148,9 +116,8 @@ public class Atividade {
                 ", conteudo='" + conteudo + '\'' +
                 ", dataInicial=" + dataInicial +
                 ", dataFinal=" + dataFinal +
-                ", professorId=" + professorId +
-                ", alunoBolsistaId=" + alunoBolsistaId +
-                ", alunoVoluntarioId=" + alunoVoluntarioId +
+                ", projetoId=" + projetoId +
+                ", projetoTitulo='" + projetoTitulo + '\'' +
                 '}';
     }
 }

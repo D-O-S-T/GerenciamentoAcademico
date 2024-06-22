@@ -1,10 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
-<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.Professor" %>
-<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.Aluno" %>
-<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.ProfessorDAO" %>
-<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.AlunoDAO" %>
+<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.Projeto" %>
+<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.ProjetoDAO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +17,7 @@
 
         <%-- Conteúdo --%>
         <label for="conteudo">Conteúdo:</label><br>
-        <input type="text" id="conteudo" name="conteudo" required><br><br>
+        <textarea id="conteudo" name="conteudo" rows="4" cols="50" required></textarea><br><br>
 
         <%-- Data Inicial --%>
         <label for="dataInicial">Data Inicial:</label><br>
@@ -30,44 +27,16 @@
         <label for="dataFinal">Data Final:</label><br>
         <input type="date" id="dataFinal" name="dataFinal" required><br><br>
 
-        <%-- Professor (combobox) --%>
-        <label for="professorId">Professor:</label><br>
-        <select id="professorId" name="professorId" required>
-            <option value="">Selecione um Professor</option>
+        <%-- Projeto (combobox) --%>
+        <label for="projetoId">Projeto:</label><br>
+        <select id="projetoId" name="projetoId" required>
+            <option value="">Selecione um Projeto</option>
             <%
-                ProfessorDAO professorDAO = new ProfessorDAO();
-                List<Professor> listaProfessores = professorDAO.getTodosProfessores();
-                for (Professor professor : listaProfessores) {
+                ProjetoDAO projetoDAO = new ProjetoDAO();
+                List<Projeto> listaProjetos = projetoDAO.getTodosProjetos();
+                for (Projeto projeto : listaProjetos) {
             %>
-                <option value="<%= professor.getId() %>"><%= professor.getNome() %></option>
-            <%
-                }
-            %>
-        </select><br><br>
-
-        <%-- Aluno Bolsista (combobox) --%>
-        <label for="alunoBolsistaId">Aluno Bolsista:</label><br>
-        <select id="alunoBolsistaId" name="alunoBolsistaId">
-            <option value="">Selecione um Aluno Bolsista</option>
-            <%
-                AlunoDAO alunoDAO = new AlunoDAO();
-                List<Aluno> listaAlunos = alunoDAO.getTodosAlunos();
-                for (Aluno aluno : listaAlunos) {
-            %>
-                <option value="<%= aluno.getId() %>"><%= aluno.getNome() %></option>
-            <%
-                }
-            %>
-        </select><br><br>
-
-        <%-- Aluno Voluntário (combobox) --%>
-        <label for="alunoVoluntarioId">Aluno Voluntário:</label><br>
-        <select id="alunoVoluntarioId" name="alunoVoluntarioId">
-            <option value="">Selecione um Aluno Voluntário</option>
-            <%
-                for (Aluno aluno : listaAlunos) {
-            %>
-                <option value="<%= aluno.getId() %>"><%= aluno.getNome() %></option>
+                <option value="<%= projeto.getId() %>"><%= projeto.getTitulo() %></option>
             <%
                 }
             %>

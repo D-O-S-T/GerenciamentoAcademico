@@ -2,6 +2,7 @@ package com.exemplo.gerenciamentoacademico.jdbc;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -13,9 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.exemplo.gerenciamentoacademico.jdbc.dao.AlunoDAO;
 import com.exemplo.gerenciamentoacademico.jdbc.dao.AtividadeDAO;
 import com.exemplo.gerenciamentoacademico.jdbc.dao.ProfessorDAO;
+import com.exemplo.gerenciamentoacademico.jdbc.dao.ProjetoDAO;
 import com.exemplo.gerenciamentoacademico.jdbc.model.Aluno;
 import com.exemplo.gerenciamentoacademico.jdbc.model.Atividade;
 import com.exemplo.gerenciamentoacademico.jdbc.model.Professor;
+import com.exemplo.gerenciamentoacademico.jdbc.model.Projeto;
 
 @WebServlet("/AtividadeServlet")
 public class AtividadeServlet extends HttpServlet {
@@ -73,13 +76,11 @@ public class AtividadeServlet extends HttpServlet {
             throws ServletException, IOException {
         String titulo = request.getParameter("titulo");
         String conteudo = request.getParameter("conteudo");
-        Date dataInicial = Date.valueOf(request.getParameter("dataInicial"));
-        Date dataFinal = Date.valueOf(request.getParameter("dataFinal"));
-        int professorId = Integer.parseInt(request.getParameter("professorId"));
-        int alunoBolsistaId = Integer.parseInt(request.getParameter("alunoBolsistaId"));
-        int alunoVoluntarioId = Integer.parseInt(request.getParameter("alunoVoluntarioId"));
+        LocalDate dataInicial = LocalDate.parse(request.getParameter("dataInicial"));
+        LocalDate dataFinal = LocalDate.parse(request.getParameter("dataFinal"));
+        int projetoId = Integer.parseInt(request.getParameter("projetoId"));
 
-        Atividade novaAtividade = new Atividade(titulo, conteudo, dataInicial, dataFinal, professorId, alunoBolsistaId, alunoVoluntarioId);
+        Atividade novaAtividade = new Atividade(titulo, conteudo, dataInicial, dataFinal, projetoId);
         atividadeDAO.adicionarAtividade(novaAtividade);
 
         response.sendRedirect("AtividadeServlet?action=listar");
@@ -90,16 +91,12 @@ public class AtividadeServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         Atividade atividade = atividadeDAO.getAtividadePorId(id);
 
-        // Obtém listas de professores e alunos do banco de dados
-        ProfessorDAO professorDAO = new ProfessorDAO();
-        List<Professor> listaProfessores = professorDAO.getTodosProfessores();
-
-        AlunoDAO alunoDAO = new AlunoDAO();
-        List<Aluno> listaAlunos = alunoDAO.getTodosAlunos();
+        // Obtém lista de projetos do banco de dados para o dropdown
+        ProjetoDAO projetoDAO = new ProjetoDAO();
+        List<Projeto> listaProjetos = projetoDAO.getTodosProjetos();
 
         request.setAttribute("atividade", atividade);
-        request.setAttribute("listaProfessores", listaProfessores);
-        request.setAttribute("listaAlunos", listaAlunos);
+        request.setAttribute("listaProjetos", listaProjetos);
 
         request.getRequestDispatcher("update-atividade-form.jsp").forward(request, response);
     }
@@ -109,13 +106,11 @@ public class AtividadeServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         String titulo = request.getParameter("titulo");
         String conteudo = request.getParameter("conteudo");
-        Date dataInicial = Date.valueOf(request.getParameter("dataInicial"));
-        Date dataFinal = Date.valueOf(request.getParameter("dataFinal"));
-        int professorId = Integer.parseInt(request.getParameter("professorId"));
-        int alunoBolsistaId = Integer.parseInt(request.getParameter("alunoBolsistaId"));
-        int alunoVoluntarioId = Integer.parseInt(request.getParameter("alunoVoluntarioId"));
+        LocalDate dataInicial = LocalDate.parse(request.getParameter("dataInicial"));
+        LocalDate dataFinal = LocalDate.parse(request.getParameter("dataFinal"));
+        int projetoId = Integer.parseInt(request.getParameter("projetoId"));
 
-        Atividade atividadeAtualizada = new Atividade(id, titulo, conteudo, dataInicial, dataFinal, professorId, alunoBolsistaId, alunoVoluntarioId);
+        Atividade atividadeAtualizada = new Atividade(id, titulo, conteudo, dataInicial, dataFinal, projetoId);
         atividadeDAO.atualizarAtividade(atividadeAtualizada);
 
         response.sendRedirect("AtividadeServlet?action=listar");

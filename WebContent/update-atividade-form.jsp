@@ -25,7 +25,7 @@
 
         <%-- Conteúdo --%>
         <label for="conteudo">Conteúdo:</label><br>
-        <input type="text" id="conteudo" name="conteudo" value="${atividade.conteudo}" required><br><br>
+        <textarea id="conteudo" name="conteudo" rows="4" cols="50" required>${atividade.conteudo}</textarea><br><br>
 
         <%-- Data Inicial --%>
         <label for="dataInicial">Data Inicial:</label><br>
@@ -35,30 +35,12 @@
         <label for="dataFinal">Data Final:</label><br>
         <input type="date" id="dataFinal" name="dataFinal" value="${atividade.dataFinal}" required><br><br>
 
-        <%-- Professor (combobox) --%>
-        <label for="professorId">Professor:</label><br>
-        <select id="professorId" name="professorId" required>
-            <option value="">Selecione um Professor</option>
-            <c:forEach var="professor" items="${listaProfessores}">
-                <option value="${professor.id}" ${professor.id == atividade.professorId ? 'selected' : ''}>${professor.nome}</option>
-            </c:forEach>
-        </select><br><br>
-
-        <%-- Aluno Bolsista (combobox) --%>
-        <label for="alunoBolsistaId">Aluno Bolsista:</label><br>
-        <select id="alunoBolsistaId" name="alunoBolsistaId">
-            <option value="">Selecione um Aluno Bolsista</option>
-            <c:forEach var="aluno" items="${listaAlunos}">
-                <option value="${aluno.id}" ${aluno.id == atividade.alunoBolsistaId ? 'selected' : ''}>${aluno.nome}</option>
-            </c:forEach>
-        </select><br><br>
-
-        <%-- Aluno Voluntário (combobox) --%>
-        <label for="alunoVoluntarioId">Aluno Voluntário:</label><br>
-        <select id="alunoVoluntarioId" name="alunoVoluntarioId">
-            <option value="">Selecione um Aluno Voluntário</option>
-            <c:forEach var="aluno" items="${listaAlunos}">
-                <option value="${aluno.id}" ${aluno.id == atividade.alunoVoluntarioId ? 'selected' : ''}>${aluno.nome}</option>
+        <%-- Projeto (combobox) --%>
+        <label for="projetoId">Projeto:</label><br>
+        <select id="projetoId" name="projetoId" required>
+            <option value="">Selecione um Projeto</option>
+            <c:forEach var="projeto" items="${listaProjetos}">
+                <option value="${projeto.id}" <c:if test="${projeto.id eq projeto.projeto.id}">selected</c:if>>${projeto.titulo}</option>
             </c:forEach>
         </select><br><br>
 

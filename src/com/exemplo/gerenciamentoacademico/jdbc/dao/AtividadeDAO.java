@@ -4,7 +4,6 @@ import com.exemplo.gerenciamentoacademico.jdbc.DatabaseUtil;
 import com.exemplo.gerenciamentoacademico.jdbc.model.Atividade;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,29 +13,25 @@ import java.util.List;
 public class AtividadeDAO {
 
     public void adicionarAtividade(Atividade atividade) {
-        String sql = "INSERT INTO atividade (titulo, conteudo, dataInicial, dataFinal, professor_id, alunoBolsista_id, alunoVoluntario_id) " +
-                     "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO atividade (titulo, conteudo, dataInicial, dataFinal, projeto_id) " +
+                     "VALUES (?, ?, ?, ?, ?)";
         try (Connection conn = DatabaseUtil.getConexao();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, atividade.getTitulo());
             stmt.setString(2, atividade.getConteudo());
-            stmt.setDate(3, atividade.getDataInicial());
-            stmt.setDate(4, atividade.getDataFinal());
-            stmt.setInt(5, atividade.getProfessorId());
-            stmt.setInt(6, atividade.getAlunoBolsistaId());
-            stmt.setInt(7, atividade.getAlunoVoluntarioId());
+            stmt.setDate(3, java.sql.Date.valueOf(atividade.getDataInicial()));
+            stmt.setDate(4, java.sql.Date.valueOf(atividade.getDataFinal()));
+            stmt.setInt(5, atividade.getProjetoId());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-    
+
     public List<Atividade> getTodasAtividades() {
-        String sql = "SELECT a.*, p.nome AS professorNome, ab.nome AS alunoBolsistaNome, av.nome AS alunoVoluntarioNome " +
+        String sql = "SELECT a.*, p.titulo AS projetoTitulo " +
                      "FROM atividade a " +
-                     "JOIN professor p ON a.professor_id = p.id " +
-                     "JOIN aluno ab ON a.alunoBolsista_id = ab.id " +
-                     "JOIN aluno av ON a.alunoVoluntario_id = av.id";
+                     "JOIN projeto p ON a.projeto_id = p.id";
         List<Atividade> atividades = new ArrayList<>();
         try (Connection conn = DatabaseUtil.getConexao();
              PreparedStatement stmt = conn.prepareStatement(sql);
@@ -47,14 +42,10 @@ public class AtividadeDAO {
                         rs.getInt("id"),
                         rs.getString("titulo"),
                         rs.getString("conteudo"),
-                        rs.getDate("dataInicial"),
-                        rs.getDate("dataFinal"),
-                        rs.getInt("professor_id"),
-                        rs.getInt("alunoBolsista_id"),
-                        rs.getInt("alunoVoluntario_id"),
-                        rs.getString("professorNome"),         // Nome do professor
-                        rs.getString("alunoBolsistaNome"),     // Nome do aluno bolsista
-                        rs.getString("alunoVoluntarioNome")    // Nome do aluno voluntário
+                        rs.getDate("dataInicial").toLocalDate(),
+                        rs.getDate("dataFinal").toLocalDate(),
+                        rs.getInt("projeto_id"),
+                        rs.getString("projetoTitulo")
                 );
                 atividades.add(atividade);
             }
@@ -65,19 +56,17 @@ public class AtividadeDAO {
     }
 
     public void atualizarAtividade(Atividade atividade) {
-        String sql = "UPDATE atividade SET titulo = ?, conteudo = ?, dataInicial = ?, dataFinal = ?, professor_id = ?, alunoBolsista_id = ?, alunoVoluntario_id = ? " +
+        String sql = "UPDATE atividade SET titulo = ?, conteudo = ?, dataInicial = ?, dataFinal = ?, projeto_id = ? " +
                      "WHERE id = ?";
         try (Connection conn = DatabaseUtil.getConexao();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, atividade.getTitulo());
             stmt.setString(2, atividade.getConteudo());
-            stmt.setDate(3, atividade.getDataInicial());
-            stmt.setDate(4, atividade.getDataFinal());
-            stmt.setInt(5, atividade.getProfessorId());
-            stmt.setInt(6, atividade.getAlunoBolsistaId());
-            stmt.setInt(7, atividade.getAlunoVoluntarioId());
-            stmt.setInt(8, atividade.getId());
+            stmt.setDate(3, java.sql.Date.valueOf(atividade.getDataInicial()));
+            stmt.setDate(4, java.sql.Date.valueOf(atividade.getDataFinal()));
+            stmt.setInt(5, atividade.getProjetoId());
+            stmt.setInt(6, atividade.getId());
 
             stmt.executeUpdate();
         } catch (SQLException e) {
@@ -109,11 +98,9 @@ public class AtividadeDAO {
                             rs.getInt("id"),
                             rs.getString("titulo"),
                             rs.getString("conteudo"),
-                            rs.getDate("dataInicial"),
-                            rs.getDate("dataFinal"),
-                            rs.getInt("professor_id"),
-                            rs.getInt("alunoBolsista_id"),
-                            rs.getInt("alunoVoluntario_id")
+                            rs.getDate("dataInicial").toLocalDate(),
+                            rs.getDate("dataFinal").toLocalDate(),
+                            rs.getInt("projeto_id")
                     );
                 }
             }
@@ -122,29 +109,5 @@ public class AtividadeDAO {
         }
         return atividade;
     }
-    
-    public List<Atividade> getTodosAtividadesSemId() {
-        String sql = "SELECT titulo, conteudo, dataInicial, dataFinal, professor_id, alunoBolsista_id, alunoVoluntario_id FROM atividade";
-        List<Atividade> atividades = new ArrayList<>();
-        try (Connection conn = DatabaseUtil.getConexao();
-             PreparedStatement stmt = conn.prepareStatement(sql);
-             ResultSet rs = stmt.executeQuery()) {
-
-            while (rs.next()) {
-                Atividade atividade = new Atividade(
-                        rs.getString("titulo"),
-                        rs.getString("conteudo"),
-                        rs.getDate("dataInicial"),
-                        rs.getDate("dataFinal"),
-                        rs.getInt("professor_id"),
-                        rs.getInt("alunoBolsista_id"),
-                        rs.getInt("alunoVoluntario_id")
-                );
-                atividades.add(atividade);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return atividades;
-    }
 }
+
