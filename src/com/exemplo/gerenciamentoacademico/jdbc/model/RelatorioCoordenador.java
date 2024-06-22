@@ -18,6 +18,10 @@ public class RelatorioCoordenador {
         this.relatorio = relatorio;
         this.coordenadorId = coordenadorId;
     }
+    
+    public RelatorioCoordenador() {
+
+    }
 
     // Getters e Setters (gerados automaticamente)
 

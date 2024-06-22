@@ -4,6 +4,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.RelatorioCoordenador" %>
 <%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.Coordenador" %>
+
 <%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.CoordenadorDAO" %>
 <!DOCTYPE html>
 <html>
@@ -30,7 +31,8 @@
         <label for="coordenadorId">Coordenador:</label><br>
         <select id="coordenadorId" name="coordenadorId" required>
             <option value="">Selecione um Coordenador</option>
-            <%
+            <%	
+            	RelatorioCoordenador relatorio = new RelatorioCoordenador();
                 CoordenadorDAO coordenadorDAO = new CoordenadorDAO();
                 List<Coordenador> listaCoordenadores = coordenadorDAO.getTodosCoordenadores();
                 for (Coordenador coordenador : listaCoordenadores) {
@@ -49,5 +51,6 @@
     <a href="RelatorioCoordenadorServlet?action=listar">Cancelar</a>
 </body>
 </html>
+
 
 
