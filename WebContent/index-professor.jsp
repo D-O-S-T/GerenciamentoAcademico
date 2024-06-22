@@ -31,12 +31,12 @@
     </style>
 </head>
 <body>
-    <h1>Bem-vindo, ${sessionScope.usuarioNome}!</h1>
+    <h1>Bem-vindo sdad, ${sessionScope.usuarioNome}!</h1>
 
     <div class="button-container">
         <button onclick="window.location.href='inserirFeedback.jsp'">Inserir Feedback</button>
         <button onclick="window.location.href='RelatorioProfessorServlet?action=listar'" onclick="window.location.href='listar-relatorioprofessor.jsp'">Relatórios</button>
-        <button onclick="window.location.href='gestaoAtividades.jsp'">Gestão de Atividades</button>
+        <button onclick="window.location.href='AtividadeServlet?action=listar'" onclick="window.location.href='listar-atividades.jsp'">Gestão de Atividades</button>
     </div>
 </body>
 </html>
