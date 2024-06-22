@@ -24,7 +24,6 @@ public class RelatorioProfessorDAO {
             e.printStackTrace();
         }
     }
-    
 
     public List<RelatorioProfessor> getTodosRelatoriosProfessor() {
         String sql = "SELECT * FROM relatorioprofessor";
@@ -48,55 +47,6 @@ public class RelatorioProfessorDAO {
         return relatorios;
     }
 
-    public List<RelatorioProfessor> getTodosRelatoriosProfessorSemId() {
-        String sql = "SELECT titulo, relatorio, professor_id FROM relatorioprofessor";
-        List<RelatorioProfessor> relatorios = new ArrayList<>();
-        try (Connection conn = DatabaseUtil.getConexao();
-             PreparedStatement stmt = conn.prepareStatement(sql);
-             ResultSet rs = stmt.executeQuery()) {
-
-            while (rs.next()) {
-                RelatorioProfessor relatorioProfessor = new RelatorioProfessor(
-                        rs.getString("titulo"),
-                        rs.getString("relatorio"),
-                        rs.getInt("professor_id")
-                );
-                relatorios.add(relatorioProfessor);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return relatorios;
-    }
-    
-    public void atualizarRelatorioProfessor(RelatorioProfessor relatorioProfessor) {
-        String sql = "UPDATE relatorioprofessor SET titulo = ?, relatorio = ?, professor_id = ? WHERE id = ?";
-        try (Connection conn = DatabaseUtil.getConexao();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            stmt.setString(1, relatorioProfessor.getTitulo());
-            stmt.setString(2, relatorioProfessor.getRelatorio());
-            stmt.setInt(3, relatorioProfessor.getProfessorId());
-            stmt.setInt(4, relatorioProfessor.getId());
-
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    public void excluirRelatorioProfessor(int id) {
-        String sql = "DELETE FROM relatorioprofessor WHERE id = ?";
-        try (Connection conn = DatabaseUtil.getConexao();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            stmt.setInt(1, id);
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-    
     public RelatorioProfessor getRelatorioProfessorPorId(int id) {
         String sql = "SELECT * FROM relatorioprofessor WHERE id = ?";
         RelatorioProfessor relatorioProfessor = null;
@@ -118,4 +68,33 @@ public class RelatorioProfessorDAO {
         }
         return relatorioProfessor;
     }
+
+    public void atualizarRelatorioProfessor(RelatorioProfessor relatorioProfessor) {
+        String sql = "UPDATE relatorioprofessor SET titulo = ?, relatorio = ?, professor_id = ? WHERE id = ?";
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, relatorioProfessor.getTitulo());
+            stmt.setString(2, relatorioProfessor.getRelatorio());
+            stmt.setInt(3, relatorioProfessor.getProfessorId());
+            stmt.setInt(4, relatorioProfessor.getId());
+
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void excluirRelatorioProfessor(int id) {
+        String sql = "DELETE FROM relatorioprofessor WHERE id = ?";
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
+

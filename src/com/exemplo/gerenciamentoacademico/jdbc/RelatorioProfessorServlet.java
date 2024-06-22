@@ -60,7 +60,7 @@ public class RelatorioProfessorServlet extends HttpServlet {
             throws ServletException, IOException {
         List<RelatorioProfessor> listaRelatorios = relatorioProfessorDAO.getTodosRelatoriosProfessor();
         request.setAttribute("listaRelatorios", listaRelatorios);
-        request.getRequestDispatcher("listar-relatorios.jsp").forward(request, response);
+        request.getRequestDispatcher("listar-relatorioprofessor.jsp").forward(request, response);
     }
 
     private void inserirRelatorioProfessor(HttpServletRequest request, HttpServletResponse response)
@@ -80,7 +80,7 @@ public class RelatorioProfessorServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         RelatorioProfessor relatorioProfessor = relatorioProfessorDAO.getRelatorioProfessorPorId(id);
         request.setAttribute("relatorioProfessor", relatorioProfessor);
-        request.getRequestDispatcher("update-relatorio-form.jsp").forward(request, response);
+        request.getRequestDispatcher("update-relatorioprofessor-form.jsp").forward(request, response);
     }
 
     private void atualizarRelatorioProfessor(HttpServletRequest request, HttpServletResponse response)
@@ -103,3 +103,4 @@ public class RelatorioProfessorServlet extends HttpServlet {
         response.sendRedirect("RelatorioProfessorServlet?action=listar");
     }
 }
+
