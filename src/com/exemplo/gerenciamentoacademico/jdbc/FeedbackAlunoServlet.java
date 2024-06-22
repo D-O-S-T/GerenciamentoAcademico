@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -55,27 +57,68 @@ public class FeedbackAlunoServlet extends HttpServlet {
                 listarFeedbacksAlunos(request, response);
         }
     }
-
+    
+    
     private void listarFeedbacksAlunos(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<FeedbackAluno> listaFeedbacks = feedbackAlunoDAO.getTodosFeedbacksAlunos();
-        request.setAttribute("listaFeedbacks", listaFeedbacks);
-        request.getRequestDispatcher("listar-feedbackaluno.jsp").forward(request, response);
-    }
+        HttpSession session = request.getSession();
+        Object alunoIdObj = session.getAttribute("alunoId");
 
+        if (alunoIdObj != null && alunoIdObj instanceof Integer) {
+            int alunoId = (Integer) alunoIdObj;
+            List<FeedbackAluno> listaFeedbacks = feedbackAlunoDAO.getFeedbacksPorAluno(alunoId);
+            request.setAttribute("listaFeedbacks", listaFeedbacks);
+            request.getRequestDispatcher("listar-feedbackaluno.jsp").forward(request, response);
+        } else {
+            // Redireciona para a página de login se o alunoId não estiver na sessão
+            response.sendRedirect("index.jsp");
+        }
+    }
+//    private void listarFeedbacksAlunos(HttpServletRequest request, HttpServletResponse response)
+//            throws ServletException, IOException {
+//        List<FeedbackAluno> listaFeedbacks = feedbackAlunoDAO.getTodosFeedbacksAlunos();
+//        request.setAttribute("listaFeedbacks", listaFeedbacks);
+//        request.getRequestDispatcher("listar-feedbackaluno.jsp").forward(request, response);
+//    }
+
+//    private void inserirFeedbackAluno(HttpServletRequest request, HttpServletResponse response)
+//            throws ServletException, IOException {
+//        String titulo = request.getParameter("titulo");
+//        String feedback = request.getParameter("feedback");
+//        int alunoId = Integer.parseInt(request.getParameter("alunoId"));
+//        int professorId = Integer.parseInt(request.getParameter("professorId"));
+//        String alunoNome = ""; // Recupere o nome do aluno conforme necessário
+//        String professorNome = ""; // Recupere o nome do professor conforme necessário
+//
+//        FeedbackAluno novoFeedback = new FeedbackAluno(titulo, feedback, alunoId, professorId, alunoNome, professorNome);
+//        feedbackAlunoDAO.adicionarFeedbackAluno(novoFeedback);
+//
+//        response.sendRedirect("FeedbackAlunoServlet?action=listar");
+//    }
+    
+    
     private void inserirFeedbackAluno(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String titulo = request.getParameter("titulo");
         String feedback = request.getParameter("feedback");
-        int alunoId = Integer.parseInt(request.getParameter("alunoId"));
         int professorId = Integer.parseInt(request.getParameter("professorId"));
-        String alunoNome = ""; // Recupere o nome do aluno conforme necessário
-        String professorNome = ""; // Recupere o nome do professor conforme necessário
 
-        FeedbackAluno novoFeedback = new FeedbackAluno(titulo, feedback, alunoId, professorId, alunoNome, professorNome);
-        feedbackAlunoDAO.adicionarFeedbackAluno(novoFeedback);
+        // Obter o id do aluno a partir da sessão
+        HttpSession session = request.getSession();
+        Object usuarioIdObj = session.getAttribute("usuarioId");
 
-        response.sendRedirect("FeedbackAlunoServlet?action=listar");
+        if (usuarioIdObj != null && usuarioIdObj instanceof Integer) {
+            int alunoId = (Integer) usuarioIdObj;
+
+            // Criar o objeto FeedbackAluno
+            FeedbackAluno novoFeedback = new FeedbackAluno(titulo, feedback, alunoId, professorId);
+            feedbackAlunoDAO.adicionarFeedbackAluno(novoFeedback);
+
+            response.sendRedirect("FeedbackAlunoServlet?action=listar");
+        } else {
+            // Lidar com o caso em que o usuário não está autenticado
+            response.sendRedirect("index.jsp"); // ou redirecionar para a página de login novamente
+        }
     }
 
     private void editarFeedbackAluno(HttpServletRequest request, HttpServletResponse response)

@@ -1,43 +1,52 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.FeedbackAluno" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Listagem de Feedbacks de Aluno</title>
+    <title>Feedbacks do Aluno</title>
 </head>
 <body>
-    <h2>Listagem de Feedbacks de Aluno</h2>
+    <h2>Feedbacks do Aluno</h2>
     
-    <table border="1">
-        <thead>
+    <%
+        // Recupera a lista de feedbacks da requisição
+        List<FeedbackAluno> listaFeedbacks = (List<FeedbackAluno>) request.getAttribute("listaFeedbacks");
+        
+        if (listaFeedbacks != null && !listaFeedbacks.isEmpty()) {
+    %>
+        <table border="1">
             <tr>
                 <th>ID</th>
                 <th>Título</th>
                 <th>Feedback</th>
-                <th>Aluno</th>
                 <th>Professor</th>
-                <th>Ações</th>
             </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="feedback" items="${listaFeedbacks}">
-                <tr>
-                    <td>${feedback.id}</td>
-                    <td>${feedback.titulo}</td>
-                    <td>${feedback.feedback}</td>
-                    <td>${feedback.alunoNome}</td>
-                    <td>${feedback.professorNome}</td>
-                    <td>
-                        <a href="FeedbackAlunoServlet?action=editar&id=${feedback.id}">Editar</a>
-                        <a href="FeedbackAlunoServlet?action=excluir&id=${feedback.id}">Excluir</a>
-                    </td>
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
-    
+            <%
+                // Itera sobre a lista de feedbacks e exibe cada um
+                for (FeedbackAluno feedback : listaFeedbacks) {
+            %>
+            <tr>
+                <td><%= feedback.getId() %></td>
+                <td><%= feedback.getTitulo() %></td>
+                <td><%= feedback.getFeedback() %></td>
+                <td><%= feedback.getProfessorNome() %></td>
+            </tr>
+            <%
+                }
+            %>
+        </table>
+    <%
+        } else {
+    %>
+        <p>Nenhum feedback encontrado para este aluno.</p>
+    <%
+        }
+    %>
+
     <br>
-    <a href="feedbackaluno-form.jsp">Adicionar Novo Feedback de Aluno</a>
+    <a href="feedbackaluno-form.jsp">Adicionar Novo Feedback</a>
 </body>
 </html>
+

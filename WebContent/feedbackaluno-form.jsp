@@ -4,6 +4,11 @@
 <%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.Professor" %>
 <%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.AlunoDAO" %>
 <%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.ProfessorDAO" %>
+
+
+<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.Professor" %>
+<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.ProfessorDAO" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +16,8 @@
     <title>Formulário de Feedback de Aluno</title>
 </head>
 <body>
-    <h2>Formulário de Feedback de Aluno</h2>
+    <h2>Novo Feedback de Aluno</h2>
+    
     <form action="FeedbackAlunoServlet?action=inserir" method="post">
         <%-- Título --%>
         <label for="titulo">Título:</label><br>
@@ -20,23 +26,7 @@
         <%-- Feedback --%>
         <label for="feedback">Feedback:</label><br>
         <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
-
-        <%-- Aluno (combobox) --%>
-        <label for="alunoId">Aluno:</label><br>
-        <select id="alunoId" name="alunoId" required>
-            <option value="">Selecione um Aluno</option>
-            <%
-                AlunoDAO alunoDAO = new AlunoDAO();
-            	
-                List<Aluno> listaAlunos = alunoDAO.getTodosAlunos();
-                for (Aluno aluno : listaAlunos) {
-            %>
-                <option value="<%= aluno.getId() %>"><%= aluno.getNome() %></option>
-            <%
-                }
-            %>
-        </select><br><br>
-
+        
         <%-- Professor (combobox) --%>
         <label for="professorId">Professor:</label><br>
         <select id="professorId" name="professorId" required>
@@ -52,8 +42,16 @@
             %>
         </select><br><br>
 
+        <%-- ID do Aluno (hidden) --%>
+        <input type="hidden" id="alunoId" name="alunoId" value="<%= request.getSession().getAttribute("alunoId") %>">
+
         <%-- Botão para enviar o formulário --%>
-        <input type="submit" value="Salvar">
+        <input type="submit" value="Enviar Feedback">
     </form>
+    
+    <br>
+    <a href="listar-feedbackaluno.jsp">Voltar para a Listagem de Feedbacks</a>
 </body>
 </html>
+
+

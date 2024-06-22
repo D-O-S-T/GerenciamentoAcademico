@@ -3,6 +3,7 @@ package com.exemplo.gerenciamentoacademico.jdbc.model;
 public class FeedbackAluno {
 
 
+
 	private int id;
 	private String titulo;
 	private String feedback;
@@ -14,6 +15,23 @@ public class FeedbackAluno {
 
 	// Construtores
 	public FeedbackAluno() {
+	}
+	
+	
+	
+	public FeedbackAluno(String titulo, String feedback, int alunoId) {
+		super();
+		this.titulo = titulo;
+		this.feedback = feedback;
+		this.alunoId = alunoId;
+	}
+	
+	public FeedbackAluno(String titulo, String feedback, int alunoId, int professorId) {
+		super();
+		this.titulo = titulo;
+		this.feedback = feedback;
+		this.alunoId = alunoId;
+		this.professorId = professorId;
 	}
 	
 	
