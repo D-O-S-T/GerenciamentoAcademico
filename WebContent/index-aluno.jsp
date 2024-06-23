@@ -23,8 +23,8 @@
         <div class="container-fluid">
             <div class="button-container">
                 <button class="button-1" onclick="window.location.href='entregarAtividade.jsp'">Entregar Atividade</button>
-                <button class="button-2" onclick="window.location.href='feedbackaluno-form.jsp'">Inserir Feedback</button>
-                <button class="button-3" onclick="window.location.href='lerFeedback.jsp'">Ler Feedback</button>
+                <button class="button-2" onclick="window.location.href='feedbackaluno-form.jsp'">Feedback</button>
+                <button class="button-3" onclick="window.location.href='lerFeedback.jsp'">Avaliar Feedback</button>
             </div>
         </div>
     </section>

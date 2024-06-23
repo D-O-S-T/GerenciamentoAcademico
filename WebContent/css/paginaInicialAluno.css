@@ -39,50 +39,127 @@ body {
 .button-container {
     margin-top: 50px; /* Espaçamento entre o navbar e a section */
     text-align: center; /* Centraliza os botões horizontalmente */
+    position: relative;
 }
 
+/* Para o botão 1 */
 .button-container .button-1 {
-    margin-right: 10px; /* Espaçamento entre os botões */
-    padding: 200px 20px; /* Ajuste o padding para determinar o tamanho dos botões */
-    background-color: #007bff; /* Cor de fundo do botão 1 */
-    color: #ffffff; /* Cor do texto do botão 1 */
+	font-size: 18px;
+	font-weight: bold;
+    margin-right: 35px;
+    padding: 180px 50px; /* Ajuste o padding conforme necessário */
+    color: white; /* Cor do texto do botão 1 */
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: relative; /* Necessário para o posicionamento do pseudo-elemento */
+    overflow: hidden; /* Garante que o overflow da imagem não ultrapasse o botão */
     background-image: url('../imagens/atividades.jpg'); /* Caminho para a imagem do botão 1 */
     background-size: cover; /* Garante que a imagem de fundo cubra todo o botão */
     background-position: center; /* Centraliza a imagem de fundo dentro do botão */
+    z-index: 2; /* Coloca o botão na frente da camada de transparência */
 }
 
+.button-container .button-1::before {
+    content: "Entregar Atividade"; /* Texto do pseudo-elemento para a camada de transparência */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)); /* Gradiente com tonalidade de preto */
+    z-index: 1; /* Coloca a camada de transparência sobre a imagem de fundo */
+    display: flex; /* Utiliza flexbox para centralizar */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    color: white; /* Cor do texto */
+    font-size: 18px; /* Tamanho da fonte */
+    text-align: center; /* Alinha o texto centralmente */
+}
+
+.button-container .button-1:hover::before {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)); /* Gradiente com mais tonalidade de preto ao passar o mouse */
+}
+
+
+
+/* Para o botão 2 */
 .button-container .button-2 {
-    margin-right: 10px; /* Espaçamento entre os botões */
-    padding: 200px 20px; /* Ajuste o padding para determinar o tamanho dos botões */
-    background-color: #007bff; /* Cor de fundo do botão 1 */
-    color: #ffffff; /* Cor do texto do botão 1 */
+	font-size: 18px;
+	font-weight: bold;
+    margin-right: 35px;
+    padding: 180px 85px; /* Ajuste o padding conforme necessário */
+    color: white; /* Cor do texto do botão 1 */
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: relative; /* Necessário para o posicionamento do pseudo-elemento */
+    overflow: hidden; /* Garante que o overflow da imagem não ultrapasse o botão */
     background-image: url('../imagens/atividades.jpg'); /* Caminho para a imagem do botão 1 */
     background-size: cover; /* Garante que a imagem de fundo cubra todo o botão */
     background-position: center; /* Centraliza a imagem de fundo dentro do botão */
+    z-index: 2; /* Coloca o botão na frente da camada de transparência */
 }
 
+.button-container .button-2::before {
+    content: "Feedback"; /* Texto do pseudo-elemento para a camada de transparência */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)); /* Gradiente com tonalidade de preto */
+    z-index: 1; /* Coloca a camada de transparência sobre a imagem de fundo */
+    display: flex; /* Utiliza flexbox para centralizar */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    color: white; /* Cor do texto */
+    font-size: 18px; /* Tamanho da fonte */
+    text-align: center; /* Alinha o texto centralmente */
+}
+
+.button-container .button-2:hover::before {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)); /* Gradiente com mais tonalidade de preto ao passar o mouse */
+}
+
+
+/* Para o botão 3 */
 .button-container .button-3 {
-    margin-right: 10px; /* Espaçamento entre os botões */
-    padding: 200px 20px; /* Ajuste o padding para determinar o tamanho dos botões */
-    background-color: #007bff; /* Cor de fundo do botão 1 */
-    color: #ffffff; /* Cor do texto do botão 1 */
+	font-size: 18px;
+	font-weight: bold;
+    margin-right: 35px;
+    padding: 180px 55px; /* Ajuste o padding conforme necessário */
+    color: white; /* Cor do texto do botão 1 */
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: relative; /* Necessário para o posicionamento do pseudo-elemento */
+    overflow: hidden; /* Garante que o overflow da imagem não ultrapasse o botão */
     background-image: url('../imagens/atividades.jpg'); /* Caminho para a imagem do botão 1 */
     background-size: cover; /* Garante que a imagem de fundo cubra todo o botão */
     background-position: center; /* Centraliza a imagem de fundo dentro do botão */
+    z-index: 2; /* Coloca o botão na frente da camada de transparência */
 }
 
-.button-container button:hover {
-    background-color: #0056b3; /* Cor de fundo dos botões ao passar o mouse */
+.button-container .button-3::before {
+    content: "Avaliar Feedback"; /* Texto do pseudo-elemento para a camada de transparência */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)); /* Gradiente com tonalidade de preto */
+    z-index: 1; /* Coloca a camada de transparência sobre a imagem de fundo */
+    display: flex; /* Utiliza flexbox para centralizar */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    color: white; /* Cor do texto */
+    font-size: 18px; /* Tamanho da fonte */
+    text-align: center; /* Alinha o texto centralmente */
 }
 
+.button-container .button-3:hover::before {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)); /* Gradiente com mais tonalidade de preto ao passar o mouse */
+}
 
 
