@@ -100,60 +100,30 @@ public class AtividadeServlet extends HttpServlet {
 
     private void inserirAtividade(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        Integer usuarioId = (Integer) session.getAttribute("usuarioId");
-
-        if (usuarioId == null) {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("usuarioId") == null) {
             response.sendRedirect("index.jsp");
             return;
         }
 
+        int usuarioId = (Integer) session.getAttribute("usuarioId");
+
+        String titulo = request.getParameter("titulo");
+        String conteudo = request.getParameter("conteudo");
+        LocalDate dataInicial = LocalDate.parse(request.getParameter("dataInicial"));
+        LocalDate dataFinal = LocalDate.parse(request.getParameter("dataFinal"));
+
+        Atividade atividade = new Atividade(titulo, conteudo, dataInicial, dataFinal);
+
+        AtividadeDAO atividadeDAO = new AtividadeDAO();
         try {
-            String titulo = request.getParameter("titulo");
-            String conteudo = request.getParameter("conteudo");
-            LocalDate dataInicial = LocalDate.parse(request.getParameter("dataInicial"));
-            LocalDate dataFinal = LocalDate.parse(request.getParameter("dataFinal"));
-
-            // Obter todos os projetos do professor com o usuarioId
-            List<Projeto> projetosDoProfessor = projetoDAO.getProjetosPorProfessor(usuarioId);
-
-            // Verificar se há algum projeto que corresponda ao usuário atual
-            Projeto projetoCorrespondente = null;
-            for (Projeto projeto : projetosDoProfessor) {
-                if (projeto.getProfessorId() == usuarioId) {
-                    projetoCorrespondente = projeto;
-                    break;
-                }
-            }
-
-            if (projetoCorrespondente == null) {
-                // Se não houver projeto correspondente, redirecionar com erro
-                response.sendRedirect("AtividadeServlet?action=listar&error=NoProject");
-                return;
-            }
-
-            // Verifique os valores dos parâmetros antes de inserir
-            System.out.println("Titulo: " + titulo);
-            System.out.println("Conteudo: " + conteudo);
-            System.out.println("Data Inicial: " + dataInicial);
-            System.out.println("Data Final: " + dataFinal);
-            System.out.println("Projeto ID: " + projetoCorrespondente.getId());
-
-            // Agora você pode usar projetoCorrespondente.getId() como projeto_id na atividade
-            Atividade novaAtividade = new Atividade(titulo, conteudo, dataInicial, dataFinal, projetoCorrespondente.getId());
-            atividadeDAO.adicionarAtividade(novaAtividade);
+            atividadeDAO.inserirAtividade(atividade, usuarioId);
             response.sendRedirect("AtividadeServlet?action=listar");
         } catch (SQLException e) {
             e.printStackTrace();
-            response.sendRedirect("AtividadeServlet?action=mostrarFormInsercao&error=DatabaseError");
-        } catch (Exception e) {
-            e.printStackTrace();
-            response.sendRedirect("AtividadeServlet?action=mostrarFormInsercao&error=InvalidData");
+            response.sendRedirect("AtividadeServlet?action=listar&error=InsertFailed");
         }
     }
-
-
-
 
     private void editarAtividade(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -174,16 +144,23 @@ public class AtividadeServlet extends HttpServlet {
 
     private void atualizarAtividade(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("usuarioId") == null) {
+            response.sendRedirect("index.jsp");
+            return;
+        }
+
+        int usuarioId = (Integer) session.getAttribute("usuarioId");
+
         try {
             int id = Integer.parseInt(request.getParameter("id"));
             String titulo = request.getParameter("titulo");
             String conteudo = request.getParameter("conteudo");
             LocalDate dataInicial = LocalDate.parse(request.getParameter("dataInicial"));
             LocalDate dataFinal = LocalDate.parse(request.getParameter("dataFinal"));
-            int projetoId = Integer.parseInt(request.getParameter("projetoId"));
 
-            Atividade atividadeAtualizada = new Atividade(id, titulo, conteudo, dataInicial, dataFinal, projetoId);
-            atividadeDAO.atualizarAtividade(atividadeAtualizada);
+            Atividade atividadeAtualizada = new Atividade(id, titulo, conteudo, dataInicial, dataFinal);
+            atividadeDAO.atualizarAtividade(atividadeAtualizada, usuarioId);
 
             response.sendRedirect("AtividadeServlet?action=listar");
         } catch (Exception e) {
@@ -191,6 +168,7 @@ public class AtividadeServlet extends HttpServlet {
             response.sendRedirect("AtividadeServlet?action=editar&id=" + request.getParameter("id") + "&error=UpdateFailed");
         }
     }
+
 
     private void excluirAtividade(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

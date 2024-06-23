@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>Listagem de Feedbacks de Professores</h2>
-    <button onclick="window.location.href='feedbackprofessor-form.jsp'">Adicionar Novo Coordenador</button>
+    <button onclick="window.location.href='feedbackprofessor-form.jsp'">Adicionar Novo Feedback Professor</button>
     
     <table border="1">
         <thead>

@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>Listagem de Atividades</h2>
-    <button onclick="window.location.href='atividade-form.jsp'">Adicionar Novo Coordenador</button>
+    <button onclick="window.location.href='atividade-form.jsp'">Adicionar Nova Atividade</button>
     
     <table border="1">
         <thead>

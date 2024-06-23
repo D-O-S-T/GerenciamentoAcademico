@@ -23,6 +23,14 @@ public class Atividade {
         this.projetoId = projetoId;
     }
     
+    public Atividade(int id, String titulo, String conteudo, LocalDate dataInicial, LocalDate dataFinal) {
+    	this.id = id;
+    	this.titulo = titulo;
+    	this.conteudo = conteudo;
+    	this.dataInicial = dataInicial;
+    	this.dataFinal = dataFinal;
+    }
+    
 	public Atividade(int id, String titulo, String conteudo, LocalDate dataInicial, LocalDate dataFinal, int projetoId,
 			String projetoTitulo) {
 		super();
@@ -42,6 +50,15 @@ public class Atividade {
 		this.dataInicial = dataInicial;
 		this.dataFinal = dataFinal;
 		this.projetoId = projetoId;
+		
+	}
+	
+	public Atividade(String titulo, String conteudo, LocalDate dataInicial, LocalDate dataFinal) {
+		super();
+		this.titulo = titulo;
+		this.conteudo = conteudo;
+		this.dataInicial = dataInicial;
+		this.dataFinal = dataFinal;
 		
 	}
 

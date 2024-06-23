@@ -53,6 +53,31 @@ public class AlunoDAO {
         }
         return alunos;
     }
+    
+    public List<Aluno> getAlunosByProfessorId(int professorId) {
+        List<Aluno> listaAlunos = new ArrayList<>();
+        String sql = "SELECT DISTINCT aluno.id, aluno.nome " +
+                     "FROM aluno " +
+                     "INNER JOIN projeto ON projeto.alunoBolsista_id = aluno.id OR projeto.alunoVoluntario_id = aluno.id " +
+                     "WHERE projeto.professor_id = ?";
+
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, professorId);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                int alunoId = rs.getInt("id");
+                String nomeAluno = rs.getString("nome");
+                Aluno aluno = new Aluno(alunoId, nomeAluno);
+                listaAlunos.add(aluno);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listaAlunos;
+    }
 
     public List<Aluno> getTodosAlunosSemId() {
         String sql = "SELECT matricula, nome, email, lattes, login, senha FROM aluno";
