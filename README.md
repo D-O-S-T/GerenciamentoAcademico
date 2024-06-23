@@ -1,58 +1,75 @@
-**Sistema de Gestão Acadêmica**
+# SGA-IC
 
----
+![Banner](https://raw.githubusercontent.com/D-O-S-T/GerenciamentoAcademico/0f7152972bbf9a9a6ab7b65329f468b534a2ee23/WebContent/imagens/undf.png)
 
-**Descrição:**
+## Descrição
+Este projeto é um Sistema de Gestão Acadêmica voltado para projetos de Iniciação Científica, utilizando Servlets, JSP e Java para funcionalidades baseadas na web. 
 
-Este projeto é um Sistema de Gestão Acadêmica voltado para projetos de Iniciação Científica, utilizando Servlets, JSP e Java para funcionalidades baseadas na web. O sistema facilita tarefas comuns de gerenciamento em ambientes acadêmicos, como registro de alunos, gestão de cursos e solicitações de bolsas.
+O sistema facilita tarefas comuns de gerenciamento em ambientes acadêmicos, como registro de alunos, gestão de cursos e solicitações de bolsas.
 
----
-
-**Funcionalidades:**
+## Funcionalidades
 1. **Registro de Alunos**: Permite aos coordenadores cadastrar alunos com informações básicas como nome, CPF, endereço e detalhes de contato.
 2. **Gestão de Cursos**: Permite aos coordenadores e professores criar e gerenciar cursos, incluindo detalhes como nome e duração.
 3. **Solicitações de Bolsas**: Os alunos podem solicitar bolsas de estudo por meio do sistema.
 
----
+## Como Utilizar
+### 1. Clonar o Repositório
+Clone este repositório para sua máquina local usando Git.
 
-**Como Utilizar:**
-1. **Clonar o Repositório:** Clone este repositório para sua máquina local usando Git.
-   ```jsp
-   git clone <url_do_repositorio>
-   ```
+### 2. Configurar o Ambiente de Desenvolvimento
+- Certifique-se de ter o Java [JDK 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html) instalado em sua máquina.
+- Utilize um IDE como [Eclipse](https://www.eclipse.org/downloads/packages/) ou [IntelliJ IDEA](https://www.jetbrains.com/idea/download) para o desenvolvimento (OBS: precisa estar configurado para criação de projetos web dinâmicos).
+- Configure o [Apache Tomcat 9](https://tomcat.apache.org/download-90.cgi) em seu IDE para o desenvolvimento de Servlets e JSP.
+- Instale o [MySQL Server 8.0.0+](https://mysql.com/downloads).
+- Recomendamos usar o [MySQL Workbench 8](https://dev.mysql.com/downloads/workbench/) para visualizar as tabelas.
 
-2. **Configurar o Ambiente de Desenvolvimento:**
-   - Certifique-se de ter o Java JDK instalado em sua máquina.
-   - Utilize uma IDE como Eclipse ou IntelliJ IDEA para o desenvolvimento.
-   - Configure o Apache Tomcat 9 na sua IDE para o desenvolvimento de Servlets e JSP.
+### 3. Executar a aplicação
 
-3. **Executar a Aplicação:**
-   - Inicie o servidor Tomcat dentro da IDE.
-   - Acesse a aplicação através do navegador utilizando a URL do servidor Tomcat. Geralmente: `http://localhost:8080/`.
+1. **Criar uma Base de Dados**
+   - Inicie o MySQL Server no computador, utilizando a senha `1234@sim`.
+   - Crie um esquema (schema) no MySQL Workbench utilizando esse [script](./sql.txt).
 
----
+2. **Iniciar o Servidor Tomcat**
+   - Inicie o servidor Tomcat dentro do IDE (através do arquivo `index.jsp`).
+   - Acesse a aplicação através do navegador utilizando a URL do servidor Tomcat: `http://localhost:8080/`.
 
-**Funcionalidades:**
-- **Gerenciamento de Alunos:** Registrar novos alunos, visualizar e editar detalhes dos alunos.
-- **Gestão de Cursos:** Adicionar novos cursos, gerenciar detalhes dos cursos.
-- **Solicitações de Bolsas:** Os alunos podem solicitar bolsas de estudo através da interface web.
-- **Interface Interativa:** Utiliza JSP para criar páginas web dinâmicas, Servlets para lidar com requisições e respostas.
+## Funcionalidades
 
----
+<details>
 
-**Requisitos do Projeto:**
-- Java JDK instalado na máquina.
-- Apache Tomcat 9.
-- IDE com suporte a Servlet/JSP (Eclipse, IntelliJ IDEA, etc.).
+<summary style="text-weight: bold">Gerenciamento de Alunos</summary>
 
----
+- Registrador de novos alunos.
+- Visualizar e editar detalhes dos alunos.
 
-**Nota:**
-Este projeto foi desenvolvido como parte de um estudo sobre Java e gerenciamento acadêmico. Sinta-se à vontade para contribuir, sugerir melhorias ou utilizar o código para seus próprios fins acadêmicos ou de aprendizado.
+</details>
 
----
+<details>
+<summary>Gestão de Cursos</summary>
 
-**Licença:**
+- Adicionar novos cursos.
+- Gerenciar detalhes dos cursos.
+</details>
+
+<details>
+<summary>Solicitações de Bolsas</summary>
+
+- Alunos podem solicitar bolsas de estudo através da interface web.
+</details>
+
+<details>
+<summary>Interface Interativa</summary>
+
+- Utilize JSP para criar páginas web dinâmicas.
+- Servlets para lidar com requisições e respostas.
+</details>
+
+<details>
+<summary>Persistência de Dados</summary>
+
+- Os dados são salvos em uma base de dados MySQL.
+- Permite adicionar, editar, excluir e atualizar registros conforme as permissões do usuário.
+</details>
+
+## Licença
 Este projeto é de código aberto e está disponível sob a Licença MIT. Consulte o arquivo [LICENSE](https://github.com/D-O-S-T/GerenciamentoAcademico/blob/fase3/LICENSE.txt) para mais detalhes.
-
----

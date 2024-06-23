@@ -1,0 +1,106 @@
+USE gerenciamento_academico;
+
+CREATE TABLE coordenador(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+nome VARCHAR(100) NOT NULL,
+email VARCHAR(100) NOT NULL,
+login VARCHAR(50) NOT NULL,
+senha VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE aluno(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+matricula VARCHAR(50) NOT NULL,
+nome VARCHAR(100) NOT NULL,
+email VARCHAR(100) NOT NULL,
+lattes VARCHAR(100) NOT NULL,
+login VARCHAR(50) NOT NULL,
+senha VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE professor(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+nome VARCHAR(100) NOT NULL,
+email VARCHAR(100) NOT NULL,
+lattes VARCHAR(100) NOT NULL,
+login VARCHAR(50) NOT NULL,
+senha VARCHAR(50) NOT NULL,
+
+areaAtuacao VARCHAR (50) NOT NULL
+);
+
+CREATE TABLE projeto(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+titulo VARCHAR(200) NOT NULL,
+
+conteudo VARCHAR(1000) NOT NULL,
+dataInicial DATE NOT NULL,
+dataFinal DATE NOT NULL,
+professor_id INT,
+alunoBolsista_id INT,
+alunoVoluntario_id INT,
+FOREIGN KEY (professor_id) REFERENCES professor(id),
+FOREIGN KEY (alunoBolsista_id) REFERENCES aluno(id),
+FOREIGN KEY (alunoVoluntario_id) REFERENCES aluno(id)
+);
+
+CREATE TABLE feedbackprofessor(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+titulo VARCHAR(200) NOT NULL,
+feedback VARCHAR(1000) NOT NULL,
+professor_id INT,
+aluno_id INT,
+FOREIGN KEY (professor_id) REFERENCES professor(id),
+FOREIGN KEY (aluno_id) REFERENCES aluno(id)
+);
+
+CREATE TABLE feedbackaluno(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+titulo VARCHAR(200) NOT NULL,
+feedback VARCHAR(1000) NOT NULL,
+aluno_id INT,
+professor_id INT,
+FOREIGN KEY (aluno_id) REFERENCES aluno(id),
+FOREIGN KEY (professor_id) REFERENCES professor(id)
+);
+
+CREATE TABLE atividade(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+titulo VARCHAR(200) NOT NULL,
+conteudo VARCHAR(1000) NOT NULL,
+dataInicial DATE NOT NULL,
+dataFinal DATE NOT NULL,
+projeto_id INT,
+
+FOREIGN KEY (projeto_id) REFERENCES projeto(id)
+);
+
+CREATE TABLE entrega(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+conteudo VARCHAR(1000) NOT NULL,
+dataEntrega DATE NOT NULL,
+professor_id INT,
+alunoDaEntrega_id INT,
+
+atividade_id INT,
+
+FOREIGN KEY (atividade_id) REFERENCES atividade(id),
+FOREIGN KEY (professor_id) REFERENCES professor(id),
+FOREIGN KEY (alunoDaEntrega_id) REFERENCES aluno(id)
+);
+
+CREATE TABLE relatorioprofessor(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+titulo VARCHAR(100) NOT NULL,
+relatorio VARCHAR(1000) NOT NULL,
+professor_id INT,
+FOREIGN KEY (professor_id) REFERENCES professor(id)
+);
+
+CREATE TABLE relatoriocoordenador(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+titulo VARCHAR(100) NOT NULL,
+relatorio VARCHAR(1000) NOT NULL,
+coordenador_id INT,
+FOREIGN KEY (coordenador_id) REFERENCES coordenador(id)
+);
