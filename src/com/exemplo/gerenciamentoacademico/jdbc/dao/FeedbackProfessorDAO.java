@@ -127,6 +127,8 @@ public class FeedbackProfessorDAO {
     }
     
     
+    
+    
     public List<FeedbackProfessor> getFeedbacksPorAlunoId(int alunoId) {
         String sql = "SELECT * FROM feedbackprofessor WHERE aluno_id = ?";
         List<FeedbackProfessor> feedbacks = new ArrayList<>();
@@ -150,4 +152,41 @@ public class FeedbackProfessorDAO {
         }
         return feedbacks;
     }
+
+    public String getNomeProfessorPorFeedbackId(int feedbackId) {
+        String nomeProfessor = "";
+        String sql = "SELECT p.nome FROM professor p " +
+                     "JOIN feedbackprofessor f ON p.id = f.professor_id WHERE f.id = ?";
+
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, feedbackId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    nomeProfessor = rs.getString("nome");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return nomeProfessor;
+    }
+    
+    public String getNomeProfessorPorId(int professorId) {
+        String nomeProfessor = null;
+        String sql = "SELECT nome FROM professor WHERE id = ?";
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, professorId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    nomeProfessor = rs.getString("nome");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return nomeProfessor;
+    }
 }
+
