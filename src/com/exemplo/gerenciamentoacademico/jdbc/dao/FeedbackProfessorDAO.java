@@ -50,8 +50,6 @@ public class FeedbackProfessorDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
-        System.out.println("Número de feedbacks encontrados no DAO: " + feedbacks.size()); // Adicione este log
         return feedbacks;
     }
 

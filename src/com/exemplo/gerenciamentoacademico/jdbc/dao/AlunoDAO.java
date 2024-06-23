@@ -180,4 +180,61 @@ public class AlunoDAO {
         }
         return aluno;
     }
+    
+    
+    public int getIdPeloNome(String nome) {
+        String sql = "SELECT id FROM aluno WHERE nome = ?";
+        int alunoId = 0; // Valor padrão ou tratamento de erro se não encontrar
+        
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, nome);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    alunoId = rs.getInt("id");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return alunoId;
+    }
+    
+    
+    public List<String> getNomesTodosAlunos() {
+        List<String> nomesAlunos = new ArrayList<>();
+        String sql = "SELECT nome FROM aluno";
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                String nomeAluno = rs.getString("nome");
+                nomesAlunos.add(nomeAluno);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return nomesAlunos;
+    }
+    
+    
+//    public List<Aluno> getTodosNomesAlunos() {
+//        List<Aluno> nomesAlunos = new ArrayList<>();
+//        // Lógica para buscar apenas os nomes dos alunos no banco de dados
+//        try (Connection conn = DatabaseUtil.getConexao();
+//             PreparedStatement stmt = conn.prepareStatement("SELECT nome FROM alunos");
+//             ResultSet rs = stmt.executeQuery()) {
+//
+//            while (rs.next()) {
+//                nomesAlunos.add(Aluno);
+//            }
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//            // Tratar exceção conforme necessário
+//        }
+//        return nomesAlunos;
+//    }
 }

@@ -6,6 +6,7 @@ package com.exemplo.gerenciamentoacademico.jdbc.model;
 public class FeedbackProfessor {
     
 
+
 	private int id;
     private String titulo;
     private String feedback;
@@ -18,6 +19,17 @@ public class FeedbackProfessor {
     // Construtor padrão
     public FeedbackProfessor() {
     }
+    
+
+	public FeedbackProfessor(String titulo, String feedback, int professorId, String alunoNome) {
+		super();
+		this.titulo = titulo;
+		this.feedback = feedback;
+		this.professorId = professorId;
+		this.alunoNome = alunoNome;
+	}
+    
+    
 
     // Construtor com parâmetros
     public FeedbackProfessor(int id, String titulo, String feedback, int professorId, int alunoId) {

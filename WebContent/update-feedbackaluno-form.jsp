@@ -29,21 +29,7 @@
         <label for="feedback">Feedback:</label><br>
         <textarea id="feedback" name="feedback" rows="4" cols="50" required>${feedback.feedback}</textarea><br><br>
 
-        <%-- Aluno (combobox) --%>
-        <label for="alunoId">Aluno:</label><br>
-        <select id="alunoId" name="alunoId" required>
-            <option value="">Selecione um Aluno</option>
-            <%
-                AlunoDAO alunoDAO = new AlunoDAO();
-            	
-                List<Aluno> listaAlunos = alunoDAO.getTodosAlunos();
-                for (Aluno aluno : listaAlunos) {
-            %>
-                <option value="<%= aluno.getId() %>"><%= aluno.getNome() %></option>
-            <%
-                }
-            %>
-        </select><br><br>
+       
 
         <%-- Professor (combobox) --%>
         <label for="professorId">Professor:</label><br>
