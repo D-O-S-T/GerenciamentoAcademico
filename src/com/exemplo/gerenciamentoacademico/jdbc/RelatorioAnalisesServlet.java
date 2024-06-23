@@ -1,40 +1,60 @@
 package com.exemplo.gerenciamentoacademico.jdbc;
 
-import java.io.IOException;
+import com.exemplo.gerenciamentoacademico.jdbc.dao.RelatorioAnalisesDAO;
+import com.exemplo.gerenciamentoacademico.jdbc.model.RelatorioAnalises;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
-import com.exemplo.gerenciamentoacademico.jdbc.dao.RelatorioAnalisesDAO;
-import com.exemplo.gerenciamentoacademico.jdbc.model.RelatorioAnalises;
-
-@WebServlet("/relatorio")
+@WebServlet("/RelatorioAnalisesServlet")
 public class RelatorioAnalisesServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-	        throws ServletException, IOException {
+    private RelatorioAnalisesDAO relatorioAnalisesDAO;
 
-	    RelatorioAnalisesDAO dao = new RelatorioAnalisesDAO();
-	    RelatorioAnalises relatorio = dao.obterRelatorioAnalises();
+    public void init() {
+        relatorioAnalisesDAO = new RelatorioAnalisesDAO();
+    }
 
-	    request.setAttribute("relatorio", relatorio);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doGet(request, response);
+    }
 
-	    // Verificação de log
-	    System.out.println("Relatorio totalUsuarios: " + relatorio.getTotalUsuarios());
-	    System.out.println("Relatorio totalProfessores: " + relatorio.getTotalProfessores());
-	    System.out.println("Relatorio totalAlunos: " + relatorio.getTotalAlunos());
-	    System.out.println("Relatorio totalCoordenadores: " + relatorio.getTotalCoordenadores());
-	    System.out.println("Relatorio totalAtividades: " + relatorio.getTotalAtividades());
-	    System.out.println("Relatorio totalProjetos: " + relatorio.getTotalProjetos());
-	    System.out.println("Relatorio totalEntregas: " + relatorio.getTotalEntregas());
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-	    request.getRequestDispatcher("/relatorios-analises-form.jsp").forward(request, response);
-	}
+        String action = request.getParameter("action");
 
+        if (action == null) {
+            action = "visualizar";
+        }
+
+        switch (action) {
+            case "visualizar":
+                visualizarRelatorio(request, response);
+                break;
+            default:
+                visualizarRelatorio(request, response);
+        }
+    }
+
+    private void visualizarRelatorio(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            RelatorioAnalises relatorioAnalises = relatorioAnalisesDAO.getRelatorioAnalises();
+            request.setAttribute("relatorioAnalises", relatorioAnalises);
+            request.getRequestDispatcher("relatorios-analises-form.jsp").forward(request, response);
+        } catch (Exception e) {
+            throw new ServletException("Erro ao obter o relatório de análises", e);
+        }
+    }
 }
+
 
 
 
