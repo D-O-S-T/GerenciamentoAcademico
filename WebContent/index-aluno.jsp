@@ -3,32 +3,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Página do Aluno</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .button-container {
-            margin-top: 20px;
-        }
-        .button-container button {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .button-container button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" href="css/cssInicial.css" type="text/css">
+    <title>Perfil Aluno</title>
 </head>
 <body>
     <h1>Bem-vindo, ${sessionScope.usuarioNome}!</h1>
