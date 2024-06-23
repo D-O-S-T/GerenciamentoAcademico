@@ -43,7 +43,7 @@ public class FeedbackAlunoServlet extends HttpServlet {
 
         switch (action) {
             case "listar":
-                listarFeedbacks(request, response);
+                listarFeedbacksAluno(request, response);
                 break;
             case "inserir":
                 inserirFeedback(request, response);
@@ -58,36 +58,61 @@ public class FeedbackAlunoServlet extends HttpServlet {
                 excluirFeedback(request, response);
                 break;
             default:
-                listarFeedbacks(request, response);
+                listarFeedbacksAluno(request, response);
         }
     }
 
-    private void listarFeedbacks(HttpServletRequest request, HttpServletResponse response)
+//    private void listarFeedbacksAluno(HttpServletRequest request, HttpServletResponse response)
+//            throws ServletException, IOException {
+//        HttpSession session = request.getSession();
+//        
+//        ////confira IndexSerlet para ver se esse atributo foi passado para lá
+//        int alunoId = (int) session.getAttribute("usuarioId");
+//        
+//        List<FeedbackAluno> listaFeedbacksAluno = feedbackAlunoDAO.getFeedbacksPorAluno(alunoId);
+//
+//        // Para cada feedback, obter o nome do professor e definir no objeto FeedbackAluno
+//        for (FeedbackAluno feedback : listaFeedbacksAluno) {
+//            String nomeProfessor = feedbackAlunoDAO.getNomeProfessorPorFeedbackId(feedback.getId());
+//            feedback.setProfessorNome(nomeProfessor);
+//        }
+//
+//        request.setAttribute("listaFeedbacksAluno", listaFeedbacksAluno);
+//        request.getRequestDispatcher("listar-feedbackaluno.jsp").forward(request, response);
+//    }
+    
+    private void listarFeedbacksAluno(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        
-        ////confira IndexSerlet para ver se esse atributo foi passado para lá
-        int alunoId = (int) session.getAttribute("alunoId");
-        
-        List<FeedbackAluno> listaFeedbacks = feedbackAlunoDAO.getFeedbacksPorAluno(alunoId);
+        Integer alunoId = (Integer) session.getAttribute("alunoId");
 
-        // Para cada feedback, obter o nome do professor e definir no objeto FeedbackAluno
-        for (FeedbackAluno feedback : listaFeedbacks) {
+        if (alunoId == null) {
+            System.out.println("alunoId não encontrado na sessão.");
+            response.sendRedirect("index.jsp");
+            return;
+        }
+
+        System.out.println("alunoId: " + alunoId);
+
+        List<FeedbackAluno> listaFeedbacksAluno = feedbackAlunoDAO.getFeedbacksPorAluno(alunoId);
+
+        System.out.println("Número de feedbacks recuperados no Servlet: " + listaFeedbacksAluno.size()); // Adicione este log
+
+        for (FeedbackAluno feedback : listaFeedbacksAluno) {
             String nomeProfessor = feedbackAlunoDAO.getNomeProfessorPorFeedbackId(feedback.getId());
             feedback.setProfessorNome(nomeProfessor);
         }
 
-        request.setAttribute("listaFeedbacks", listaFeedbacks);
+        request.setAttribute("listaFeedbacksAluno", listaFeedbacksAluno);
         request.getRequestDispatcher("listar-feedbackaluno.jsp").forward(request, response);
     }
-
     private void inserirFeedback(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String titulo = request.getParameter("titulo");
         String feedback = request.getParameter("feedback");
         HttpSession session = request.getSession();
 
-        Integer alunoId = (Integer) session.getAttribute("alunoId");
+        Integer alunoId = (Integer) session.getAttribute("usuarioId");
         if (alunoId == null) {
             throw new ServletException("ID do aluno não encontrado na sessão.");
         }

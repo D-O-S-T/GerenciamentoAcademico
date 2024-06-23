@@ -35,7 +35,7 @@
 
     <div class="button-container">
         <button onclick="window.location.href='entregarAtividade.jsp'">Entregar Atividade</button>
-        <button onclick="window.location.href='feedbackaluno-form.jsp'">Inserir Feedback</button>
+           <button onclick="window.location.href='FeedbackAlunoServlet?action=listar'">Inserir Feedback</button>
         <button onclick="window.location.href='lerFeedback.jsp'">Ler Feedback</button>
     </div>
 </body>

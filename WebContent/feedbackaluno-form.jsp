@@ -28,7 +28,7 @@
         <input type="text" id="professorId" name="professorId"><br><br>
         
         <!-- Campo Escondido para Aluno ID -->
-        <input type="hidden" id="alunoId" name="alunoId" value="${sessionScope.alunoId}">
+        <input type="hidden" id="alunoId" name="alunoId" value="${sessionScope.usuarioId}">
         
         <!-- Botão Enviar -->
         <input type="submit" value="Enviar">
