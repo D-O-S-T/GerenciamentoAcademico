@@ -44,6 +44,7 @@
     </c:choose>
 
     <br>
-    <a href="feedbackaluno-form.jsp">Adicionar Novo Feedback</a>
+    <button onclick="window.location.href='feedbackaluno-form.jsp'">Adicionar Novo Feedback</button>
+    <button onclick="window.location.href='index-aluno.jsp'">Voltar</button>
 </body>
 </html>

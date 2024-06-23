@@ -94,16 +94,17 @@ public class EntregaServlet extends HttpServlet {
     private void listarEntregas(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("usuarioId") == null) {
+        if (session == null || session.getAttribute("alunoId") == null) {
             response.sendRedirect("index.jsp");
             return;
         }
 
-        int usuarioId = (Integer) session.getAttribute("usuarioId");
-        List<Entrega> listaEntregas = entregaDAO.getEntregasPorProfessor(usuarioId);
+        int alunoId = (Integer) session.getAttribute("alunoId");
+        List<Entrega> listaEntregas = entregaDAO.getEntregasPorAluno(alunoId);
         request.setAttribute("listaEntregas", listaEntregas);
         request.getRequestDispatcher("listar-entregas.jsp").forward(request, response);
     }
+
 
     private void mostrarFormEntrega(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -135,8 +136,7 @@ public class EntregaServlet extends HttpServlet {
         int usuarioId = (Integer) session.getAttribute("usuarioId");
 
         String conteudo = request.getParameter("conteudo");
-        LocalDate dataEntrega = LocalDate.parse(request.getParameter("dataEntrega"));
-        int alunoDaEntregaId = Integer.parseInt(request.getParameter("alunoDaEntregaId"));
+        LocalDate dataEntrega = LocalDate.now(); // Obtém a data atual
         int atividadeId = Integer.parseInt(request.getParameter("atividadeId"));
 
         try {
@@ -147,7 +147,7 @@ public class EntregaServlet extends HttpServlet {
             int professorId = projetoDAO.getProfessorIdPorProjeto(projetoId);
 
             // Criar objeto Entrega
-            Entrega entrega = new Entrega(conteudo, dataEntrega, professorId, alunoDaEntregaId, atividadeId);
+            Entrega entrega = new Entrega(conteudo, dataEntrega, professorId, usuarioId, atividadeId);
 
             entregaDAO.inserirEntrega(entrega);
             response.sendRedirect("EntregaServlet?action=listar");
@@ -156,6 +156,8 @@ public class EntregaServlet extends HttpServlet {
             response.sendRedirect("EntregaServlet?action=listar&error=InsertFailed");
         }
     }
+
+
 
     private void editarEntrega(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -167,7 +169,7 @@ public class EntregaServlet extends HttpServlet {
             request.setAttribute("entrega", entrega);
             request.setAttribute("listaAtividades", listaAtividades);
 
-            request.getRequestDispatcher("update-entrega-form.jsp").forward(request, response);
+            request.getRequestDispatcher("update-entregas-form.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
             response.sendRedirect("EntregaServlet?action=listar&error=InvalidEntrega");
@@ -187,12 +189,9 @@ public class EntregaServlet extends HttpServlet {
         try {
             int id = Integer.parseInt(request.getParameter("id"));
             String conteudo = request.getParameter("conteudo");
-            LocalDate dataEntrega = LocalDate.parse(request.getParameter("dataEntrega"));
-            int alunoDaEntregaId = Integer.parseInt(request.getParameter("alunoDaEntregaId"));
-            int atividadeId = Integer.parseInt(request.getParameter("atividadeId"));
 
-            Entrega entregaAtualizada = new Entrega(id, conteudo, dataEntrega, usuarioId, alunoDaEntregaId, atividadeId);
-            entregaDAO.atualizarEntrega(entregaAtualizada);
+            Entrega entregaAtualizada = new Entrega(id, conteudo, usuarioId); // Criando uma nova entrega com apenas o conteúdo atualizado
+            entregaDAO.atualizarConteudo(entregaAtualizada); // Método específico para atualizar apenas o conteúdo
 
             response.sendRedirect("EntregaServlet?action=listar");
         } catch (Exception e) {

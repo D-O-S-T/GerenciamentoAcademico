@@ -61,6 +61,8 @@ public class EntregaDAO {
         }
         return entregas;
     }
+    
+    
 
     public void inserirEntrega(Entrega entrega) throws SQLException {
         String sql = "INSERT INTO entrega (conteudo, dataEntrega, professor_id, alunoDaEntrega_id, atividade_id) " +
@@ -78,6 +80,16 @@ public class EntregaDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             throw e;
+        }
+    }
+    
+    public void atualizarConteudo(Entrega entrega) throws SQLException {
+        String sql = "UPDATE entrega SET conteudo = ? WHERE id = ?";
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, entrega.getConteudo());
+            stmt.setInt(2, entrega.getId());
+            stmt.executeUpdate();
         }
     }
 
@@ -111,6 +123,31 @@ public class EntregaDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    
+    public List<Entrega> getEntregasPorAluno(int alunoId) {
+        String sql = "SELECT * FROM entrega WHERE alunoDaEntrega_id = ?";
+        List<Entrega> entregas = new ArrayList<>();
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, alunoId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Entrega entrega = new Entrega(
+                            rs.getInt("id"),
+                            rs.getString("conteudo"),
+                            rs.getDate("dataEntrega").toLocalDate(),
+                            rs.getInt("professor_id"),
+                            rs.getInt("alunoDaEntrega_id"),
+                            rs.getInt("atividade_id")
+                    );
+                    entregas.add(entrega);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return entregas;
     }
 
     public Entrega getEntregaPorId(int id) {

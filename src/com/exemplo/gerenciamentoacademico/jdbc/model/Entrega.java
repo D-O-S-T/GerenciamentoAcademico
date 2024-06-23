@@ -21,6 +21,12 @@ public class Entrega {
         this.alunoDaEntregaId = alunoDaEntregaId;
         this.atividadeId = atividadeId;
     }
+    
+    public Entrega(int id, String conteudo, int alunoDaEntregaId) {
+    	this.id = id;
+    	this.conteudo = conteudo;
+    	this.alunoDaEntregaId = alunoDaEntregaId;
+    }
 
     public Entrega(String conteudo, LocalDate dataEntrega, int professorId, int alunoDaEntregaId, int atividadeId) {
         this.conteudo = conteudo;
@@ -28,6 +34,21 @@ public class Entrega {
         this.professorId = professorId;
         this.alunoDaEntregaId = alunoDaEntregaId;
         this.atividadeId = atividadeId;
+    }
+    
+    public Entrega(int id, String conteudo, LocalDate dataEntrega, int alunoDaEntregaId, int atividadeId) {
+    	this.id = id;
+    	this.conteudo = conteudo;
+    	this.dataEntrega = dataEntrega;
+    	this.alunoDaEntregaId = alunoDaEntregaId;
+    	this.atividadeId = atividadeId;
+    }
+    
+    public Entrega(int id, String conteudo, LocalDate dataEntrega, int atividadeId) {
+    	this.id = id;
+    	this.conteudo = conteudo;
+    	this.dataEntrega = dataEntrega;
+    	this.atividadeId = atividadeId;
     }
 
     public int getId() {
