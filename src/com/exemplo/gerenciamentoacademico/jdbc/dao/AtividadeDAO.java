@@ -41,6 +41,37 @@ public class AtividadeDAO {
         return atividades;
     }
     
+    public List<Atividade> getAtividadesPorAluno(int alunoId) {
+        List<Atividade> atividades = new ArrayList<>();
+        String sql = "SELECT a.* FROM atividade a " +
+                     "JOIN projeto p ON a.projeto_id = p.id " +
+                     "WHERE p.alunoBolsista_id = ? OR p.alunoVoluntario_id = ?";
+
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, alunoId);
+            stmt.setInt(2, alunoId);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Atividade atividade = new Atividade();
+                atividade.setId(rs.getInt("id"));
+                atividade.setTitulo(rs.getString("titulo"));
+                atividade.setConteudo(rs.getString("conteudo"));
+                atividade.setDataInicial(rs.getDate("dataInicial").toLocalDate());
+                atividade.setDataFinal(rs.getDate("dataFinal").toLocalDate());
+                atividades.add(atividade);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return atividades;
+    }
+
+    
     public List<Atividade> getAtividadesPorProfessor(int professorId) {
         String sql = "SELECT a.*, p.titulo AS projetoTitulo " +
                      "FROM atividade a " +

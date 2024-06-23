@@ -45,6 +45,9 @@ public class AtividadeServlet extends HttpServlet {
                 case "listar":
                     listarAtividades(request, response);
                     break;
+                case "listarPorAluno":
+                    listarAtividadesPorAluno(request, response);
+                    break;
                 case "mostrarFormInsercao":
                     mostrarFormInsercao(request, response);
                     break;
@@ -68,6 +71,21 @@ public class AtividadeServlet extends HttpServlet {
             throw new ServletException(e);
         }
     }
+
+    private void listarAtividadesPorAluno(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("usuarioId") == null) {
+            response.sendRedirect("index.jsp");
+            return;
+        }
+
+        int usuarioId = (Integer) session.getAttribute("usuarioId");
+        List<Atividade> listaAtividades = atividadeDAO.getAtividadesPorAluno(usuarioId);
+        request.setAttribute("listaAtividades", listaAtividades);
+        request.getRequestDispatcher("lista-entrega-atividade.jsp").forward(request, response);
+    }
+
 
     private void mostrarFormInsercao(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

@@ -34,7 +34,7 @@
     <h1>Bem-vindo, ${sessionScope.usuarioNome}!</h1>
 
     <div class="button-container">
-        <button onclick="window.location.href='entregarAtividade.jsp'">Entregar Atividade</button>
+        <button onclick="window.location.href='AtividadeServlet?action=listarPorAluno'">Entregar Atividade</button>
            <button onclick="window.location.href='FeedbackAlunoServlet?action=listar'">Inserir Feedback</button>
         <button onclick="window.location.href='lerFeedback.jsp'">Ler Feedback</button>
     </div>
