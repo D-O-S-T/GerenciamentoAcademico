@@ -108,29 +108,29 @@ public class AtividadeServlet extends HttpServlet {
             return;
         }
 
-        // Obter todos os projetos do professor com o usuarioId
-        List<Projeto> projetosDoProfessor = projetoDAO.getProjetosPorProfessor(usuarioId);
-
-        // Verificar se há algum projeto que corresponda ao usuário atual
-        Projeto projetoCorrespondente = null;
-        for (Projeto projeto : projetosDoProfessor) {
-            if (projeto.getProfessorId() == usuarioId) {
-                projetoCorrespondente = projeto;
-                break;
-            }
-        }
-
-        if (projetoCorrespondente == null) {
-            // Se não houver projeto correspondente, redirecionar com erro
-            response.sendRedirect("AtividadeServlet?action=listar&error=NoProject");
-            return;
-        }
-
         try {
             String titulo = request.getParameter("titulo");
             String conteudo = request.getParameter("conteudo");
             LocalDate dataInicial = LocalDate.parse(request.getParameter("dataInicial"));
             LocalDate dataFinal = LocalDate.parse(request.getParameter("dataFinal"));
+
+            // Obter todos os projetos do professor com o usuarioId
+            List<Projeto> projetosDoProfessor = projetoDAO.getProjetosPorProfessor(usuarioId);
+
+            // Verificar se há algum projeto que corresponda ao usuário atual
+            Projeto projetoCorrespondente = null;
+            for (Projeto projeto : projetosDoProfessor) {
+                if (projeto.getProfessorId() == usuarioId) {
+                    projetoCorrespondente = projeto;
+                    break;
+                }
+            }
+
+            if (projetoCorrespondente == null) {
+                // Se não houver projeto correspondente, redirecionar com erro
+                response.sendRedirect("AtividadeServlet?action=listar&error=NoProject");
+                return;
+            }
 
             // Verifique os valores dos parâmetros antes de inserir
             System.out.println("Titulo: " + titulo);
@@ -151,6 +151,7 @@ public class AtividadeServlet extends HttpServlet {
             response.sendRedirect("AtividadeServlet?action=mostrarFormInsercao&error=InvalidData");
         }
     }
+
 
 
 

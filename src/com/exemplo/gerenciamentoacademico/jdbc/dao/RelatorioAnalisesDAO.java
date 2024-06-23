@@ -37,49 +37,42 @@ public class RelatorioAnalisesDAO {
             ResultSet rs = psTotalUsuarios.executeQuery();
             if (rs.next()) {
                 int totalUsuarios = rs.getInt("totalUsuarios");
-                System.out.println("Total Usuarios: " + totalUsuarios); // Log
                 relatorio.setTotalUsuarios(totalUsuarios);
             }
 
             rs = psTotalProfessores.executeQuery();
             if (rs.next()) {
                 int totalProfessores = rs.getInt("total");
-                System.out.println("Total Professores: " + totalProfessores); // Log
                 relatorio.setTotalProfessores(totalProfessores);
             }
 
             rs = psTotalAlunos.executeQuery();
             if (rs.next()) {
                 int totalAlunos = rs.getInt("total");
-                System.out.println("Total Alunos: " + totalAlunos); // Log
                 relatorio.setTotalAlunos(totalAlunos);
             }
 
             rs = psTotalCoordenadores.executeQuery();
             if (rs.next()) {
                 int totalCoordenadores = rs.getInt("total");
-                System.out.println("Total Coordenadores: " + totalCoordenadores); // Log
                 relatorio.setTotalCoordenadores(totalCoordenadores);
             }
 
             rs = psTotalAtividades.executeQuery();
             if (rs.next()) {
                 int totalAtividades = rs.getInt("total");
-                System.out.println("Total Atividades: " + totalAtividades); // Log
                 relatorio.setTotalAtividades(totalAtividades);
             }
 
             rs = psTotalProjetos.executeQuery();
             if (rs.next()) {
                 int totalProjetos = rs.getInt("total");
-                System.out.println("Total Projetos: " + totalProjetos); // Log
                 relatorio.setTotalProjetos(totalProjetos);
             }
 
             rs = psTotalEntregas.executeQuery();
             if (rs.next()) {
                 int totalEntregas = rs.getInt("total");
-                System.out.println("Total Entregas: " + totalEntregas); // Log
                 relatorio.setTotalEntregas(totalEntregas);
             }
 

@@ -8,6 +8,7 @@
 </head>
 <body>
     <h2>Listagem de Atividades</h2>
+    <button onclick="window.location.href='atividade-form.jsp'">Adicionar Novo Coordenador</button>
     
     <table border="1">
         <thead>
@@ -38,8 +39,7 @@
             </c:forEach>
         </tbody>
     </table>
-    
     <br>
-    <a href="atividade-form.jsp">Adicionar Nova Atividade</a>
+    <button onclick="window.location.href='index-professor.jsp'">Voltar a Página Inicial</button>
 </body>
 </html>
