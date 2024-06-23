@@ -34,8 +34,7 @@
     <h1>Bem-vindo, ${sessionScope.usuarioNome}!</h1>
 
     <div class="button-container">
-        <button onclick="window.location.href='RelatorioAnalisesServlet?action=listar'" onclick="window.location.href='relatorios-analises-form.jsp'">Relatórios e Análises</button>
-        <button onclick="window.location.href='acompanhamentoProjetos.jsp'">Acompanhamento dos Projetos</button>
+        <button onclick="window.location.href='RelatorioAnalisesServlet?action=visualizar'">Relatórios e Análises</button>
         <button onclick="window.location.href='AlunoServlet?action=listar'" onclick="window.location.href='listar-alunos.jsp'">Gestão de Alunos</button>
         <button onclick="window.location.href='ProjetoServlet?action=listar'" onclick="window.location.href='listar-projetos.jsp'">Gestão de Projetos</button>
         <button onclick="window.location.href='ProfessorServlet?action=listar'" onclick="window.location.href='index-professor.jsp'">Gestão de Professores</button>

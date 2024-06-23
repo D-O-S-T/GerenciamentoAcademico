@@ -12,7 +12,7 @@ import java.util.List;
 
 public class FeedbackAlunoDAO {
 
-    public void adicionarFeedback(FeedbackAluno feedback) {
+	public void adicionarFeedback(FeedbackAluno feedback) {
         String sql = "INSERT INTO feedbackaluno (titulo, feedback, aluno_id, professor_id) " +
                      "VALUES (?, ?, ?, ?)";
         try (Connection conn = DatabaseUtil.getConexao();
@@ -21,12 +21,13 @@ public class FeedbackAlunoDAO {
             stmt.setString(2, feedback.getFeedback());
             stmt.setInt(3, feedback.getAlunoId());
             stmt.setInt(4, feedback.getProfessorId());
+            System.out.println("AlunoId na DAO antes de adicionar: " + feedback.getAlunoId()); // Log adicional
             stmt.executeUpdate();
+            System.out.println("Feedback adicionado com alunoId: " + feedback.getAlunoId());
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-
     public List<FeedbackAluno> getFeedbacksPorAluno(int alunoId) {
         String sql = "SELECT * FROM feedbackaluno WHERE aluno_id = ?";
         List<FeedbackAluno> feedbacks = new ArrayList<>();
@@ -48,6 +49,7 @@ public class FeedbackAlunoDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println("Número de feedbacks encontrados no DAO: " + feedbacks.size()); // Adicione este log
         return feedbacks;
     }
 

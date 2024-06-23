@@ -10,103 +10,84 @@ import com.exemplo.gerenciamentoacademico.jdbc.model.RelatorioAnalises;
 
 public class RelatorioAnalisesDAO {
 
-    public RelatorioAnalises obterRelatorioAnalises() {
-        RelatorioAnalises relatorio = new RelatorioAnalises(0, 0, 0, 0, 0, 0, 0);
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
+    public RelatorioAnalises getRelatorioAnalises() throws SQLException {
+        RelatorioAnalises relatorio = new RelatorioAnalises();
+        Connection connection = DatabaseUtil.getConexao();
 
-        try {
-            conn = DatabaseUtil.getConexao();
+        String totalUsuariosQuery = "SELECT " +
+            "(SELECT COUNT(*) FROM professor) + " +
+            "(SELECT COUNT(*) FROM aluno) + " +
+            "(SELECT COUNT(*) FROM coordenador) AS totalUsuarios";
 
-            // Contar total de usuários (professores, alunos e coordenadores)
-            String queryTotalUsuarios = "SELECT ("
-                    + "(SELECT COUNT(*) FROM professor) + "
-                    + "(SELECT COUNT(*) FROM aluno) + "
-                    + "(SELECT COUNT(*) FROM coordenador)) AS total";
-            stmt = conn.prepareStatement(queryTotalUsuarios);
-            rs = stmt.executeQuery();
-            System.out.println("Até aqui chegou boiola");
+        String totalProfessoresQuery = "SELECT COUNT(*) AS total FROM professor";
+        String totalAlunosQuery = "SELECT COUNT(*) AS total FROM aluno";
+        String totalCoordenadoresQuery = "SELECT COUNT(*) AS total FROM coordenador";
+        String totalAtividadesQuery = "SELECT COUNT(*) AS total FROM atividade";
+        String totalProjetosQuery = "SELECT COUNT(*) AS total FROM projeto";
+        String totalEntregasQuery = "SELECT COUNT(*) AS total FROM entrega";
+
+        try (PreparedStatement psTotalUsuarios = connection.prepareStatement(totalUsuariosQuery);
+             PreparedStatement psTotalProfessores = connection.prepareStatement(totalProfessoresQuery);
+             PreparedStatement psTotalAlunos = connection.prepareStatement(totalAlunosQuery);
+             PreparedStatement psTotalCoordenadores = connection.prepareStatement(totalCoordenadoresQuery);
+             PreparedStatement psTotalAtividades = connection.prepareStatement(totalAtividadesQuery);
+             PreparedStatement psTotalProjetos = connection.prepareStatement(totalProjetosQuery);
+             PreparedStatement psTotalEntregas = connection.prepareStatement(totalEntregasQuery)) {
+
+            ResultSet rs = psTotalUsuarios.executeQuery();
             if (rs.next()) {
-                relatorio.setTotalUsuarios(rs.getInt("total"));
-                System.out.println("Total de Usuários: " + rs.getInt("total"));
+                int totalUsuarios = rs.getInt("totalUsuarios");
+                relatorio.setTotalUsuarios(totalUsuarios);
             }
-            rs.close();
-            stmt.close();
 
-            // Contar total de professores
-            String queryTotalProfessores = "SELECT COUNT(*) AS total FROM professor";
-            stmt = conn.prepareStatement(queryTotalProfessores);
-            rs = stmt.executeQuery();
+            rs = psTotalProfessores.executeQuery();
             if (rs.next()) {
-                relatorio.setTotalProfessores(rs.getInt("total"));
-                System.out.println("Total de Professores: " + rs.getInt("total"));
+                int totalProfessores = rs.getInt("total");
+                relatorio.setTotalProfessores(totalProfessores);
             }
-            rs.close();
-            stmt.close();
 
-            // Contar total de alunos
-            String queryTotalAlunos = "SELECT COUNT(*) AS total FROM aluno";
-            stmt = conn.prepareStatement(queryTotalAlunos);
-            rs = stmt.executeQuery();
+            rs = psTotalAlunos.executeQuery();
             if (rs.next()) {
-                relatorio.setTotalAlunos(rs.getInt("total"));
-                System.out.println("Total de Alunos: " + rs.getInt("total"));
+                int totalAlunos = rs.getInt("total");
+                relatorio.setTotalAlunos(totalAlunos);
             }
-            rs.close();
-            stmt.close();
 
-            // Contar total de coordenadores
-            String queryTotalCoordenadores = "SELECT COUNT(*) AS total FROM coordenador";
-            stmt = conn.prepareStatement(queryTotalCoordenadores);
-            rs = stmt.executeQuery();
+            rs = psTotalCoordenadores.executeQuery();
             if (rs.next()) {
-                relatorio.setTotalCoordenadores(rs.getInt("total"));
-                System.out.println("Total de Coordenadores: " + rs.getInt("total"));
+                int totalCoordenadores = rs.getInt("total");
+                relatorio.setTotalCoordenadores(totalCoordenadores);
             }
-            rs.close();
-            stmt.close();
 
-            // Contar total de atividades
-            String queryTotalAtividades = "SELECT COUNT(*) AS total FROM atividade";
-            stmt = conn.prepareStatement(queryTotalAtividades);
-            rs = stmt.executeQuery();
+            rs = psTotalAtividades.executeQuery();
             if (rs.next()) {
-                relatorio.setTotalAtividades(rs.getInt("total"));
-                System.out.println("Total de Atividades: " + rs.getInt("total"));
+                int totalAtividades = rs.getInt("total");
+                relatorio.setTotalAtividades(totalAtividades);
             }
-            rs.close();
-            stmt.close();
 
-            // Contar total de projetos
-            String queryTotalProjetos = "SELECT COUNT(*) AS total FROM projeto";
-            stmt = conn.prepareStatement(queryTotalProjetos);
-            rs = stmt.executeQuery();
+            rs = psTotalProjetos.executeQuery();
             if (rs.next()) {
-                relatorio.setTotalProjetos(rs.getInt("total"));
-                System.out.println("Total de Projetos: " + rs.getInt("total"));
+                int totalProjetos = rs.getInt("total");
+                relatorio.setTotalProjetos(totalProjetos);
             }
-            rs.close();
-            stmt.close();
 
-            // Contar total de entregas
-            String queryTotalEntregas = "SELECT COUNT(*) AS total FROM entrega";
-            stmt = conn.prepareStatement(queryTotalEntregas);
-            rs = stmt.executeQuery();
+            rs = psTotalEntregas.executeQuery();
             if (rs.next()) {
-                relatorio.setTotalEntregas(rs.getInt("total"));
-                System.out.println("Total de Entregas: " + rs.getInt("total"));
+                int totalEntregas = rs.getInt("total");
+                relatorio.setTotalEntregas(totalEntregas);
             }
-            rs.close();
-            stmt.close();
 
         } catch (SQLException e) {
-            System.out.println("Erro ao executar SQL: " + e.getMessage());
+            e.printStackTrace();
+            throw e;
+        } finally {
+            if (connection != null) {
+                connection.close();
+            }
         }
-
         return relatorio;
     }
 }
+
 
 
 

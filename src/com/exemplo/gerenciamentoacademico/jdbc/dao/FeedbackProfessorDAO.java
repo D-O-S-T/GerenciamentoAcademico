@@ -125,4 +125,29 @@ public class FeedbackProfessorDAO {
         }
         return nomeAluno;
     }
+    
+    
+    public List<FeedbackProfessor> getFeedbacksPorAlunoId(int alunoId) {
+        String sql = "SELECT * FROM feedbackprofessor WHERE aluno_id = ?";
+        List<FeedbackProfessor> feedbacks = new ArrayList<>();
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, alunoId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    FeedbackProfessor feedback = new FeedbackProfessor(
+                            rs.getInt("id"),
+                            rs.getString("titulo"),
+                            rs.getString("feedback"),
+                            rs.getInt("professor_id"),
+                            rs.getInt("aluno_id")
+                    );
+                    feedbacks.add(feedback);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return feedbacks;
+    }
 }

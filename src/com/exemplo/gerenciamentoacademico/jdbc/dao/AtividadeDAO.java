@@ -12,19 +12,7 @@ import java.util.List;
 
 public class AtividadeDAO {
 
-	public void adicionarAtividade(Atividade atividade) throws SQLException {
-        String sql = "INSERT INTO atividade (titulo, conteudo, dataInicial, dataFinal, projeto_id) " +
-                     "VALUES (?, ?, ?, ?, ?)";
-        try (Connection conn = DatabaseUtil.getConexao();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, atividade.getTitulo());
-            stmt.setString(2, atividade.getConteudo());
-            stmt.setDate(3, java.sql.Date.valueOf(atividade.getDataInicial()));
-            stmt.setDate(4, java.sql.Date.valueOf(atividade.getDataFinal()));
-            stmt.setInt(5, atividade.getProjetoId());
-            stmt.executeUpdate();
-        }
-    }
+	
 
     public List<Atividade> getTodasAtividades() {
         String sql = "SELECT a.*, p.titulo AS projetoTitulo " +
@@ -52,6 +40,37 @@ public class AtividadeDAO {
         }
         return atividades;
     }
+    
+    public List<Atividade> getAtividadesPorAluno(int alunoId) {
+        List<Atividade> atividades = new ArrayList<>();
+        String sql = "SELECT a.* FROM atividade a " +
+                     "JOIN projeto p ON a.projeto_id = p.id " +
+                     "WHERE p.alunoBolsista_id = ? OR p.alunoVoluntario_id = ?";
+
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, alunoId);
+            stmt.setInt(2, alunoId);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Atividade atividade = new Atividade();
+                atividade.setId(rs.getInt("id"));
+                atividade.setTitulo(rs.getString("titulo"));
+                atividade.setConteudo(rs.getString("conteudo"));
+                atividade.setDataInicial(rs.getDate("dataInicial").toLocalDate());
+                atividade.setDataFinal(rs.getDate("dataFinal").toLocalDate());
+                atividades.add(atividade);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return atividades;
+    }
+
     
     public List<Atividade> getAtividadesPorProfessor(int professorId) {
         String sql = "SELECT a.*, p.titulo AS projetoTitulo " +
@@ -82,25 +101,118 @@ public class AtividadeDAO {
         return atividades;
     }
     
-    
+    public void inserirAtividade(Atividade atividade, int usuarioId) throws SQLException {
+        String sqlProjeto = "SELECT id FROM projeto WHERE professor_id = ?";
+        String sqlInserir = "INSERT INTO atividade (titulo, conteudo, dataInicial, dataFinal, projeto_id) " +
+                            "VALUES (?, ?, ?, ?, ?)";
 
-    public void atualizarAtividade(Atividade atividade) {
-        String sql = "UPDATE atividade SET titulo = ?, conteudo = ?, dataInicial = ?, dataFinal = ?, projeto_id = ? " +
-                     "WHERE id = ?";
-        try (Connection conn = DatabaseUtil.getConexao();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        Connection conn = null;
+        PreparedStatement stmtProjeto = null;
+        PreparedStatement stmtInserir = null;
+        ResultSet rs = null;
 
-        	stmt.setString(1, atividade.getTitulo());
-        	stmt.setString(2, atividade.getConteudo());
-        	stmt.setDate(3, java.sql.Date.valueOf(atividade.getDataInicial()));
-        	stmt.setDate(4, java.sql.Date.valueOf(atividade.getDataFinal()));
-        	stmt.setInt(5, atividade.getProjetoId());
+        try {
+            conn = DatabaseUtil.getConexao();
 
-            stmt.executeUpdate();
+            // Consultar o projeto_id com base no professor_id (usuarioId)
+            stmtProjeto = conn.prepareStatement(sqlProjeto);
+            stmtProjeto.setInt(1, usuarioId);
+            rs = stmtProjeto.executeQuery();
+
+            int projetoId = 0; // Inicializa projetoId
+
+            if (rs.next()) {
+                projetoId = rs.getInt("id");
+            } else {
+                throw new SQLException("Não foi encontrado nenhum projeto associado ao professor.");
+            }
+
+            // Inserir a atividade com o projeto_id obtido
+            stmtInserir = conn.prepareStatement(sqlInserir);
+            stmtInserir.setString(1, atividade.getTitulo());
+            stmtInserir.setString(2, atividade.getConteudo());
+            stmtInserir.setDate(3, java.sql.Date.valueOf(atividade.getDataInicial()));
+            stmtInserir.setDate(4, java.sql.Date.valueOf(atividade.getDataFinal()));
+            stmtInserir.setInt(5, projetoId);
+
+            stmtInserir.executeUpdate();  // Executa a inserção no banco de dados
+
         } catch (SQLException e) {
             e.printStackTrace();
+            throw e;
+        } finally {
+            // Fechar os recursos
+            if (rs != null) {
+                rs.close();
+            }
+            if (stmtProjeto != null) {
+                stmtProjeto.close();
+            }
+            if (stmtInserir != null) {
+                stmtInserir.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
         }
     }
+
+
+
+    public void atualizarAtividade(Atividade atividade, int usuarioId) throws SQLException {
+        String sqlProjeto = "SELECT projeto.id FROM projeto WHERE projeto.professor_id = ?";
+        String sql = "UPDATE atividade SET titulo = ?, conteudo = ?, dataInicial = ?, dataFinal = ?, projeto_id = ? " +
+                     "WHERE id = ?";
+        
+        Connection conn = null;
+        PreparedStatement stmtProjeto = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = DatabaseUtil.getConexao();
+
+            // Obter projeto_id com base no professor_id (usuarioId)
+            stmtProjeto = conn.prepareStatement(sqlProjeto);
+            stmtProjeto.setInt(1, usuarioId);
+            ResultSet rs = stmtProjeto.executeQuery();
+
+            int projetoId = 0; // Inicializa projetoId
+
+            if (rs.next()) {
+                projetoId = rs.getInt("id");
+            } else {
+                throw new SQLException("Não foi encontrado nenhum projeto associado ao professor.");
+            }
+
+            // Atualizar a atividade com o projeto_id obtido
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, atividade.getTitulo());
+            stmt.setString(2, atividade.getConteudo());
+            stmt.setDate(3, java.sql.Date.valueOf(atividade.getDataInicial()));
+            stmt.setDate(4, java.sql.Date.valueOf(atividade.getDataFinal()));
+            stmt.setInt(5, projetoId);
+            stmt.setInt(6, atividade.getId());
+
+            stmt.executeUpdate();  // Executa a atualização no banco de dados
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;
+        } finally {
+            // Fechar os recursos
+            if (stmtProjeto != null) {
+                stmtProjeto.close();
+            }
+            if (stmt != null) {
+                stmt.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+    }
+
+
 
     public void excluirAtividade(int id) {
         String sql = "DELETE FROM atividade WHERE id = ?";

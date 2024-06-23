@@ -4,11 +4,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Listagem de Atividades</title>
+    <title>Entregas de Atividades</title>
 </head>
 <body>
-    <h2>Listagem de Atividades</h2>
-    <button onclick="window.location.href='atividade-form.jsp'">Adicionar Nova Atividade</button>
+    <h2>Entregas de Atividades</h2>
     
     <table border="1">
         <thead>
@@ -18,7 +17,6 @@
                 <th>Conteúdo</th>
                 <th>Data Inicial</th>
                 <th>Data Final</th>
-                <th>Projeto</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -30,16 +28,17 @@
                     <td>${atividade.conteudo}</td>
                     <td>${atividade.dataInicial}</td>
                     <td>${atividade.dataFinal}</td>
-                    <td>${atividade.projetoTitulo}</td>
                     <td>
-                        <a href="AtividadeServlet?action=editar&id=${atividade.id}">Editar</a>
-                        <a href="AtividadeServlet?action=excluir&id=${atividade.id}">Excluir</a>
+                        <form action="EntregaServlet?action=mostrarFormEntrega" method="post" style="display:inline;">
+                            <input type="hidden" name="atividadeId" value="${atividade.id}">
+                            <input type="submit" value="Entregar">
+                        </form>
                     </td>
                 </tr>
             </c:forEach>
         </tbody>
     </table>
     <br>
-    <button onclick="window.location.href='index-professor.jsp'">Voltar a Página Inicial</button>
+    <button onclick="window.location.href='index.jsp'">Voltar a Página Inicial</button>
 </body>
 </html>
