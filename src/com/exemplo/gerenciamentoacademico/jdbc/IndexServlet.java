@@ -40,18 +40,19 @@ public class IndexServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("usuarioId", usuario.getId());
             session.setAttribute("usuarioNome", usuario.getNome());
-            
-            ////lembre-se, settar o atributo com o nome que vai usar nas req do front->>>>>>>
-            session.setAttribute("professorId", usuario.getId());
-          
-            session.setAttribute("alunoId", usuario.getId());
+            // Definindo o ID para o tipo de usuário correto
+            if ("aluno".equals(tipoUsuario)) {
+                session.setAttribute("alunoId", usuario.getId());
+            } else if ("professor".equals(tipoUsuario)) {
+                session.setAttribute("professorId", usuario.getId());
+            }
 
             if ("professor".equals(tipoUsuario)) {
-                response.sendRedirect("index-professor.jsp"); // Redireciona para página do professor
+                response.sendRedirect("index-professor.jsp");
             } else if ("aluno".equals(tipoUsuario)) {
-                response.sendRedirect("index-aluno.jsp"); // Redireciona para página do aluno
+                response.sendRedirect("index-aluno.jsp");
             } else if ("coordenador".equals(tipoUsuario)) {
-                response.sendRedirect("index-coordenador.jsp"); // Redireciona para página do coordenador
+                response.sendRedirect("index-coordenador.jsp");
             }
         } else {
             request.setAttribute("erroLogin", "Senha, login ou tipo de usuário está errado.");
@@ -59,4 +60,3 @@ public class IndexServlet extends HttpServlet {
         }
     }
 }
-
