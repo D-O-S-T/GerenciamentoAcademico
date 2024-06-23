@@ -22,23 +22,24 @@
         </thead>
         <tbody>
             <c:forEach var="atividade" items="${listaAtividades}">
-                <tr>
-                    <td>${atividade.id}</td>
-                    <td>${atividade.titulo}</td>
-                    <td>${atividade.conteudo}</td>
-                    <td>${atividade.dataInicial}</td>
-                    <td>${atividade.dataFinal}</td>
-                    <td>
-                        <form action="EntregaServlet?action=mostrarFormEntrega" method="post" style="display:inline;">
-                            <input type="hidden" name="atividadeId" value="${atividade.id}">
-                            <input type="submit" value="Entregar">
-                        </form>
-                    </td>
-                </tr>
-            </c:forEach>
+    <tr>
+        <td>${atividade.id}</td>
+        <td>${atividade.titulo}</td>
+        <td>${atividade.conteudo}</td>
+        <td>${atividade.dataInicial}</td>
+        <td>${atividade.dataFinal}</td>
+        <td>
+            <form action="EntregaServlet?action=mostrarFormEntrega" method="post" style="display:inline;">
+                <input type="hidden" name="atividadeId" value="${atividade.id}">
+                <input type="submit" value="Entregar">
+            </form>
+        </td>
+    </tr>
+</c:forEach>
+            
         </tbody>
     </table>
     <br>
-    <button onclick="window.location.href='index.jsp'">Voltar a Página Inicial</button>
+    <button onclick="window.location.href='index-aluno.jsp'">Voltar a Página Inicial</button>
 </body>
 </html>

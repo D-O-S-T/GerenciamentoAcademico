@@ -1,27 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Inserir Entrega</title>
+    <title>Formulário de Entrega</title>
 </head>
 <body>
-    <h1>Inserir Entrega</h1>
+    <h2>Formulário de Entrega</h2>
+    
     <form action="EntregaServlet?action=inserir" method="post">
-        <label for="conteudo">Conte�do:</label>
-        <textarea id="conteudo" name="conteudo" required></textarea><br><br>
-
-        <label for="dataEntrega">Data de Entrega:</label>
-        <input type="date" id="dataEntrega" name="dataEntrega" required><br><br>
-
-        <label for="alunoDaEntregaId">ID do Aluno:</label>
-        <input type="number" id="alunoDaEntregaId" name="alunoDaEntregaId" required><br><br>
-
-        <label for="atividadeId">ID da Atividade:</label>
-        <input type="number" id="atividadeId" name="atividadeId" required><br><br>
-
-        <input type="submit" value="Inserir Entrega">
+        <input type="hidden" name="atividadeId" value="${atividadeId}">
+        <!-- outros campos do formulário -->
+        <label for="conteudo">Conteúdo:</label><br>
+        <textarea id="conteudo" name="conteudo" rows="4" cols="50"></textarea><br>
+        
+        <label for="dataEntrega">Data de Entrega:</label><br>
+        <input type="date" id="dataEntrega" name="dataEntrega"><br>
+        
+        <label for="alunoDaEntregaId">ID do Aluno:</label><br>
+        <input type="number" id="alunoDaEntregaId" name="alunoDaEntregaId"><br>
+        
+        <input type="submit" value="Enviar Entrega">
     </form>
+
     <br>
-    <a href="EntregaServlet?action=listar">Voltar</a>
+    <button onclick="window.location.href='index-aluno.jsp'">Voltar a Página Inicial</button>
 </body>
 </html>

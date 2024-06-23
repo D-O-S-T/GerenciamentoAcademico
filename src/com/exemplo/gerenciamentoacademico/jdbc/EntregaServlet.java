@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,10 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.exemplo.gerenciamentoacademico.jdbc.dao.EntregaDAO;
 import com.exemplo.gerenciamentoacademico.jdbc.dao.AtividadeDAO;
-import com.exemplo.gerenciamentoacademico.jdbc.model.Entrega;
+import com.exemplo.gerenciamentoacademico.jdbc.dao.EntregaDAO;
+import com.exemplo.gerenciamentoacademico.jdbc.dao.ProjetoDAO;
 import com.exemplo.gerenciamentoacademico.jdbc.model.Atividade;
+import com.exemplo.gerenciamentoacademico.jdbc.model.Entrega;
 
 @WebServlet("/EntregaServlet")
 public class EntregaServlet extends HttpServlet {
@@ -22,10 +24,12 @@ public class EntregaServlet extends HttpServlet {
 
     private EntregaDAO entregaDAO;
     private AtividadeDAO atividadeDAO;
+    private ProjetoDAO projetoDAO; // Adicione o DAO do Projeto
 
     public void init() {
         entregaDAO = new EntregaDAO();
         atividadeDAO = new AtividadeDAO();
+        projetoDAO = new ProjetoDAO(); // Inicialize o DAO do Projeto
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -44,6 +48,9 @@ public class EntregaServlet extends HttpServlet {
             switch (action) {
                 case "listar":
                     listarEntregas(request, response);
+                    break;
+                case "mostrarFormEntrega":
+                    mostrarFormEntrega(request, response);
                     break;
                 case "mostrarFormInsercao":
                     mostrarFormInsercao(request, response);
@@ -98,6 +105,25 @@ public class EntregaServlet extends HttpServlet {
         request.getRequestDispatcher("listar-entregas.jsp").forward(request, response);
     }
 
+    private void mostrarFormEntrega(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("usuarioId") == null) {
+            response.sendRedirect("index.jsp");
+            return;
+        }
+
+        int usuarioId = (Integer) session.getAttribute("usuarioId");
+        int atividadeId = Integer.parseInt(request.getParameter("atividadeId"));
+
+        // Obter detalhes da atividade (opcional)
+        Atividade atividade = atividadeDAO.getAtividadePorId(atividadeId);
+
+        // Colocar atividadeId no request
+        request.setAttribute("atividadeId", atividadeId);
+        request.getRequestDispatcher("entrega-form.jsp").forward(request, response);
+    }
+
     private void inserirEntrega(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
@@ -113,9 +139,16 @@ public class EntregaServlet extends HttpServlet {
         int alunoDaEntregaId = Integer.parseInt(request.getParameter("alunoDaEntregaId"));
         int atividadeId = Integer.parseInt(request.getParameter("atividadeId"));
 
-        Entrega entrega = new Entrega(conteudo, dataEntrega, usuarioId, alunoDaEntregaId, atividadeId);
-
         try {
+            // Obter projeto_id associado à atividade
+            int projetoId = atividadeDAO.getProjetoIdPorAtividade(atividadeId);
+
+            // Obter professor_id a partir do projeto_id
+            int professorId = projetoDAO.getProfessorIdPorProjeto(projetoId);
+
+            // Criar objeto Entrega
+            Entrega entrega = new Entrega(conteudo, dataEntrega, professorId, alunoDaEntregaId, atividadeId);
+
             entregaDAO.inserirEntrega(entrega);
             response.sendRedirect("EntregaServlet?action=listar");
         } catch (SQLException e) {

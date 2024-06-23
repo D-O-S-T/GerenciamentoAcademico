@@ -54,6 +54,20 @@ public class ProjetoDAO {
         return projetos;
     }
     
+    public int getProfessorIdPorProjeto(int projetoId) throws SQLException {
+        String sql = "SELECT professor_id FROM projeto WHERE id = ?";
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, projetoId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("professor_id");
+                } else {
+                    throw new SQLException("Projeto não encontrado para o projetoId associado à atividade.");
+                }
+            }
+        }
+    }
     
     public Projeto getProjetoPorProfessorId(int professorId) {
         String sql = "SELECT * FROM projeto WHERE professor_id = ?";
