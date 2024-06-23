@@ -26,10 +26,6 @@
     <h1>Relatório de Análises</h1>
     <table>
         <tr>
-            <th>Categoria</th>
-            <th>Total</th>
-        </tr>
-        <tr>
             <td>Total de Usuários</td>
             <td>${relatorio.totalUsuarios}</td>
         </tr>
@@ -60,4 +56,6 @@
     </table>
 </body>
 </html>
+
+
 

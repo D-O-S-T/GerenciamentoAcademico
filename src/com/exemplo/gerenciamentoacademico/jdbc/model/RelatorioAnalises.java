@@ -8,12 +8,21 @@ public class RelatorioAnalises {
     private int totalAtividades;
     private int totalProjetos;
     private int totalEntregas;
+    
 
-    // Construtor padrão
-    public RelatorioAnalises() {
-    }
+    public RelatorioAnalises(int totalUsuarios, int totalProfessores, int totalAlunos, int totalCoordenadores,
+			int totalAtividades, int totalProjetos, int totalEntregas) {
+		super();
+		this.totalUsuarios = totalUsuarios;
+		this.totalProfessores = totalProfessores;
+		this.totalAlunos = totalAlunos;
+		this.totalCoordenadores = totalCoordenadores;
+		this.totalAtividades = totalAtividades;
+		this.totalProjetos = totalProjetos;
+		this.totalEntregas = totalEntregas;
+	}
 
-    // Getters e Setters
+	// Getters e Setters
     public int getTotalUsuarios() {
         return totalUsuarios;
     }
@@ -70,4 +79,5 @@ public class RelatorioAnalises {
         this.totalEntregas = totalEntregas;
     }
 }
+
 
