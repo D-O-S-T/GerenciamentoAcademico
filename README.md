@@ -3,28 +3,47 @@
 ---
 
 **Descrição:**
-Este projeto consiste em um Sistema de Gestão Acadêmica simples desenvolvido em Java. O sistema permite cadastrar alunos, cursos e solicitar bolsas de estudo. É uma aplicação de console que demonstra operações básicas de gerenciamento acadêmico, como cadastro de alunos, cursos e solicitação de bolsas.
+
+Este projeto é um Sistema de Gestão Acadêmica voltado para projetos de Iniciação Científica, utilizando Servlets, JSP e Java para funcionalidades baseadas na web. O sistema facilita tarefas comuns de gerenciamento em ambientes acadêmicos, como registro de alunos, gestão de cursos e solicitações de bolsas.
 
 ---
 
 **Funcionalidades:**
-1. **Cadastro de Alunos:** Permite cadastrar alunos com informações básicas como nome, CPF, endereço e contato.
-2. **Cadastro de Cursos:** Permite cadastrar cursos com informações básicas como nome e carga horária.
-3. **Solicitação de Bolsas:** Permite solicitar bolsas de estudo para alunos cadastrados no sistema.
+1. **Registro de Alunos**: Permite aos coordenadores cadastrar alunos com informações básicas como nome, CPF, endereço e detalhes de contato.
+2. **Gestão de Cursos**: Permite aos coordenadores e professores criar e gerenciar cursos, incluindo detalhes como nome e duração.
+3. **Solicitações de Bolsas**: Os alunos podem solicitar bolsas de estudo por meio do sistema.
 
 ---
 
 **Como Utilizar:**
-1. Clone o repositório do projeto para sua máquina local.
-2. Abra o projeto em sua IDE Java preferida (por exemplo, Eclipse, IntelliJ IDEA).
-3. Execute a classe principal `ClassePrincipal.java` para iniciar o sistema.
-4. Você poderá cadastrar alunos, cursos e solicitar bolsas de estudo.
+1. **Clonar o Repositório:** Clone este repositório para sua máquina local usando Git.
+   ```jsp
+   git clone <url_do_repositorio>
+   ```
+
+2. **Configurar o Ambiente de Desenvolvimento:**
+   - Certifique-se de ter o Java JDK instalado em sua máquina.
+   - Utilize uma IDE como Eclipse ou IntelliJ IDEA para o desenvolvimento.
+   - Configure o Apache Tomcat 9 na sua IDE para o desenvolvimento de Servlets e JSP.
+
+3. **Executar a Aplicação:**
+   - Inicie o servidor Tomcat dentro da IDE.
+   - Acesse a aplicação através do navegador utilizando a URL do servidor Tomcat. Geralmente: `http://localhost:8080/`.
+
+---
+
+**Funcionalidades:**
+- **Gerenciamento de Alunos:** Registrar novos alunos, visualizar e editar detalhes dos alunos.
+- **Gestão de Cursos:** Adicionar novos cursos, gerenciar detalhes dos cursos.
+- **Solicitações de Bolsas:** Os alunos podem solicitar bolsas de estudo através da interface web.
+- **Interface Interativa:** Utiliza JSP para criar páginas web dinâmicas, Servlets para lidar com requisições e respostas.
 
 ---
 
 **Requisitos do Projeto:**
 - Java JDK instalado na máquina.
-- IDE Java (Eclipse, IntelliJ IDEA, NetBeans, etc.) para execução do código.
+- Apache Tomcat 9.
+- IDE com suporte a Servlet/JSP (Eclipse, IntelliJ IDEA, etc.).
 
 ---
 
@@ -34,6 +53,6 @@ Este projeto foi desenvolvido como parte de um estudo sobre Java e gerenciamento
 ---
 
 **Licença:**
-Este projeto é de código aberto e está disponível sob a Licença MIT. Consulte o arquivo LICENSE para obter mais detalhes.
+Este projeto é de código aberto e está disponível sob a Licença MIT. Consulte o arquivo [LICENSE](https://github.com/D-O-S-T/GerenciamentoAcademico/blob/fase3/LICENSE.txt) para mais detalhes.
 
 ---
