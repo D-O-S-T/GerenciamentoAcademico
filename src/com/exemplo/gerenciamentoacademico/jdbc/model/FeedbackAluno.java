@@ -2,34 +2,35 @@ package com.exemplo.gerenciamentoacademico.jdbc.model;
 
 public class FeedbackAluno {
 
-
-
-	
-
-
 	private int id;
 	private String titulo;
 	private String feedback;
 	private int alunoId;
 	private int professorId;
-	
+
 	private String alunoNome;
 	private String professorNome;
 
 	// Construtores
 	public FeedbackAluno() {
 	}
-	
-	
 
-	
+	public FeedbackAluno(int id, String titulo, String feedback, int alunoId, int professorId) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.feedback = feedback;
+		this.alunoId = alunoId;
+		this.professorId = professorId;
+	}
+
 	public FeedbackAluno(String titulo, String feedback, int alunoId) {
 		super();
 		this.titulo = titulo;
 		this.feedback = feedback;
 		this.alunoId = alunoId;
 	}
-	
+
 	public FeedbackAluno(String titulo, String feedback, int alunoId, int professorId) {
 		super();
 		this.titulo = titulo;
@@ -37,8 +38,7 @@ public class FeedbackAluno {
 		this.alunoId = alunoId;
 		this.professorId = professorId;
 	}
-	
-	
+
 	public FeedbackAluno(String titulo, String feedback, int alunoId, int professorId, String alunoNome,
 			String professorNome) {
 		super();
@@ -50,7 +50,6 @@ public class FeedbackAluno {
 		this.professorNome = professorNome;
 	}
 
-	
 	public FeedbackAluno(int id, String titulo, String feedback, int alunoId, int professorId, String alunoNome,
 			String professorNome) {
 		super();
@@ -62,9 +61,6 @@ public class FeedbackAluno {
 		this.alunoNome = alunoNome;
 		this.professorNome = professorNome;
 	}
-
-	
-	
 
 	// Getters e Setters
 	public int getId() {
@@ -107,33 +103,27 @@ public class FeedbackAluno {
 		this.professorId = professorId;
 	}
 
-
-
 	public String getAlunoNome() {
 		return alunoNome;
 	}
-
 
 	public void setAlunoNome(String alunoNome) {
 		this.alunoNome = alunoNome;
 	}
 
-
 	public String getProfessorNome() {
 		return professorNome;
 	}
 
-
 	public void setProfessorNome(String professorNome) {
 		this.professorNome = professorNome;
 	}
-	
-	
+
 	// toString() para representação textual do objeto
-		@Override
-		public String toString() {
-			return "FeedbackAluno{" + "id=" + id + ", titulo='" + titulo + '\'' + ", feedback='" + feedback + '\''
-					+ ", alunoId=" + alunoId + ", professorId=" + professorId + '}';
-		}
+	@Override
+	public String toString() {
+		return "FeedbackAluno{" + "id=" + id + ", titulo='" + titulo + '\'' + ", feedback='" + feedback + '\''
+				+ ", alunoId=" + alunoId + ", professorId=" + professorId + '}';
+	}
 
 }

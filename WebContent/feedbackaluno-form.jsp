@@ -1,57 +1,38 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.util.List" %>
-<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.Aluno" %>
-<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.Professor" %>
-<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.AlunoDAO" %>
-<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.ProfessorDAO" %>
-
-
-<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.model.Professor" %>
-<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.ProfessorDAO" %>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Formulário de Feedback de Aluno</title>
+    <title>Formulário de Feedback do Aluno</title>
 </head>
 <body>
-    <h2>Novo Feedback de Aluno</h2>
+    <h1>Formulário de Feedback do Aluno</h1>
+    
+    <!-- Verificar se existe uma mensagem de erro e exibi-la -->
+    <c:if test="${not empty erro}">
+        <p style="color:red;">${erro}</p>
+    </c:if>
     
     <form action="FeedbackAlunoServlet?action=inserir" method="post">
-        <%-- Título --%>
-        <label for="titulo">Título:</label><br>
-        <input type="text" id="titulo" name="titulo" required><br><br>
-
-        <%-- Feedback --%>
-        <label for="feedback">Feedback:</label><br>
-        <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+        <!-- Título do Feedback -->
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo"><br><br>
         
-        <%-- Professor (combobox) --%>
-        <label for="professorId">Professor:</label><br>
-        <select id="professorId" name="professorId" required>
-            <option value="">Selecione um Professor</option>
-            <%
-                ProfessorDAO professorDAO = new ProfessorDAO();
-                List<Professor> listaProfessores = professorDAO.getTodosProfessores();
-                for (Professor professor : listaProfessores) {
-            %>
-                <option value="<%= professor.getId() %>"><%= professor.getNome() %></option>
-            <%
-                }
-            %>
-        </select><br><br>
-
-        <%-- ID do Aluno (hidden) --%>
-        <input type="hidden" id="alunoId" name="alunoId" value="<%= request.getSession().getAttribute("alunoId") %>">
-
-        <%-- Botão para enviar o formulário --%>
-        <input type="submit" value="Enviar Feedback">
+        <!-- Feedback -->
+        <label for="feedback">Feedback:</label><br>
+        <textarea id="feedback" name="feedback" rows="5" cols="40"></textarea><br><br>
+        
+        <!-- Professor ID (pode ser um select ou um campo de texto, dependendo do seu caso) -->
+        <label for="professorId">ID do Professor:</label>
+        <input type="text" id="professorId" name="professorId"><br><br>
+        
+        <!-- Campo Escondido para Aluno ID -->
+        <input type="hidden" id="alunoId" name="alunoId" value="${sessionScope.alunoId}">
+        
+        <!-- Botão Enviar -->
+        <input type="submit" value="Enviar">
     </form>
-    
-    <br>
-    <a href="listar-feedbackaluno.jsp">Voltar para a Listagem de Feedbacks</a>
 </body>
 </html>
-
 

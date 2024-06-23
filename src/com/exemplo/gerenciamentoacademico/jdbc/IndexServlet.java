@@ -43,6 +43,8 @@ public class IndexServlet extends HttpServlet {
             
             ////lembre-se, settar o atributo com o nome que vai usar nas req do front->>>>>>>
             session.setAttribute("professorId", usuario.getId());
+          
+            session.setAttribute("alunoId", usuario.getId());
 
             if ("professor".equals(tipoUsuario)) {
                 response.sendRedirect("index-professor.jsp"); // Redireciona para página do professor
