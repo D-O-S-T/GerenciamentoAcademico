@@ -112,3 +112,18 @@ main {
         padding: 30px 50px;
     }
 }
+
+
+/* Estilização do titulo Sibe Bar*/
+.tituloSideBar{
+	font-weight: bold;
+	text-align: center;
+	padding: 20px;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
