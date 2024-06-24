@@ -5,12 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Página Inicial</title>
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-	<img src="/imagens/undf.png" alt="foto" />
-    <h1>Bem-vindo!</h1>
+	<img src="imagens/undf.png" alt="foto" />
+    <h1>Bem-vindo(a)!</h1>
     <p>Por favor, selecione o tipo de usuário:</p>
 
     <!-- Verificar se existe uma mensagem de erro e exibi-la -->

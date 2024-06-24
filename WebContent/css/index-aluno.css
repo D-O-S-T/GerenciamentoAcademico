@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+body {
+    display: flex; 
+    flex-direction: column; 
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px; /* Padding igual à altura da navbar flutuante */
+}
+
+.navbarScroll {
+    background-color: #140f44; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra no navbar */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 80px; /* Altura do navbar */
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.logoUnDF {
+    max-height: 60px; 
+}
+
+.heroTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center; 
+    margin-top: 15px; 
+    margin-bottom: 15px; 
+}
+
+.butoins {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: calc(100vh - 160px); /* Altura das seções dos botões */
+}
+
+/* ------------------------------- BOTÕES ------------------------------- */
+/* Opção 1 */
+.button-container {
+    text-align: center;
+    position: relative;
+    
+}
+/* Opção 2 - Descomenta se gostar
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+*/
+
+.button-container button {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background-image: url('../imagens/atividades.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1; 
+	margin: 10px; 
+	width: 200px; 
+    height: 200px; 
+}
+
+.button-container button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4));
+    z-index: 2; /* Overlay em cima do plano de fundo */
+    opacity: 1; /* Efeito de overlay inicialmente visível */
+    transition: opacity 0.3s ease; /* Easing */
+}
+
+.button-container button:hover::before {
+    opacity: 0; /* Esconde o overlay no hover */
+}
+
+/* Texto do botão */
+.button-container button span {
+    z-index: 3; /* Texto do botão em cima do overlay */
+    position: relative;
+    color: white;
+    padding: 5px 10px; 
+	/* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+/* Sombra pro texto apenas no estado de hover */
+.button-container button:hover span {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ------------------------------- ESTILOS ESPECÍFICOS DOS BOTÕES ------------------------------- */
+.button-container .button-1 {
+    padding: 300px 130px;
+}
+
+.button-container .button-2 {
+    padding: 300px 130px;
+}
+
+.button-container .button-3 {
+    padding: 300px 130px;
+}
+
+/* ------------------------------- FOOTER ------------------------------- */
+footer {
+    padding: 50px 0;
+    background-color: #140f44;
+    margin-top: auto; /* Força o footer pro final */
+}
+
+footer h1 {
+    font-family: "Titillium Web", sans-serif;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+footer p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    color: white;
+    margin: 0;
+    line-height: 1.4em;
+}
+
+.sigla {
+    font-family: "Titillium Web", sans-serif;
+    font-size: 18px;
+    font-weight: bolder;
+    color: #777;
+}
+
+footer .logo-do-gdf {
+    text-align: right;
+}
+
+.col-xs-12 {
+    width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+    .button-container {
+        flex-direction: column; /* Empilhar os botões verticalmente */
+        margin: 20px 0;
+    }
+
+    .button-container button {
+        width: 80%; 
+        padding: 30px 50px;
+    }
+    
+    .button-container button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4));
+        z-index: 2;
+        opacity: 1; 
+        transition: opacity 0.3s ease;
+    }
+}

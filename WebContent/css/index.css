@@ -1,69 +1,74 @@
 body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-     }
+	justify-content: center; 
+	align-items: center; 
+	text-align: center;
+}
 
-    .login{
-            text-align: center;
-            margin-top: 100px; 
-    }
+.login {
+	text-align: center;
+	margin-top: 100px;
+}
 
-    img {
-            max-width: 100%;
-            height: 400px;
-            margin-top: 20px;
-            margin-bottom: -100px;
-    }
+img {
+	max-width: 100%;
+	height: auto;
+	margin-top: 20px;
+	display: block;
+}
 
-    p {
-            font-size: 18px;
-            margin-top: 20px;
-    }
+h1 {
+	margin-top: 20px;
+}
 
-    form {
-            background-color: #fff;
-            width: 400px;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+p {
+	font-size: 18px;
+	margin-top: 20px;
+}
 
-    label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-    }
+form {
+	background-color: #fff;
+	width: 400px;
+	margin: 20px auto;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	text-align: left;
+	/* Para que os labels e inputs fiquem alinhados à esquerda */
+}
 
-        input[type="text"],
-        input[type="password"],
-        select {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-        }
+label {
+	display: block;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
 
-        input[type="submit"] {
-            background-color: #123ce3;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+input[type="text"], input[type="password"], select {
+	width: calc(100% - 22px);
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+}
 
-        input[type="submit"]:hover {
-            background-color: rgb(18, 60, 227);
-        }
+input[type="submit"] {
+	background-color: #123ce3;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+	width: 80%;
+	display: block;
+	margin: 0 auto;
+}
 
-        .error-message {
-            color: red;
-            margin-top: 10px;
-        }
+input[type="submit"]:hover {
+	background-color: rgb(18, 60, 227);
+}
+
+.error-message {
+	color: red;
+	margin-top: 10px;
+}
