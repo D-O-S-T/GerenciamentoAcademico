@@ -24,7 +24,7 @@ label, textarea {
     color: #666666;
 }
 
-input[type="text"], input[type="date"], input[type="number"], select, textarea {
+input[type="text"], input[type="date"], input[type="number"],input[type="email"], select, textarea {
     width: calc(100% - 22px);
     padding: 10px;
     margin-bottom: 15px;
