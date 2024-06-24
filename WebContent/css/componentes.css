@@ -99,13 +99,6 @@ footer .logo-gdf {
 }
 
 /*Teste css sidebar*/
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
 .sidebar {
     width: 250px;
     height: 100vh;
@@ -154,9 +147,7 @@ button#toggleButton {
     left: 10px;
 }
 
-button#toggleButton:hover {
-    background-color: #2980b9;
-}
+
 
 /* Estilização do titulo Sibe Bar*/
 .tituloSideBar{
