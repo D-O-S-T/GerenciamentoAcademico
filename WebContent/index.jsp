@@ -5,8 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Página Inicial</title>
+    <link rel="stylesheet" href="css/index.css" />
 </head>
+
 <body>
+	<img src="/imagens/undf.png" alt="foto" />
     <h1>Bem-vindo!</h1>
     <p>Por favor, selecione o tipo de usuário:</p>
 
