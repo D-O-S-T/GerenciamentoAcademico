@@ -99,7 +99,6 @@ footer .logo-gdf {
     background-color: #fff;
 }
 
-=======
 /*Teste css sidebar*/
 body {
     font-family: Arial, sans-serif;
@@ -121,10 +120,11 @@ body {
 .sidebar-list {
     list-style: none;
     padding: 0;
+    margin-top: 100px;
 }
 
 .sidebar-list li {
-    padding: 15px 20px;
+    padding: 30px 20px;
     cursor: pointer;
 }
 
@@ -158,4 +158,3 @@ button#toggleButton {
 button#toggleButton:hover {
     background-color: #2980b9;
 }
->>>>>>> Stashed changes
