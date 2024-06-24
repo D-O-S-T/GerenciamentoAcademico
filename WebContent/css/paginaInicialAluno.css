@@ -169,4 +169,64 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)); /* Gradiente com mais tonalidade de preto ao passar o mouse */
 }
 
+/*Estilização footer*/
+@media screen and (max-width: 767px){
+.rodape{
+	padding-top: 25px;
+}
+}
 
+.rodape{
+	padding: 50px;
+	background-color: #140f44;
+}
+
+/* Estilização para o h1 do footer */
+.rodape h1 {
+	font-family: "Titillium Web", sans-serif;
+    font-size: 24px; /* Tamanho do texto */
+    color: #fff; /* Cor do texto */
+    margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+
+.row{
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+.rodape p {
+	font-family: "Open Sans", sans-serif;
+	font-size: 14px;
+	color: white;
+	margin: 0;
+	line-height: 1.4em;
+}
+
+.sigla{
+	font-family: "Titillium Web", sans-serif;
+	font-size: 18px;
+	font-weight: bolder;
+	color: #333;
+}
+
+@media screen and (max-width: 767px){
+.rodape .logo-do-gdf{
+	text-align: left;
+	margin-top: 20px;
+}
+}
+
+@media (min-width: 992px){
+.col-md-8{
+	width: 66.66666667%;
+}
+}
+
+.rodape .logo-do-gdf{
+	text-align: right;
+}
+
+.col-xs-12{
+	width: 100%;
+}

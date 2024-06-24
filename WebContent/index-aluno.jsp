@@ -31,38 +31,18 @@
     
     <!-- footer -->
     <div class="rodape">
-    	<div class="container">
-    		<div class="row">
-    		<div class="col-md-8 col-sm-12 col-xs-12">
-    		<h1>Universidade do Distrito Federal - Governo no Distrito Federal</h1>
-    		<p class="sigla">Professor Jorge Amaury Maia Nunes - UnDF</p>
-    		</div>
-    		
-    		</div>
-    		<div>
-    		<p> Residência Oficial da Granja do Torto - Parque Tecnológico de Brasília - BIOTIC, Lote 4, DF / UnDF - 2° ANDAR CEP: 70635-815</p>
-    		</div>
-    	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <h1>Universidade do Distrito Federal Professor Jorge Amaury Maia Nunes - UnDF </h1>
+                <p class="sigla">Governo no Distrito Federal</p>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 logo-do-gdf">
+                <p>Residência Oficial da Granja do Torto - Parque Tecnológico de Brasília - BIOTIC, Lote 4, DF / UnDF - 2° ANDAR CEP: 70635-815</p>
+            </div>
+        </div>
     </div>
+</div>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
