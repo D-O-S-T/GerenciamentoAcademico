@@ -80,12 +80,12 @@ footer .logo-gdf {
 /* Estilos para a tabela */
 .tabela {
     width: 50%;
-    border-collapse: separate; /* Utiliza separação entre as bordas das células */
-    
+    border-collapse: separate; /* Utiliza separação entre as bordas das células */  
 }
+
 .tabela th, .tabela td {
     padding: 10px; /* Espaçamento interno das células */
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid #ddd;
     font-weight: 200px;
     font-size: 20px;
@@ -158,6 +158,7 @@ button#toggleButton {
 
 a {
 	color: #fff;
+	text-decoration: none;
 }
 
 

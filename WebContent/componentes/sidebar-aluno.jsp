@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="css/componentes.css">
 <div class="sidebar" id="sidebar">
       <ul class="sidebar-list">
           <p class="tituloSideBar">Ambiente de Pesquisa Estudantil</p>
           <li onclick="window.location.href='AtividadeServlet?action=listarPorAluno'"><span>Entregar Atividade</span></li>
           <li>Feedback</li>
           <li>Avaliar Feedback</li>
-          <li><a href="https://willowitzy.com/">Suporte</a></li>
+          <li><a href="https://willowitzy.com/" target="_blank">Suporte</a></li>
           <li>Sair</li>
       </ul>
   </div>

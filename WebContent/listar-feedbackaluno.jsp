@@ -13,7 +13,7 @@
     <title>Feedbacks do Aluno</title>
 </head>
 <body>
-<div style="display:flex; justify-content">
+<div style="display:flex; justify-content; align-itens: center;">
 	<%@ include file="componentes/sidebar.jsp" %>
     <h2>Feedbacks do Aluno</h2>
     <c:choose>
