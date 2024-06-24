@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <div class="sidebar" id="sidebar">
       <ul class="sidebar-list">
           <li>Relatórios e Análises</li>

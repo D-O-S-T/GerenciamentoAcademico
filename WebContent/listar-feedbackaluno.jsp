@@ -13,8 +13,9 @@
     <title>Feedbacks do Aluno</title>
 </head>
 <body>
+<div style="display:flex; justify-content">
+	<%@ include file="componentes/sidebar.jsp" %>
     <h2>Feedbacks do Aluno</h2>
-
     <c:choose>
         <c:when test="${not empty listaFeedbacksAluno}">
             <table border="1">
@@ -51,7 +52,7 @@
     <br>
     <button onclick="window.location.href='feedbackaluno-form.jsp'">Adicionar Novo Feedback</button>
     <button onclick="window.location.href='index-aluno.jsp'">Voltar</button>
-    
+     </div>
      <%@ include file="componentes/footer.jsp" %>
 </body>
 </html>

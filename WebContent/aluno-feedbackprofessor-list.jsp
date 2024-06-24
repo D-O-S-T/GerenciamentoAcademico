@@ -13,35 +13,33 @@
     <title>Listagem de Feedbacks de Professores</title>
 </head>
 <body>
-    <h2>Listagem de Feedbacks de Professores</h2>
-   
-    
-    <table class="tabela" border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Título</th>
-                <th>Feedback</th>
-                <th>ID do Professor</th>
-             
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="feedback" items="${listaFeedbacksProfessor}">
-                <tr>
-                    <td>${feedback.id}</td>
-                    <td>${feedback.titulo}</td>
-                    <td>${feedback.feedback}</td>
-                    <td>${feedback.professorId}</td>
-                    
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
-    
-    <br>
-    <button onclick="window.location.href='index-professor.jsp'">Voltar a Página Inicial</button>
-    
-     <%@ include file="componentes/footer.jsp" %>
-</body>
+<div class="wrapper">
+        <%@ include file="componentes/sidebar.jsp" %>
+        <div class="main-content">
+            <h2>Listagem de Feedbacks de Professores</h2>
+            <table class="tabela" border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Feedback</th>
+                        <th>ID do Professor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach var="feedback" items="${listaFeedbacksProfessor}">
+                        <tr>
+                            <td>${feedback.id}</td>
+                            <td>${feedback.titulo}</td>
+                            <td>${feedback.feedback}</td>
+                            <td>${feedback.professorId}</td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+            <br>
+            <button onclick="window.location.href='index-professor.jsp'">Voltar à Página Inicial</button>
+        </div>
+    </div>
+    <%@ include file="componentes/footer.jsp" %>
 </html>

@@ -69,7 +69,6 @@ footer .logo-gdf {
     width: 100%;
 }
 
-<<<<<<< Updated upstream
 .side-bar{
 	display: flex;
 }
@@ -157,4 +156,10 @@ button#toggleButton {
 
 button#toggleButton:hover {
     background-color: #2980b9;
+<<<<<<< Updated upstream
 }
+=======
+}
+
+
+>>>>>>> Stashed changes
