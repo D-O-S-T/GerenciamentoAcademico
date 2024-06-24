@@ -2,12 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Listagem de Coordenadores</title>
+    <link rel="stylesheet" href="css/componentes.css">
 </head>
 <body>
+	<div style="display:flex; justify-content">
+	<%@ include file="componentes/sidebar.jsp" %>
     <h2>Listagem de Coordenadores</h2>
     <button onclick="window.location.href='coordenador-form.jsp'">Adicionar Novo Coordenador</button>
     
@@ -39,5 +42,6 @@
     
     <br>
     <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
+    </div>
 </body>
 </html>

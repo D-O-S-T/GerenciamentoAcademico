@@ -69,6 +69,7 @@ footer .logo-gdf {
     width: 100%;
 }
 
+<<<<<<< Updated upstream
 .side-bar{
 	display: flex;
 }
@@ -98,3 +99,63 @@ footer .logo-gdf {
     background-color: #fff;
 }
 
+=======
+/*Teste css sidebar*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #2c3e50;
+    color: white;
+    position: fixed;
+    left: -250px;
+    transition: left 0.3s;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-list li {
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.sidebar-list li:hover {
+    background-color: #34495e;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+    flex-grow: 1;
+}
+
+.main-content.collapsed {
+    margin-left: 0;
+}
+
+button#toggleButton {
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+button#toggleButton:hover {
+    background-color: #2980b9;
+}
+>>>>>>> Stashed changes
