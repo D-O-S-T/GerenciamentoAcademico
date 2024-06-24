@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/base.css">
+	
     <meta charset="UTF-8">
     <title>Entregas de Atividades</title>
 </head>
@@ -42,5 +45,8 @@
     <br>
     <button onclick="window.location.href='index-aluno.jsp'">Voltar a Página Inicial</button>
     <button onclick="window.location.href='EntregaServlet?action=listar'">Vizualizar suas Entregas</button>
+    
+    
+    <%@ include file="componentes/footer.jsp" %>
 </body>
 </html>

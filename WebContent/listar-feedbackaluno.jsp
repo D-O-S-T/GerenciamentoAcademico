@@ -4,6 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/base.css">
     <meta charset="UTF-8">
     <title>Feedbacks do Aluno</title>
 </head>
