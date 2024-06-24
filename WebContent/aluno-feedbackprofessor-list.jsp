@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.ProfessorDAO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,7 @@
     <title>Listagem de Feedbacks de Professores</title>
 </head>
 <body>
-    <h2>Listagem de Feedbacks de Professores</h2>
+    <h2>Feedbacks recebidos de Professores</h2>
    
     
     <table border="1">
@@ -16,7 +17,7 @@
                 <th>ID</th>
                 <th>Título</th>
                 <th>Feedback</th>
-                <th>ID do Professor</th>
+                <th>Professor</th>
              
             </tr>
         </thead>
@@ -26,7 +27,7 @@
                     <td>${feedback.id}</td>
                     <td>${feedback.titulo}</td>
                     <td>${feedback.feedback}</td>
-                    <td>${feedback.professorId}</td>
+                    <td>${feedback.professorNome}</td>
                     
                 </tr>
             </c:forEach>

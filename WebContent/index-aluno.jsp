@@ -36,7 +36,7 @@
     <div class="button-container">
         <button onclick="window.location.href='AtividadeServlet?action=listarPorAluno'">Entregar Atividade</button>
            <button onclick="window.location.href='FeedbackAlunoServlet?action=listar'">Inserir Feedback</button>
-        <button onclick="window.location.href='aluno-feedbackprofessor-list.jsp'">Ler Feedback</button>
+        <button onclick="window.location.href='ListarFeedbackAlunoServlet?action=listar'">Ler Feedback</button>
     </div>
 </body>
 </html>
