@@ -16,7 +16,7 @@
     <h2>Listagem de Feedbacks de Professores</h2>
    
     
-    <table border="1">
+    <table class="tabela" border="1">
         <thead>
             <tr>
                 <th>ID</th>
