@@ -68,3 +68,11 @@ footer .logo-gdf {
 .col-xs-12 {
     width: 100%;
 }
+
+.side-bar{
+	display: flex;
+}
+
+.side-bar-padrao{
+	flex-direction: row;
+}
