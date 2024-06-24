@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.exemplo.gerenciamentoacademico.jdbc.dao.FeedbackProfessorDAO;
+import com.exemplo.gerenciamentoacademico.jdbc.model.Aluno;
 import com.exemplo.gerenciamentoacademico.jdbc.model.FeedbackProfessor;
 
 @WebServlet("/ListarFeedbackAlunoServlet")
@@ -76,4 +77,7 @@ public class ListarFeedbackAlunoServlet extends HttpServlet {
         request.setAttribute("listaFeedbacksProfessor", listaFeedbacksProfessor);
         request.getRequestDispatcher("aluno-feedbackprofessor-list.jsp").forward(request, response);
     }
+    
+    
+   
 }

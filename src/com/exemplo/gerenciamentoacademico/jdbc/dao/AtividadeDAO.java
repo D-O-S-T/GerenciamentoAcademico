@@ -282,4 +282,29 @@ public class AtividadeDAO {
         }
         return atividade;
     }
+    
+    public List<Atividade> getAtividadesPorProjetoId(int projetoId) {
+        String sql = "SELECT * FROM atividade WHERE projeto_id = ?";
+        List<Atividade> atividades = new ArrayList<>();
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, projetoId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Atividade atividade = new Atividade(
+                            rs.getInt("id"),
+                            rs.getString("titulo"),
+                            rs.getString("conteudo"),
+                            rs.getDate("dataInicial").toLocalDate(),
+                            rs.getDate("dataFinal").toLocalDate(),
+                            rs.getInt("projeto_id")
+                    );
+                    atividades.add(atividade);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return atividades;
+    }
 }

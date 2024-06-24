@@ -46,6 +46,8 @@
                 }
             %>
         </select><br><br>
+         <%-- Aluno (combobox) --%>
+        
         
         <!-- Campo Escondido para Professor ID -->
         <input type="hidden" id="professorId" name="professorId" value="${sessionScope.usuarioId}">

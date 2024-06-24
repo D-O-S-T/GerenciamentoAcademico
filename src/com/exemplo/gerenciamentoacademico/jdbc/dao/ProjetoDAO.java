@@ -213,5 +213,30 @@ public class ProjetoDAO {
         }
         return projetos;
     }
+    
+    
+    public List<Integer> getAlunosIdsPorProfessorId(int professorId) {
+        String sql = "SELECT alunoBolsista_id, alunoVoluntario_id " +
+                     "FROM projeto " +
+                     "WHERE professor_id = ?";
+        List<Integer> alunoIds = new ArrayList<>();
+        
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, professorId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    int bolsistaId = rs.getInt("alunoBolsista_id");
+                    int voluntarioId = rs.getInt("alunoVoluntario_id");
+                    alunoIds.add(bolsistaId);
+                    alunoIds.add(voluntarioId);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return alunoIds;
+    }
 }
 
