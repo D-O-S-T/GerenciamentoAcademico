@@ -1,19 +1,16 @@
 body {
-	justify-content: center; 
-	align-items: center; 
-	text-align: center;
-}
-
-.login {
-	text-align: center;
-	margin-top: 100px;
+	display: grid;
+	height: 100vh; /* Garante a altura total da viewport */
+    place-items: center;
+    margin: 0; /* Remove margem padrão do body */
 }
 
 .logo {
 	max-width: 100%;
 	height: auto;
-	margin-top: 20px;
+	margin: auto;
 	display: block;
+	width: 0 auto;
 }
 
 h1 {
@@ -22,20 +19,132 @@ h1 {
 
 p {
 	font-size: 18px;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
-form {
+.wrapper {
+	max-width: 400px;
 	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 30px;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.wrapper .form-container {
+	width: 100%;	
+	overflow: hidden;
+}
+
+.form-container .slide-controls {
+	position: relative;
+	display: flex;
+	height: 50px;
+	width: 100%;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 30px 0 10px 0;
+	justify-content: space-between;
+	border: 1px solid lightgrey;
+}
+
+.slide-controls .slide {
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	color: white;
+	font-size: 16px;
+	font-weight: 500;
+	text-align: center;
+	line-height: 48px;
+	cursor: pointer;
+	transition: all 0.6s ease;
+}
+
+.slide-controls .senha {
+	color: black;
+}
+
+.slide-controls .slide-tab {
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	left: 0;
+	z-index: 0;
+	border-radius: 5px;
+	transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	background: #123ce3;
+}
+
+input[type="radio"] {
+	display: none;
+		
+}
+
+#senha:checked ~ .slide-tab {
+	left: 50%;
+}
+
+#senha:checked ~ .senha {
+	color: white;
+}
+
+#senha:checked ~ .login {
+	color: black;
+}
+
+.form-container .form-inner {
+	display: flex;
+	width: 200%;
+}
+
+.form-container .form-inner form {
+	width: 50%;	
 	width: 400px;
 	margin: 20px auto;
-	padding: 20px;
-	border-radius: 8px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	text-align: left;
 	/* Para que os labels e inputs fiquem alinhados à esquerda */
 }
 
+.form-inner form .field {
+	height: 50px;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.form-inner form .field input {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	padding-left: 15px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid lightgrey;
+	border-bottom-width: 2px;
+	transition: all 0.4s ease;
+}
+
+.form-inner form .field input:focus {
+	border-color: rgb(18, 60, 227);
+}
+
+.form-inner form .senha-link {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+.form-inner form .senha-link a,
+.form-inner form .cadastro-link a {
+	/* color: */
+	text-decoration: none;
+}
+
+.form-inner form .senha-link a:hover,
+.form-inner form .cadastro-link a:hover {
+	text-decoration: underline;
+}
+	
 label {
 	display: block;
 	margin-bottom: 10px;
@@ -55,6 +164,7 @@ input[type="submit"] {
 	background-color: #123ce3;
 	color: white;
 	padding: 12px 20px;
+	font-weight: 500;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
