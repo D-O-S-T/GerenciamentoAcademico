@@ -1,12 +1,5 @@
 @charset "UTF-8";
 
-body {
-	margin: 0;
-    padding: 0;
-    display: flex;/* Garante a altura total da viewport */
-    place-items: center;
-   }
-
 h1 {
 	margin-top: 20px;
 }
@@ -25,31 +18,37 @@ input[type="submit"] {
 	margin: 0 auto;
 }
 
-label {
+label, textarea {
     display: block;
     margin-bottom: 5px;
     color: #666666;
 }
 
-input[type="text"], input[type="date"], select {
-	width: calc(100% - 22px);
-	padding: 10px;
-	margin-bottom: 15px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	font-size: 14px;
+input[type="text"], input[type="date"], input[type="number"], select, textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
 .wrapper {
-	max-width: 400px;
-	background-color: #fff;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	padding: 30px;
-	border-radius: 8px;
-	overflow: hidden;
+	background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
 }
 
 .wrapper .form-container {
-	width: 100%;	
-	overflow: hidden;
+	width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+	
 }
