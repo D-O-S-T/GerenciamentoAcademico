@@ -9,7 +9,7 @@ body {
 	margin-top: 100px;
 }
 
-img {
+.logo {
 	max-width: 100%;
 	height: auto;
 	margin-top: 20px;
@@ -69,6 +69,6 @@ input[type="submit"]:hover {
 }
 
 .error-message {
+	font-size: 14px;
 	color: red;
-	margin-top: 10px;
 }

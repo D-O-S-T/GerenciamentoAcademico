@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!-- Seu arquivo HTML -->
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
 	<link rel="stylesheet" href="css/reset.css">
@@ -12,36 +12,35 @@
     <title>Perfil Aluno</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top navbarScroll">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
         <div class="container">
             <div class="logo-container">
-                <img src="imagens/undf.png" alt="Logo UnDF" class="logoUnDF" width="95px" height="50px">
+                <img src="imagens/undf.png" alt="Logo UnDF" class="logo-undf" width="95px" height="50px">
             </div>
-            <p class="heroTitle">Bem-vindo(a), ${sessionScope.usuarioNome}!</p>
+            <p class="welcome-message">Bem-vindo(a), ${sessionScope.usuarioNome}!</p>
         </div>
     </nav>
 	    
 	<main>
-	    <section class="butoins">
+	    <section class="buttons">
 	        <div class="container-fluid">
-	            <div class="button-container">
-	                <button class="button-1" onclick="window.location.href='AtividadeServlet?action=listarPorAluno'"><span>Entregar Atividade</span></button>
-	                <button class="button-2" onclick="window.location.href='FeedbackAlunoServlet?action=listar'"><span>Feedback</span></button>
-	                <button class="button-3" onclick="window.location.href='aluno-feedbackprofessor-list.jsp'"><span>Avaliar Feedback</span></button>
+	            <div class="button-group">
+	                <button class="button button-1" onclick="window.location.href='AtividadeServlet?action=listarPorAluno'"><span>Entregar Atividade</span></button>
+	                <button class="button button-2" onclick="window.location.href='FeedbackAlunoServlet?action=listar'"><span>Feedback</span></button>
+	                <button class="button button-3" onclick="window.location.href='aluno-feedbackprofessor-list.jsp'"><span>Avaliar Feedback</span></button>
 	            </div>
 	        </div>
 	    </section>
     </main>
     
-    <!-- footer -->
 	<footer>
 	    <div class="container">
 	        <div class="row">
 	            <div class="col-md-8 col-sm-12 col-xs-12">
-	                <h1>Universidade do Distrito Federal Professor Jorge Amaury Maia Nunes - UnDF</h1>
+	                <h1 class="footer-title">Universidade do Distrito Federal Professor Jorge Amaury Maia Nunes - UnDF</h1>
 	                <p class="sigla">Governo do Distrito Federal</p>
 	            </div>
-	            <div class="col-md-4 col-sm-12 col-xs-12 logo-do-gdf">
+	            <div class="col-md-4 col-sm-12 col-xs-12 logo-gdf">
 	                <p>Residência Oficial da Granja do Torto - Parque Tecnológico de Brasília - BIOTIC, Lote 4, DF / UnDF - 2° ANDAR CEP: 70635-815</p>
 	            </div>
 	        </div>

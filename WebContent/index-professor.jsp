@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Página do Professor</title>
+    <title>Pï¿½gina do Professor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,12 +31,12 @@
     </style>
 </head>
 <body>
-    <h1>Bem-vindo, ${sessionScope.usuarioNome}!</h1>
+    <h1>Bem-vindo(a), ${sessionScope.usuarioNome}!</h1>
 
     <div class="button-container">
         <button onclick="window.location.href='FeedbackProfessorServlet?action=listar'">Inserir Feedback</button>
-        <button onclick="window.location.href='RelatorioProfessorServlet?action=listar'" onclick="window.location.href='listar-relatorioprofessor.jsp'">Relatórios</button>
-        <button onclick="window.location.href='AtividadeServlet?action=listar'" onclick="window.location.href='listar-atividades.jsp'">Gestão de Atividades</button>
+        <button onclick="window.location.href='RelatorioProfessorServlet?action=listar'" onclick="window.location.href='listar-relatorioprofessor.jsp'">Relatï¿½rios</button>
+        <button onclick="window.location.href='AtividadeServlet?action=listar'" onclick="window.location.href='listar-atividades.jsp'">Gestï¿½o de Atividades</button>
     </div>
 </body>
 </html>
