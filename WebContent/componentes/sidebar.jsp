@@ -9,7 +9,7 @@
           <li onclick="window.location.href='ProfessorServlet?action=listar'" onclick="window.location.href='index-professor.jsp'">Gestão de Professores</li>
           <li onclick="window.location.href='CoordenadorServlet?action=listar'" onclick="window.location.href='listar-coordenadores.jsp'">Gestão de Coordenadores</li>
           <li onclick="window.location.href='RelatorioCoordenadorServlet?action=listar'" onclick="window.location.href='listar-relatoriocoordenador.jsp'">Inserir Relatório</li>
-          <li>Suporte</li>
+          <li >Suporte</li>
           <li onclick="window.location.href='index.jsp'">Sair</li>
       </ul>
   </div>
