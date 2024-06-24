@@ -35,6 +35,6 @@
     </table>
     
     <br>
-    <button onclick="window.location.href='index-professor.jsp'">Voltar a Página Inicial</button>
+    <button onclick="window.location.href='index-aluno.jsp'">Voltar a Página Inicial</button>
 </body>
 </html>

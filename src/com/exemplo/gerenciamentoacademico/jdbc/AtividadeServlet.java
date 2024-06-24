@@ -48,6 +48,9 @@ public class AtividadeServlet extends HttpServlet {
                 case "listarPorAluno":
                     listarAtividadesPorAluno(request, response);
                     break;
+                case "listarProjeto":
+                	listarAtividadesProjeto(request, response);
+                    break;
                 case "mostrarFormInsercao":
                     mostrarFormInsercao(request, response);
                     break;
@@ -199,4 +202,25 @@ public class AtividadeServlet extends HttpServlet {
             response.sendRedirect("AtividadeServlet?action=listar&error=DeleteFailed");
         }
     }
+    
+    private void listarAtividadesProjeto(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("usuarioId") == null) {
+            response.sendRedirect("index.jsp");
+            return;
+        }
+
+       
+        try {
+            int projetoId = Integer.parseInt(request.getParameter("projeto_id"));
+            List<Atividade> listaAtividades = atividadeDAO.getAtividadesPorProjetoId(projetoId);
+            request.setAttribute("listaAtividades", listaAtividades);
+            request.getRequestDispatcher("listar-atividades-projeto.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.sendRedirect("AtividadeServlet?action=listar&error=InvalidProjectId");
+        }
+    }
 }
+
