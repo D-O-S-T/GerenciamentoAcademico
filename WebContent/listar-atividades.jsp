@@ -41,5 +41,6 @@
     </table>
     <br>
     <button onclick="window.location.href='index-professor.jsp'">Voltar a Página Inicial</button>
+    <button onclick="window.location.href='EntregaServlet?action=listarProfessor'">Listar Entregas dos Alunos</button>
 </body>
 </html>

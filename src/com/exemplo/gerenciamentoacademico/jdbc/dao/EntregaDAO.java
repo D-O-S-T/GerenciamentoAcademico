@@ -62,8 +62,6 @@ public class EntregaDAO {
         return entregas;
     }
     
-    
-
     public void inserirEntrega(Entrega entrega) throws SQLException {
         String sql = "INSERT INTO entrega (conteudo, dataEntrega, professor_id, alunoDaEntrega_id, atividade_id) " +
                      "VALUES (?, ?, ?, ?, ?)";
