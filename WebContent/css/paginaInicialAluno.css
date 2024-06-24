@@ -34,6 +34,13 @@ body {
     margin-bottom: 15px; /* Espaçamento inferior */
 }
 
+.butoins{
+	display: flex; /* Utiliza flexbox */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Centraliza os botões verticalmente */
+    height: 100vh; /* Altura total da viewport */
+}
+
 
 /*Para os botões*/
 .button-container {

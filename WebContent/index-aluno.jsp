@@ -19,7 +19,7 @@
         </div>
     </nav>
    
-    <section>
+    <section class="butoins">
         <div class="container-fluid">
             <div class="button-container">
                 <button class="button-1" onclick="window.location.href='AtividadeServlet?action=listarPorAluno'">Entregar Atividade</button>
@@ -28,5 +28,41 @@
             </div>
         </div>
     </section>
+    
+    <!-- footer -->
+    <div class="rodape">
+    	<div class="container">
+    		<div class="row">
+    		<div class="col-md-8 col-sm-12 col-xs-12">
+    		<h1>Universidade do Distrito Federal - Governo no Distrito Federal</h1>
+    		<p class="sigla">Professor Jorge Amaury Maia Nunes - UnDF</p>
+    		</div>
+    		
+    		</div>
+    		<div>
+    		<p> Residência Oficial da Granja do Torto - Parque Tecnológico de Brasília - BIOTIC, Lote 4, DF / UnDF - 2° ANDAR CEP: 70635-815</p>
+    		</div>
+    	</div>
+    </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
