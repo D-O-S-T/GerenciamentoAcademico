@@ -39,3 +39,17 @@ input[type="text"], input[type="date"], select {
 	border-radius: 4px;
 	font-size: 14px;
 }
+
+.wrapper {
+	max-width: 400px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 30px;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.container .form-container {
+	width: 100%;	
+	overflow: hidden;
+}
