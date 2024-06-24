@@ -40,7 +40,7 @@
         </tbody>
     </table>
     <br>
-    <button onclick="window.location.href='index-aluno.jsp'">Voltar a i Página Inicial</button>
+    <button onclick="window.location.href='index-aluno.jsp'">Voltar a Página Inicial</button>
     <button onclick="window.location.href='EntregaServlet?action=listar'">Vizualizar suas Entregas</button>
 </body>
 </html>
