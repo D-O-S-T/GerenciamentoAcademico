@@ -6,20 +6,14 @@
     <meta charset="UTF-8">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/componentes.css">
     <link rel="stylesheet" href="css/index-aluno.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <title>Perfil Aluno</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
-        <div class="container">
-            <div class="logo-container">
-                <img src="imagens/undf.png" alt="Logo UnDF" class="logo-undf" width="95px" height="50px">
-            </div>
-            <p class="welcome-message">Bem-vindo(a), ${sessionScope.usuarioNome}!</p>
-        </div>
-    </nav>
+	<%@ include file="componentes/nav.jsp" %>
 	    
 	<main>
 	    <section class="buttons">
@@ -33,18 +27,6 @@
 	    </section>
     </main>
     
-	<footer>
-	    <div class="container">
-	        <div class="row">
-	            <div class="col-md-8 col-sm-12 col-xs-12">
-	                <h1 class="footer-title">Universidade do Distrito Federal Professor Jorge Amaury Maia Nunes - UnDF</h1>
-	                <p class="sigla">Governo do Distrito Federal</p>
-	            </div>
-	            <div class="col-md-4 col-sm-12 col-xs-12 logo-gdf">
-	                <p>Residência Oficial da Granja do Torto - Parque Tecnológico de Brasília - BIOTIC, Lote 4, DF / UnDF - 2° ANDAR CEP: 70635-815</p>
-	            </div>
-	        </div>
-	    </div>
-	</footer>
+	<%@ include file="componentes/footer.jsp" %>
 </body>
 </html>

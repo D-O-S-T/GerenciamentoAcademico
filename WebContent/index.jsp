@@ -7,6 +7,7 @@
     <title>Página Inicial</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/componentes.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 
