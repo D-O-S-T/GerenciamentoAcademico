@@ -128,7 +128,7 @@ body {
 }
 
 .sidebar-list li:hover {
-    background-color: #34495e;
+    background-color: #428FCA;
 }
 
 .main-content {
@@ -156,6 +156,17 @@ button#toggleButton {
 
 button#toggleButton:hover {
     background-color: #2980b9;
+}
+
+/* Estilização do titulo Sibe Bar*/
+.tituloSideBar{
+	font-weight: bold;
+	text-align: center;
+	padding: 20px;
+}
+
+a {
+	color: #fff;
 }
 
 

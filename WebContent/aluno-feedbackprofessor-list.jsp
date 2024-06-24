@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="wrapper">
-        <%@ include file="componentes/sidebar.jsp" %>
+        <%@ include file="componentes/sidebar-aluno.jsp" %>
         <div class="main-content">
             <h2>Listagem de Feedbacks de Professores</h2>
             <table class="tabela" border="1">
