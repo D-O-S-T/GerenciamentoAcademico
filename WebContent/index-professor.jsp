@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Pï¿½gina do Professor</title>
+    <title>Página do Professor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -35,8 +35,8 @@
 
     <div class="button-container">
         <button onclick="window.location.href='FeedbackProfessorServlet?action=listar'">Inserir Feedback</button>
-        <button onclick="window.location.href='RelatorioProfessorServlet?action=listar'" onclick="window.location.href='listar-relatorioprofessor.jsp'">Relatï¿½rios</button>
-        <button onclick="window.location.href='AtividadeServlet?action=listar'" onclick="window.location.href='listar-atividades.jsp'">Gestï¿½o de Atividades</button>
+        <button onclick="window.location.href='RelatorioProfessorServlet?action=listar'" onclick="window.location.href='listar-relatorioprofessor.jsp'">Relatórios</button>
+        <button onclick="window.location.href='AtividadeServlet?action=listar'" onclick="window.location.href='listar-atividades.jsp'">Gestão de Atividades</button>
     </div>
 </body>
 </html>
