@@ -68,3 +68,33 @@ footer .logo-gdf {
 .col-xs-12 {
     width: 100%;
 }
+
+.side-bar{
+	display: flex;
+}
+
+.side-bar-padrao{
+	flex-direction: row;
+}
+
+/* Estilos para a tabela */
+.tabela {
+    width: 50%;
+    border-collapse: separate; /* Utiliza separação entre as bordas das células */
+    
+}
+.tabela th, .tabela td {
+    padding: 10px; /* Espaçamento interno das células */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-weight: 200px;
+    font-size: 20px;
+}
+
+.tabela th {
+    background-color: #8AC7E8;
+}
+.tabela tbody tr:hover {
+    background-color: #fff;
+}
+
