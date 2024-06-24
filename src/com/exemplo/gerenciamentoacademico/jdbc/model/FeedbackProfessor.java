@@ -13,6 +13,7 @@ public class FeedbackProfessor {
     private int professorId;
     private int alunoId;
     private String alunoNome;
+    private String professorNome;
     
     
 
@@ -91,16 +92,7 @@ public class FeedbackProfessor {
         this.alunoId = alunoId;
     }
 
-    @Override
-    public String toString() {
-        return "FeedbackProfessor{" +
-                "id=" + id +
-                ", titulo='" + titulo + '\'' +
-                ", feedback='" + feedback + '\'' +
-                ", professorId=" + professorId +
-                ", alunoId=" + alunoId +
-                '}';
-    }
+ 
 
 	public String getAlunoNome() {
 		return alunoNome;
@@ -109,4 +101,24 @@ public class FeedbackProfessor {
 	public void setAlunoNome(String alunoNome) {
 		this.alunoNome = alunoNome;
 	}
+	
+	 // Novo setter para professorNome
+    public void setProfessorNome(String professorNome) {
+        this.professorNome = professorNome;
+    }
+
+    // Novo getter para professorNome
+    public String getProfessorNome() {
+        return professorNome;
+    }
+
+
+	@Override
+	public String toString() {
+		return "FeedbackProfessor [id=" + id + ", titulo=" + titulo + ", feedback=" + feedback + ", professorId="
+				+ professorId + ", alunoId=" + alunoId + ", alunoNome=" + alunoNome + ", professorNome=" + professorNome
+				+ "]";
+	}
+    
+    
 }

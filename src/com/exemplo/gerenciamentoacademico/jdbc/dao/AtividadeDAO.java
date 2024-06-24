@@ -70,6 +70,39 @@ public class AtividadeDAO {
 
         return atividades;
     }
+    
+    public boolean existeAtividade(int atividadeId) {
+        String sql = "SELECT COUNT(*) AS count FROM atividade WHERE id = ?";
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, atividadeId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    int count = rs.getInt("count");
+                    return count > 0;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    
+    public int getProjetoIdPorAtividade(int atividadeId) throws SQLException {
+        String sql = "SELECT projeto_id FROM atividade WHERE id = ?";
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, atividadeId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("projeto_id");
+                } else {
+                    throw new SQLException("Atividade não encontrada para o atividadeId especificado.");
+                }
+            }
+        }
+    }
 
     
     public List<Atividade> getAtividadesPorProfessor(int professorId) {

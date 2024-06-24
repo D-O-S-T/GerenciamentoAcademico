@@ -154,4 +154,21 @@ public class ProfessorDAO {
         }
         return professores;
     }
+    
+    public String getNomeProfessorPorId(int professorId) {
+        String nomeProfessor = null;
+        String sql = "SELECT nome FROM professor WHERE id = ?";
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, professorId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    nomeProfessor = rs.getString("nome");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return nomeProfessor;
+    }
 }
