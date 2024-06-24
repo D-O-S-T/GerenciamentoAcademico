@@ -10,7 +10,7 @@ public class DatabaseUtil {
 
     private static final String url = "jdbc:mysql://localhost:3306/gerenciamento_academico?serverTimezone=UTC";
     private static final String user = "root";
-    private static final String password = "1234@sim";
+    private static final String password = "senha1234@sim";
 
     private static Connection conn;
 
