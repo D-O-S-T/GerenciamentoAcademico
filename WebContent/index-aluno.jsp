@@ -20,7 +20,7 @@
 	            <div class="button-group">
 	                <button class="button button-1" onclick="window.location.href='AtividadeServlet?action=listarPorAluno'"><span>Entregar Atividade</span></button>
 	                <button class="button button-2" onclick="window.location.href='FeedbackAlunoServlet?action=listar'"><span>Feedback</span></button>
-	                <button class="button button-3" onclick="window.location.href='aluno-feedbackprofessor-list.jsp'"><span>Avaliar Feedback</span></button>
+	                <button class="button button-3" onclick="window.location.href='ListarFeedbackAlunoServlet?action=listar'"><span>Avaliar Feedback</span></button>
 	            </div>
 	        </div>
 	    </section>

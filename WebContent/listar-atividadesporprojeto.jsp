@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,11 @@
 </head>
 <body>
     <h2>Listagem de Atividades</h2>
-    <button onclick="window.location.href='atividade-form.jsp'">Adicionar Nova Atividade</button>
+    
+    <form action="AtividadeServlet" method="GET">
+        <button type="submit">Adicionar Nova Atividade</button>
+        <input type="hidden" name="action" value="mostrarFormInsercao">
+    </form>
     
     <table border="1">
         <thead>
@@ -28,8 +33,8 @@
                     <td>${atividade.id}</td>
                     <td>${atividade.titulo}</td>
                     <td>${atividade.conteudo}</td>
-                    <td>${atividade.dataInicial}</td>
-                    <td>${atividade.dataFinal}</td>
+                    <td><fmt:formatDate value="${atividade.dataInicial}" pattern="dd/MM/yyyy" /></td>
+                    <td><fmt:formatDate value="${atividade.dataFinal}" pattern="dd/MM/yyyy" /></td>
                     <td>${atividade.projetoTitulo}</td>
                     <td>
                         <a href="AtividadeServlet?action=editar&id=${atividade.id}">Editar</a>
@@ -40,7 +45,6 @@
         </tbody>
     </table>
     <br>
-    <button onclick="window.location.href='index-professor.jsp'">Voltar a Página Inicial</button>
-    <button onclick="window.location.href='EntregaServlet?action=listarProfessor'">Listar Entregas dos Alunos</button>
+    <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
 </body>
 </html>

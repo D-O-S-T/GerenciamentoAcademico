@@ -1,7 +1,7 @@
 
 package com.exemplo.gerenciamentoacademico.jdbc.model;
 
-
+import java.util.List;
 
 public class FeedbackProfessor {
     
@@ -14,6 +14,7 @@ public class FeedbackProfessor {
     private int alunoId;
     private String alunoNome;
     private String professorNome;
+    private List<Aluno> alunos;
     
     
 
@@ -118,6 +119,16 @@ public class FeedbackProfessor {
 		return "FeedbackProfessor [id=" + id + ", titulo=" + titulo + ", feedback=" + feedback + ", professorId="
 				+ professorId + ", alunoId=" + alunoId + ", alunoNome=" + alunoNome + ", professorNome=" + professorNome
 				+ "]";
+	}
+
+
+	public List<Aluno> getAlunos() {
+		return alunos;
+	}
+
+
+	public void setAlunos(List<Aluno> alunos) {
+		this.alunos = alunos;
 	}
     
     

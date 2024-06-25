@@ -34,8 +34,7 @@
 			</form>
 
 			<br>
-			<button onclick="window.location.href='index-aluno.jsp'">Voltar
-				a Página Inicial</button>
+			<button onclick="window.location.href='AtividadeServlet?action=listarPorAluno'">Voltar</button>
 		</div>
 	</div>
 

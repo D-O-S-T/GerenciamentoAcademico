@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.exemplo.gerenciamentoacademico.jdbc.dao.FeedbackProfessorDAO;
+import com.exemplo.gerenciamentoacademico.jdbc.model.Aluno;
 import com.exemplo.gerenciamentoacademico.jdbc.model.FeedbackProfessor;
 
 @WebServlet("/ListarFeedbackAlunoServlet")
@@ -29,7 +30,21 @@ public class ListarFeedbackAlunoServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        listarFeedbacksAluno(request, response);
+    	
+    	 String action = request.getParameter("action");
+
+         if (action == null) {
+             action = "listar";
+         }
+
+         switch (action) {
+             case "listar":
+                 listarFeedbacksAluno(request, response);
+                 break;
+            default :
+            	 listarFeedbacksAluno(request, response);
+            	
+         }
     }
 
     private void listarFeedbacksAluno(HttpServletRequest request, HttpServletResponse response)
@@ -48,10 +63,21 @@ public class ListarFeedbackAlunoServlet extends HttpServlet {
         System.out.println("alunoId: " + alunoId);
 
         List<FeedbackProfessor> listaFeedbacksProfessor = feedbackProfessorDAO.getFeedbacksPorAlunoId(alunoId);
+        
+        
+        // Para cada feedback, obter o nome do aluno e definir no objeto FeedbackProfessor
+        for (FeedbackProfessor feedback : listaFeedbacksProfessor) {
+            String nomeProfessor = feedbackProfessorDAO.getNomeProfessorPorFeedbackId(feedback.getId());
+           
+            feedback.setProfessorNome(nomeProfessor);
+        }
 
         System.out.println("Número de feedbacks recuperados no Servlet: " + listaFeedbacksProfessor.size());
 
         request.setAttribute("listaFeedbacksProfessor", listaFeedbacksProfessor);
-        request.getRequestDispatcher("listar-feedbackaluno.jsp").forward(request, response);
+        request.getRequestDispatcher("aluno-feedbackprofessor-list.jsp").forward(request, response);
     }
+    
+    
+   
 }

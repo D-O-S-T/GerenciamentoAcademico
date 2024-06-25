@@ -67,6 +67,9 @@ public class EntregaServlet extends HttpServlet {
                 case "excluir":
                     excluirEntrega(request, response);
                     break;
+                case "listarProfessor":
+                    listarEntregasProfessor(request, response);
+                    break;
                 default:
                     listarEntregas(request, response);
             }
@@ -90,6 +93,21 @@ public class EntregaServlet extends HttpServlet {
 
         request.getRequestDispatcher("entrega-form.jsp").forward(request, response);
     }
+    
+    private void listarEntregasProfessor(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("professorId") == null) {
+            response.sendRedirect("index.jsp");
+            return;
+        }
+
+        int professorId = (Integer) session.getAttribute("professorId");
+        List<Entrega> listaEntregas = entregaDAO.getEntregasPorProfessor(professorId);
+        request.setAttribute("listaEntregas", listaEntregas);
+        request.getRequestDispatcher("listar-entragaprofessor.jsp").forward(request, response);
+    }
+
 
     private void listarEntregas(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

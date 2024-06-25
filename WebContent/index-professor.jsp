@@ -18,7 +18,7 @@
     <div class="button-container">
         <button onclick="window.location.href='FeedbackProfessorServlet?action=listar'">Inserir Feedback</button>
         <button onclick="window.location.href='RelatorioProfessorServlet?action=listar'" onclick="window.location.href='listar-relatorioprofessor.jsp'">Relatórios</button>
-        <button onclick="window.location.href='AtividadeServlet?action=listar'" onclick="window.location.href='listar-atividades.jsp'">Gestão de Atividades</button>
+        <button onclick="window.location.href='AtividadeServlet?action=listar'">Gestão de Atividades</button>
     </div>
 </body>
 </html>

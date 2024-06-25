@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="com.exemplo.gerenciamentoacademico.jdbc.dao.ProfessorDAO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +39,7 @@
                 </tbody>
             </table>
             <br>
-            <button onclick="window.location.href='index-professor.jsp'">Voltar à Página Inicial</button>
+            <button onclick="window.location.href='index-aluno.jsp'">Voltar à Página Inicial</button>
         </div>
     </div>
     <%@ include file="componentes/footer.jsp" %>
