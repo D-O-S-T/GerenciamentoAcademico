@@ -18,7 +18,7 @@
 </head>
 <body>
 
-	<!-- COLOCAR A SIDEBAR REFERENTE A PROFESSOR -->
+	<%@ include file="componentes/sidebar.jsp"%>
 
 	<div class="wrapper">
 		<div class="form-container">

@@ -18,12 +18,12 @@
 	<section class="buttons">
 	        <div class="container-fluid">
 	            <div class="button-group">
-	            <button class="button button-1" onclick="window.location.href='RelatorioAnalisesServlet?action=visualizar'"><span>Relatórios e Análises</span></button>
+	            <button class="button button-1" onclick="window.location.href='RelatorioAnalisesServlet?action=visualizar'"><span>Análises e Extratos</span></button>
         		<button class="button button-1" onclick="window.location.href='AlunoServlet?action=listar'" onclick="window.location.href='listar-alunos.jsp'"><span>Gestão de Alunos</span></button>
         		<button class="button button-1" onclick="window.location.href='ProjetoServlet?action=listar'" onclick="window.location.href='listar-projetos.jsp'"><span>Gestão de Projetos</span></button>
         		<button class="button button-1" onclick="window.location.href='ProfessorServlet?action=listar'" onclick="window.location.href='index-professor.jsp'"><span>Gestão de Professores</span></button>
         		<button class="button button-1" onclick="window.location.href='CoordenadorServlet?action=listar'" onclick="window.location.href='listar-coordenadores.jsp'"><span>Gestão de Coordenadores</span></button>
-        		<button class="button button-1" onclick="window.location.href='RelatorioCoordenadorServlet?action=listar'" onclick="window.location.href='listar-relatoriocoordenador.jsp'"><span>Inserir Relatório</span></button>
+        		<button class="button button-1" onclick="window.location.href='RelatorioCoordenadorServlet?action=listar'" onclick="window.location.href='listar-relatoriocoordenador.jsp'"><span>Relatórios</span></button>
 	            </div>
 	        </div>
 	</section>
