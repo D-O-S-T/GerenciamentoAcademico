@@ -9,80 +9,81 @@
     <link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/componentes.css">
+	<link rel="stylesheet" href="css/pagina-padrao.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
     <script>
-        function gerarPDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-
-            doc.text("Listagem de Alunos", 10, 10);
-
-            const headers = ["ID", "Matrícula", "Nome", "E-mail", "Lattes", "Login"];
-            let data = [];
-            const rows = document.querySelectorAll("table tbody tr");
-
-            rows.forEach(row => {
-                const cells = row.querySelectorAll("td");
-                let rowData = [];
-                cells.forEach(cell => {
-                    rowData.push(cell.innerText);
-                });
-                data.push(rowData);
-            });
-
-            doc.autoTable({
-                head: [headers],
-                body: data,
-            });
-
-            doc.save("listagem_alunos.pdf");
-        }
+		function gerarPDF() {
+		    const { jsPDF } = window.jspdf;
+		    const doc = new jsPDF();
+		
+		    doc.text("Listagem de Alunos", 10, 10);
+		
+		    const headers = ["ID", "Matrícula", "Nome", "E-mail", "Lattes", "Login"];
+		    let data = [];
+		    const rows = document.querySelectorAll("table tbody tr");
+		
+		    rows.forEach(row => {
+		        const cells = row.querySelectorAll("td");
+		        let rowData = [];
+		        cells.forEach(cell => {
+		            rowData.push(cell.innerText);
+		        });
+		        data.push(rowData);
+		    });
+		
+		    doc.autoTable({
+		        head: [headers],
+		        body: data,
+		    });
+		
+		    doc.save("listagem_alunos.pdf");
+		}
     </script>
 </head>
 <body>
-	<div class="wrapper">
 	<%@ include file="componentes/sidebar-coordenador.jsp" %>
-	<div class="main-content">
-    <h2>Listagem de Alunos</h2>
-    <button onclick="window.location.href='aluno-form.jsp'">Adicionar Novo Aluno</button>
-    <button onclick="gerarPDF()">Gerar PDF</button>
-    <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
-
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Matrícula</th>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Lattes</th>
-                <th>Login</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="aluno" items="${listaAlunos}">
-                <tr>
-                    <td>${aluno.id}</td>
-                    <td>${aluno.matricula}</td>
-                    <td>${aluno.nome}</td>
-                    <td>${aluno.email}</td>
-                    <td>${aluno.lattes}</td>
-                    <td>${aluno.login}</td>
-                    <td>
-                        <a href="AlunoServlet?action=editar&id=${aluno.id}">Editar</a>
-                        <a href="AlunoServlet?action=excluir&id=${aluno.id}">Excluir</a>
-                    </td>
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
-    
-    <br>
-    </div>
+	<%@ include file="componentes/nav.jsp" %>
+	
+	<div class="wrapper">
+		<div class="main-content">
+		    <h2>Listagem de Alunos</h2>
+		    <button class="button-custom" onclick="window.location.href='aluno-form.jsp'">Adicionar Aluno</button>
+		    <button class="button-custom" onclick="gerarPDF()">Gerar PDF</button>
+		    <button class="button-custom button-secondary" onclick="window.location.href='index-coordenador.jsp'">Voltar</button>
+		
+		    <table border="1">
+		        <thead>
+		            <tr>
+		                <th>ID</th>
+		                <th>Matrícula</th>
+		                <th>Nome</th>
+		                <th>E-mail</th>
+		                <th>Lattes</th>
+		                <th>Login</th>
+		                <th>Ações</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <c:forEach var="aluno" items="${listaAlunos}">
+		                <tr>
+		                    <td>${aluno.id}</td>
+		                    <td>${aluno.matricula}</td>
+		                    <td>${aluno.nome}</td>
+		                    <td>${aluno.email}</td>
+		                    <td>${aluno.lattes}</td>
+		                    <td>${aluno.login}</td>
+		                    <td>
+		                        <a href="AlunoServlet?action=editar&id=${aluno.id}">Editar</a>
+		                        <a href="AlunoServlet?action=excluir&id=${aluno.id}">Excluir</a>
+		                    </td>
+		                </tr>
+		            </c:forEach>
+		        </tbody>
+		    </table>
+    	</div>
     </div>
     <%@ include file="componentes/footer.jsp" %>
 </body>

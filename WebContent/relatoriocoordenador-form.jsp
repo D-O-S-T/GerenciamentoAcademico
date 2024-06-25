@@ -8,26 +8,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/componentes.css">
-<link rel="stylesheet" href="css/form.css">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-	crossorigin="anonymous">
-<meta charset="UTF-8">
-<title>Formulário de Relatório de Coordenador</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/componentes.css">
+	<link rel="stylesheet" href="css/form.css">
+	<link rel="stylesheet" href="css/pagina-padrao.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<title>Formulário de Relatório de Coordenador</title>
 </head>
 <body>
-	
 	<%@ include file="componentes/sidebar-coordenador.jsp"%>
+	<%@ include file="componentes/nav.jsp"%>
 	
 	<div class="wrapper">
-
 		<div class="form-container">
-			<h2>Formulário de Relatório de Coordenador</h2>
+			<h2 style="font-size: 16px;">Formulário de Relatório de Coordenador</h2>
 			<form action="RelatorioCoordenadorServlet?action=inserir"
 				method="post">
 				<%-- Título --%>

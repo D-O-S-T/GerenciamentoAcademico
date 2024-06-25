@@ -1,8 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<jsp:useBean id="relatorioAnalises" scope="request"
-	class="com.exemplo.gerenciamentoacademico.jdbc.model.RelatorioAnalises" />
-
+<jsp:useBean id="relatorioAnalises" scope="request" class="com.exemplo.gerenciamentoacademico.jdbc.model.RelatorioAnalises" />
 <html>
 <head>
 	<link rel="stylesheet" href="css/reset.css">
@@ -48,26 +46,26 @@
 	</script>
 </head>
 <body>
-
 	<%@ include file="componentes/sidebar-professor.jsp"%>
+	<%@ include file="componentes/nav.jsp"%>
 
-	<div class="analise">
-		<div class="analise-container">
-		<h1>Relatório de Análises</h1>
-		<p>Total de Usuários: ${relatorioAnalises.totalUsuarios}</p>
-		<p>Total de Professores: ${relatorioAnalises.totalProfessores}</p>
-		<p>Total de Alunos: ${relatorioAnalises.totalAlunos}</p>
-		<p>Total de Coordenadores: ${relatorioAnalises.totalCoordenadores}</p>
-		<p>Total de Atividades: ${relatorioAnalises.totalAtividades}</p>
-		<p>Total de Projetos: ${relatorioAnalises.totalProjetos}</p>
-		<p>Total de Entregas: ${relatorioAnalises.totalEntregas}</p>
-		<button onclick="window.location.href='index-coordenador.jsp'">Voltar
-			a Página Inicial</button>
-		<button onclick="gerarPDF()">Gerar PDF</button></div>
-		
+	<div class="wrapper">
+		<div class="analise">
+			<div class="analise-container">
+			<h2>Relatório de Análises</h2>
+			<p>Total de Usuários: ${relatorioAnalises.totalUsuarios}</p>
+			<p>Total de Professores: ${relatorioAnalises.totalProfessores}</p>
+			<p>Total de Alunos: ${relatorioAnalises.totalAlunos}</p>
+			<p>Total de Coordenadores: ${relatorioAnalises.totalCoordenadores}</p>
+			<p>Total de Atividades: ${relatorioAnalises.totalAtividades}</p>
+			<p>Total de Projetos: ${relatorioAnalises.totalProjetos}</p>
+			<p>Total de Entregas: ${relatorioAnalises.totalEntregas}</p>
+			
+			<button class="button-custom button-secondary" onclick="window.location.href='index-coordenador.jsp'">Voltar</button>		
+			<button class="button-custom" onclick="gerarPDF()">Gerar PDF</button></div>
+		</div>
 	</div>
 	
 	<%@ include file="componentes/footer.jsp"%>
-
 </body>
 </html>
