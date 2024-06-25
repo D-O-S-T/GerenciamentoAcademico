@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon-undf.png">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/componentes.css">
@@ -13,48 +14,46 @@
     <title>Entregas de Atividades</title>
 </head>
 <body>
-    <h2>Entregas de Atividades</h2>
-    <div class="side-bar">
-    <container class="side-bar-padrao">
-     <%@ include file="componentes/sidebar-aluno.jsp" %>
-    <table border="1">
-        <thead>
-            <tr>
-                
-                <th>Título</th>
-                <th>Conteúdo</th>
-                <th>Data Inicial</th>
-                <th>Data Final</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="atividade" items="${listaAtividades}">
-    <tr>
-        
-        <td>${atividade.titulo}</td>
-        <td>${atividade.conteudo}</td>
-        <td>${atividade.dataInicial}</td>
-        <td>${atividade.dataFinal}</td>
-        <td>
-            <form action="EntregaServlet?action=mostrarFormEntrega" method="post" style="display:inline;">
-                <input type="hidden" name="atividadeId" value="${atividade.id}">
-                <input type="submit" value="Entregar">
-            </form>
-        </td>
-    </tr>
-</c:forEach>
-            
-        </tbody>
-    </table>
-    </container>
+    <%@ include file="componentes/sidebar-aluno.jsp" %>
+    <div class="side-bar2">
+        <div class="side-bar-padrao2">
+            <h2>Entregas de Atividades</h2>
+            <div class="teste2">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Conteúdo</th>
+                            <th>Data Inicial</th>
+                            <th>Data Final</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach var="atividade" items="${listaAtividades}">
+                            <tr>
+                                <td>${atividade.titulo}</td>
+                                <td>${atividade.conteudo}</td>
+                                <td>${atividade.dataInicial}</td>
+                                <td>${atividade.dataFinal}</td>
+                                <td>
+                                    <form action="EntregaServlet?action=mostrarFormEntrega" method="post" style="display:inline;">
+                                        <input type="hidden" name="atividadeId" value="${atividade.id}">
+                                        <input type="submit" value="Entregar">
+                                    </form>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+                <br>
+                <button onclick="window.location.href='index-aluno.jsp'">Voltar a Página Inicial</button>
+                <button onclick="window.location.href='EntregaServlet?action=listar'">Visualizar suas Entregas</button>
+            </div>
+        </div>
     </div>
-   
-    <br>
-    <button onclick="window.location.href='index-aluno.jsp'">Voltar a Página Inicial</button>
-    <button onclick="window.location.href='EntregaServlet?action=listar'">Vizualizar suas Entregas</button>
-    
-    
     <%@ include file="componentes/footer.jsp" %>
 </body>
+
+
 </html>

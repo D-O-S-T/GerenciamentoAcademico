@@ -131,6 +131,35 @@ footer .logo-gdf {
     transition: left 0.3s;
 }
 
+/*TESTE LEX*/
+.side-bar {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Garante que a barra lateral ocupe toda a altura da viewport */
+    background-color: #f0f0f0; /* Cor de fundo para verificar o alinhamento */
+}
+
+.side-bar-padrao2 {
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 800px; /* Define uma largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente dentro da side-bar */
+}
+
+.teste2 {
+    text-align: center; /* Alinha o texto centralmente */
+}
+
+.teste2 table {
+    width: 100%; /* Ocupa toda a largura disponível */
+    border-collapse: collapse; /* Remove espaçamento entre as células da tabela */
+}
+
+.teste2 button {
+    margin-top: 10px; /* Espaçamento superior para os botões */
+}
+
+
 .sidebar-list {
     list-style: none;
     padding: 0;
