@@ -19,9 +19,9 @@
 	<section class="buttons">
 	        <div class="container-fluid">
 	            <div class="button-group">
-	            <button class="button button-1" onclick="window.location.href='FeedbackProfessorServlet?action=listar'">Inserir Feedback</button>
-        		<button class="button button-2" onclick="window.location.href='RelatorioProfessorServlet?action=listar'" >Relatórios</button>
-       			<button class="button button-3" onclick="window.location.href='AtividadeServlet?action=listar'">Gestão de Atividades</button>
+	            <button class="button button-1" onclick="window.location.href='FeedbackProfessorServlet?action=listar'"><span>Inserir Feedback</span></button>
+        		<button class="button button-2" onclick="window.location.href='RelatorioProfessorServlet?action=listar'" ><span>Relatórios</span></button>
+       			<button class="button button-3" onclick="window.location.href='AtividadeServlet?action=listar'"><span>Gestão de Atividades</span></button>
 	            </div>
 	         </div>
 	</section>
