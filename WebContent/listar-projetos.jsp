@@ -56,9 +56,9 @@
     </table>
     
     <br>
-    </div>
-    </div>
     <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
+    </div>
+    </div>
     
     <%@ include file="componentes/footer.jsp" %>
 </body>

@@ -14,10 +14,12 @@
 </head>
 </head>
 <body>
+	<div class="wrapper">
 	<%@ include file="componentes/sidebar.jsp" %>
+	<div class="main-content">
     <h2>Listagem de Alunos</h2>
     <button onclick="window.location.href='aluno-form.jsp'">Adicionar Novo Aluno</button>
-    <table border="1">
+    <table class="tabela" border="1">
         <thead>
             <tr>
                 <th>ID</th>
@@ -49,6 +51,8 @@
     
     <br>
     <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
+    </div>
+    </div>
     <%@ include file="componentes/footer.jsp" %>
 </body>
 </html>
