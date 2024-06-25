@@ -69,15 +69,7 @@ footer .logo-gdf {
     width: 100%;
 }
 
-.side-bar{
-	display: flex;
-}
-
-.side-bar-padrao{
-	flex-direction: row;
-}
-
-/* Estilos para a tabela */
+/* ------------------------------- TABELA ------------------------------- */
 .tabela {
     width: 50%;
     border-collapse: separate; /* Utiliza separação entre as bordas das células */  
@@ -96,6 +88,36 @@ footer .logo-gdf {
 }
 .tabela tbody tr:hover {
     background-color: #fff;
+}
+
+.content-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center; 
+	text-align: center; 
+	margin-top: 10px; 
+}
+
+.content-wrapper h2 {
+	margin-bottom: 0px; 
+}
+
+.content-wrapper button {
+    margin-bottom: 20px; 
+}
+
+.content-wrapper table {
+    width: 80%; 
+    margin-top: 20px; 
+}
+
+/* ------------------------------- SIDEBAR ------------------------------- */
+.side-bar{
+	display: flex;
+}
+
+.side-bar-padrao{
+	flex-direction: row;
 }
 
 /*Teste css sidebar*/
@@ -147,29 +169,3 @@ button#toggleButton {
     left: 10px;
 }
 
-/* estilização da teabela */
-title{
-	margin-top: 10px;
-}
-
-
- .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Centraliza horizontalmente */
-            text-align: center; /* Alinha o texto ao centro */
-            margin-top: 10px; /* Espaçamento superior */
-        }
-
-        .content-wrapper h2 {
-            margin-bottom: 0px; /* Espaçamento inferior para o título */
-        }
-
-        .content-wrapper button {
-            margin-bottom: 20px; /* Espaçamento inferior para o botão */
-        }
-
-        .content-wrapper table {
-            width: 80%; /* Largura da tabela */
-            margin-top: 20px; /* Espaçamento superior para a tabela */
-        }
