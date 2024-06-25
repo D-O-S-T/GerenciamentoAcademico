@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon-undf.png">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/componentes.css">
@@ -12,8 +13,13 @@
     <title>Listagem de Feedbacks de Professores</title>
 </head>
 <body>
-    <h2>Listagem de Feedbacks de Professores</h2>
-    <button onclick="window.location.href='feedbackprofessor-form.jsp'">Adicionar Novo Feedback Professor</button>
+	<%@ include file="componentes/sidebar-aluno.jsp" %>
+	<%@ include file="componentes/nav.jsp" %>
+	 <div class="side-bar2">
+        <div class="side-bar-padrao2">
+    		<h2>Listagem de Feedbacks de Professores</h2>
+    		<div class="teste2">
+    		<button onclick="window.location.href='feedbackprofessor-form.jsp'">Adicionar Novo Feedback Professor</button>
     
     <table border="1">
         <thead>
@@ -44,7 +50,9 @@
     
     <br>
     <button onclick="window.location.href='index-professor.jsp'">Voltar a Página Inicial</button>
-    
+    </div>
+    </div>
+    </div>
      <%@ include file="componentes/footer.jsp" %>
 </body>
 </html>

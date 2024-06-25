@@ -14,7 +14,8 @@
     <title>Entregas de Atividades</title>
 </head>
 <body>
-    <%@ include file="componentes/sidebar-aluno.jsp" %>
+	<%@ include file="componentes/sidebar-aluno.jsp" %>
+	<%@ include file="componentes/nav.jsp" %>
     <div class="side-bar2">
         <div class="side-bar-padrao2">
             <h2>Entregas de Atividades</h2>

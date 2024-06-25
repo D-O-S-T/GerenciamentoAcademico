@@ -140,14 +140,32 @@ footer .logo-gdf {
     background-color: #f0f0f0; /* Cor de fundo para verificar o alinhamento */
 }
 
+.side-bar {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    height: 100vh; /* Altura total da viewport */
+    background-color: #f0f0f0; /* Cor de fundo para verificar alinhamento */
+    padding-top: 20px; /* Espaçamento superior para separação do topo */
+}
+
+.side-bar2 {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    height: 100vh; /* Altura total da viewport */
+    background-color: #f0f0f0; /* Cor de fundo para verificar alinhamento */
+    padding-top: 60px; /* Espaçamento superior para separação do topo */
+}
+
 .side-bar-padrao2 {
     width: 100%; /* Ocupa toda a largura disponível */
-    max-width: 800px; /* Define uma largura máxima */
-    margin: 0 auto; /* Centraliza horizontalmente dentro da side-bar */
+    max-width: 1000px; /* Define uma largura máxima */
 }
 
 .teste2 {
     text-align: center; /* Alinha o texto centralmente */
+    margin-top: 90px; /* Espaçamento superior para os elementos dentro de teste */
 }
 
 .teste2 table {
@@ -156,8 +174,11 @@ footer .logo-gdf {
 }
 
 .teste2 button {
-    margin-top: 10px; /* Espaçamento superior para os botões */
+    margin-top: 50px; /* Espaçamento superior para os botões */
+    margin-left: 20px;
 }
+
+
 
 
 .sidebar-list {
