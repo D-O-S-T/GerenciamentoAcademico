@@ -14,7 +14,6 @@
 </head>
 <body>
 	<%@ include file="componentes/nav.jsp" %>
-	    
 	<main>
 	    <section class="buttons">
 	        <div class="container-fluid">
