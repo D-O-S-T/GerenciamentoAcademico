@@ -45,6 +45,7 @@
 			<br> <a href="ProfessorServlet?action=listar">Cancelar</a>
 		</div>
 	</div>
+	
 	<%@ include file="componentes/footer.jsp"%>
 
 </body>
