@@ -81,7 +81,7 @@
 			<button onclick="gerarPDF()">Gerar PDF</button>
 			<button onclick="window.location.href='index-coordenador.jsp'">Voltar à Página Inicial</button>
 
-			<table border="1">
+			<table class="tabela" border="1">
 				<thead>
 					<tr>
 						<th>ID</th>
