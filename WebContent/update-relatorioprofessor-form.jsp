@@ -22,37 +22,41 @@
 </head>
 <body>
 	<%@ include file="componentes/sidebar.jsp"%>
-	
+
 	<div class="wrapper">
-	
+
 		<div class="form-container">
-		
-            <h2>Editar Relatório de Professor</h2>
-            
-            <form action="RelatorioProfessorServlet" method="POST">
-            
-                <input type="hidden" name="action" value="atualizar">
-                <input type="hidden" name="id" value="${relatorioProfessor.id}">
-                
-                <!-- Título -->
-                <label for="titulo">Título:</label>
-                <input type="text" id="titulo" name="titulo" value="${relatorioProfessor.titulo}" required>
-                
-                <!-- Relatório -->
-                <label for="relatorio">Relatório:</label>
-                <textarea id="relatorio" name="relatorio" rows="4" cols="50" required>${relatorioProfessor.relatorio}</textarea>
-                
-                <!-- ID do Professor -->
-                <!-- <label type="hidden" for="professor_id">ID do Professor:</label>  -->
-                <input type="hidden" id="professor_id" name="professor_id" value="${relatorioProfessor.professorId}" required>
-                
-                <input type="submit" value="Atualizar">
-            </form>
-            <a href="RelatorioProfessorServlet?action=listar">Cancelar</a>
-        </div>
+
+			<h2>Editar Relatório de Professor</h2>
+
+			<form action="RelatorioProfessorServlet" method="POST">
+
+				<input type="hidden" name="action" value="atualizar"> <input
+					type="hidden" name="id" value="${relatorioProfessor.id}">
+
+				<!-- Título -->
+				<label for="titulo">Título:</label><br> <input type="text"
+					id="titulo" name="titulo" value="${relatorioProfessor.titulo}"
+					required><br>
+
+				<!-- Relatório -->
+				<label for="relatorio">Relatório:</label><br>
+				<textarea id="relatorio" name="relatorio" rows="4" cols="50"
+					required>${relatorioProfessor.relatorio}</textarea>
+				<br>
+
+				<!-- ID do Professor -->
+				<!-- <label type="hidden" for="professor_id">ID do Professor:</label>  -->
+				<input type="hidden" id="professor_id" name="professor_id"
+					value="${relatorioProfessor.professorId}" required><br>
+
+				<input type="submit" value="Atualizar">
+			</form>
+			<a href="RelatorioProfessorServlet?action=listar">Cancelar</a>
+		</div>
 	</div>
-	
+
 	<%@ include file="componentes/footer.jsp"%>
-	
+
 </body>
 </html>

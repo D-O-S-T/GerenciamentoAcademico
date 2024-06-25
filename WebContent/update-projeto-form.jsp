@@ -11,45 +11,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/form.css" />
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/componentes.css">
+<link rel="stylesheet" href="css/form.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
 <meta charset="UTF-8">
 <title>Editar Projeto</title>
 </head>
 <body>
-	<div class="conteiner">
+
+	<%@ include file="componentes/sidebar.jsp"%>
+	
+	<div class="wrapper">
 
 		<div class="form-container">
 
-			<h1>Editar Projeto</h1>
+			<h2>Editar Projeto</h2>
 
 			<form action="ProjetoServlet" method="POST">
 				<input type="hidden" name="action" value="atualizar"> <input
 					type="hidden" name="id" value="${projeto.id}">
 
 				<%-- Título --%>
-				<label for="titulo">Título:</label><br> <input type="text"
+				<label for="titulo">Título:</label><br> 
+				<input type="text"
 					id="titulo" name="titulo" value="${projeto.titulo}" required><br>
 				<br>
 
 				<%-- Conteúdo --%>
-				<label for="conteudo">Conteúdo:</label><br> <input type="text"
+				<label for="conteudo">Conteúdo:</label><br> 
+				<input type="text"
 					id="conteudo" name="conteudo" value="${projeto.conteudo}" required><br>
 				<br>
 
 				<%-- Data Inicial --%>
-				<label for="dataInicial">Data Inicial:</label><br> <input
-					type="date" id="dataInicial" name="dataInicial"
-					value="${projeto.dataInicial}" required><br>
+				<label for="dataInicial">Data Inicial:</label><br> 
+				<input type="date" 
+					id="dataInicial" name="dataInicial" value="${projeto.dataInicial}" required><br>
 				<br>
 
 				<%-- Data Final --%>
-				<label for="dataFinal">Data Final:</label><br> <input
-					type="date" id="dataFinal" name="dataFinal"
-					value="${projeto.dataFinal}" required><br>
+				<label for="dataFinal">Data Final:</label><br> 
+				<input type="date" 
+				id="dataFinal" name="dataFinal" value="${projeto.dataFinal}" required><br>
 				<br>
 
 				<%-- Professor (combobox) --%>
@@ -104,6 +113,9 @@
 			<a href="ProjetoServlet?action=listar">Cancelar</a> <br>
 		</div>
 	</div>
+	
+	<%@ include file="componentes/footer.jsp"%>
+	
 </body>
 </html>
 
