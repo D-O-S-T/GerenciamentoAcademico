@@ -13,10 +13,10 @@
     <title>Listagem de Feedbacks de Professores</title>
 </head>
 <body>
-<div class="wrapper">
+<div class="content-wrapper">
         <%@ include file="componentes/sidebar-aluno.jsp" %>
         <div class="main-content">
-            <h2>Listagem de Feedbacks de Professores</h2>
+            <h2 class="">Listagem de Feedbacks de Professores</h2>
             <table class="tabela" border="1">
                 <thead>
                     <tr>

@@ -147,4 +147,29 @@ button#toggleButton {
     left: 10px;
 }
 
+/* estilização da teabela */
+title{
+	margin-top: 10px;
+}
 
+
+ .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza horizontalmente */
+            text-align: center; /* Alinha o texto ao centro */
+            margin-top: 10px; /* Espaçamento superior */
+        }
+
+        .content-wrapper h2 {
+            margin-bottom: 0px; /* Espaçamento inferior para o título */
+        }
+
+        .content-wrapper button {
+            margin-bottom: 20px; /* Espaçamento inferior para o botão */
+        }
+
+        .content-wrapper table {
+            width: 80%; /* Largura da tabela */
+            margin-top: 20px; /* Espaçamento superior para a tabela */
+        }
