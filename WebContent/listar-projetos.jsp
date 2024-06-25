@@ -39,7 +39,6 @@
                     <td>
                         <a href="ProjetoServlet?action=editar&id=${projeto.id}">Editar</a>
                         <a href="ProjetoServlet?action=excluir&id=${projeto.id}">Excluir</a>
-                        <a href="AtividadeServlet?action=listarProjeto&id=${projeto.id}">Exibir</a>
                     </td>
                 </tr>
             </c:forEach>

@@ -13,7 +13,7 @@
     <table border="1">
         <thead>
             <tr>
-                <th>ID</th>
+                
                 <th>Título</th>
                 <th>Feedback</th>
                
@@ -24,13 +24,10 @@
         <tbody>
             <c:forEach var="feedback" items="${listaFeedbacks}">
                 <tr>
-                    <td>${feedback.id}</td>
+                    
                     <td>${feedback.titulo}</td>
                     <td>${feedback.feedback}</td>
-                    <td>${feedback.alunoNome}</td>
-                   
-                    
-                     
+                    <td>${feedback.alunoNome}</td>                    
                     <td>
                         <a href="FeedbackProfessorServlet?action=editar&id=${feedback.id}">Editar</a>
                         <a href="FeedbackProfessorServlet?action=excluir&id=${feedback.id}">Excluir</a>

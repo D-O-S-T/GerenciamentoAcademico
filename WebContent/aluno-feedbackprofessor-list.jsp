@@ -14,7 +14,7 @@
     <table border="1">
         <thead>
             <tr>
-                <th>ID</th>
+                
                 <th>Título</th>
                 <th>Feedback</th>
                 <th>Professor</th>
@@ -24,7 +24,7 @@
         <tbody>
             <c:forEach var="feedback" items="${listaFeedbacksProfessor}">
                 <tr>
-                    <td>${feedback.id}</td>
+                    
                     <td>${feedback.titulo}</td>
                     <td>${feedback.feedback}</td>
                     <td>${feedback.professorNome}</td>

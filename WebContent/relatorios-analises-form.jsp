@@ -15,5 +15,6 @@
     <p>Total de Atividades: ${relatorioAnalises.totalAtividades}</p>
     <p>Total de Projetos: ${relatorioAnalises.totalProjetos}</p>
     <p>Total de Entregas: ${relatorioAnalises.totalEntregas}</p>
+    <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
 </body>
 </html>

@@ -12,7 +12,7 @@
     <table border="1">
         <thead>
             <tr>
-                <th>ID</th>
+                
                 <th>Título</th>
                 <th>Conteúdo</th>
                 <th>Data Inicial</th>
@@ -23,7 +23,7 @@
         <tbody>
             <c:forEach var="atividade" items="${listaAtividades}">
     <tr>
-        <td>${atividade.id}</td>
+        
         <td>${atividade.titulo}</td>
         <td>${atividade.conteudo}</td>
         <td>${atividade.dataInicial}</td>

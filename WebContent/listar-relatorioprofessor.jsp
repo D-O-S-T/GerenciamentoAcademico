@@ -14,20 +14,20 @@
     <table border="1">
         <thead>
             <tr>
-                <th>ID</th>
+                
                 <th>Título</th>
                 <th>Relatório</th>
-                <th>ID do Professor</th>
+                
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             <c:forEach var="relatorioProfessor" items="${listaRelatorios}">
                 <tr>
-                    <td>${relatorioProfessor.id}</td>
+                    
                     <td>${relatorioProfessor.titulo}</td>
                     <td>${relatorioProfessor.relatorio}</td>
-                    <td>${relatorioProfessor.professorId}</td>
+                    
                     <td>
                         <a href="RelatorioProfessorServlet?action=editar&id=${relatorioProfessor.id}">Editar</a>
                         <a href="RelatorioProfessorServlet?action=excluir&id=${relatorioProfessor.id}">Excluir</a>

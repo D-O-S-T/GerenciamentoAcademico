@@ -12,7 +12,7 @@
     <table border="1">
         <thead>
             <tr>
-                <th>ID</th>
+                
                 <th>Conteúdo</th>
                 <th>Data de Entrega</th>
                 <th>ID do Aluno</th>
@@ -22,7 +22,7 @@
         <tbody>
             <c:forEach var="entrega" items="${listaEntregas}">
                 <tr>
-                    <td>${entrega.id}</td>
+                    
                     <td>${entrega.conteudo}</td>
                     <td>${entrega.dataEntrega}</td>
                     <td>${entrega.alunoDaEntregaId}</td>
