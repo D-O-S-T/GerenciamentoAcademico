@@ -7,6 +7,9 @@
     <title>Atualizar Feedback do Professor</title>
 </head>
 <body>
+
+	<!-- COLOCAR A SIDEBAR REFERENTE A PROFESSOR -->
+
     <h2>Atualizar Feedback do Professor</h2>
     
     <form action="FeedbackProfessorServlet?action=atualizar" method="post">
