@@ -54,16 +54,13 @@
     </script>
 </head>
 <body>
-	<div class="wrapper">
-		<%@ include file="componentes/sidebar.jsp"%>
-		
-	<div class="main-content">
-		<h2>Listagem de Coordenadores</h2>
-		<button onclick="window.location.href='coordenador-form.jsp'">Adicionar
-			Novo Coordenador</button>
+	<%@ include file="componentes/sidebar-coordenador.jsp"%>
+
+	<div class="content-wrapper">
+		<h2>Listagem de Coordenadores</h2>  
+		<button onclick="window.location.href='coordenador-form.jsp'">Adicionar Novo Coordenador</button>
 		<button onclick="gerarPDF()">Gerar PDF</button>
-		<button onclick="window.location.href='index-coordenador.jsp'">Voltar
-			à Página Inicial</button>
+		<button onclick="window.location.href='index-coordenador.jsp'">Voltar à Página Inicial</button>
 
 		<table border="1">
 			<thead>

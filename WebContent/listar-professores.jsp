@@ -48,7 +48,7 @@
     
     
     <div class="wrapper">
-        <%@ include file="componentes/sidebar.jsp" %>
+        <%@ include file="componentes/sidebar-coordenador.jsp" %>
         <div class="main-content">
         	<h2>Listagem de Professores</h2>
             <button onclick="window.location.href='professor-form.jsp'">Adicionar Novo Professor</button>

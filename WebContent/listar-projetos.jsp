@@ -46,7 +46,7 @@
 </head>
 <body>
 <div class="wrapper">
-	<%@ include file="componentes/sidebar.jsp" %>
+	<%@ include file="componentes/sidebar-coordenador.jsp" %>
 	<div class="main-content">
 	
     <h2>Listagem de Projetos</h2>

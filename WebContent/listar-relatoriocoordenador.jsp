@@ -74,7 +74,7 @@
 </head>
 <body>
 	<div class="wrapper">
-		<%@ include file="componentes/sidebar.jsp"%>
+		<%@ include file="componentes/sidebar-coordenador.jsp"%>
 		<div class="main-content">
 			<h2>Listagem de Relatórios de Coordenador</h2>
 			<button onclick="window.location.href='relatoriocoordenador-form.jsp'">Adicionar Novo Relatório</button>

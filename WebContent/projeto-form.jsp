@@ -24,7 +24,7 @@
 </head>
 <body>
 
-	<%@ include file="componentes/sidebar.jsp"%>
+	<%@ include file="componentes/sidebar-coordenador.jsp"%>
 	
 	<div class="wrapper">
 

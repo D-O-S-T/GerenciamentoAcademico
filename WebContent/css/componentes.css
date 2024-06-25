@@ -112,11 +112,11 @@ footer .logo-gdf {
 }
 
 /* ------------------------------- SIDEBAR ------------------------------- */
-.side-bar{
+.side-bar {
 	display: flex;
 }
 
-.side-bar-padrao{
+.side-bar-padrao {
 	flex-direction: row;
 }
 
@@ -178,9 +178,6 @@ footer .logo-gdf {
     margin-left: 20px;
 }
 
-
-
-
 .sidebar-list {
     list-style: none;
     padding: 0;
@@ -196,6 +193,35 @@ footer .logo-gdf {
     background-color: #428FCA;
 }
 
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+}
+.hamburger-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0; 
+    transition: 0.4s;
+}
+
+button#toggleButton {
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 40px;
+    background-color: #140f44;
+    color: white;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+     
 .main-content {
     margin-left: 250px;
     padding: 20px;
@@ -205,17 +231,5 @@ footer .logo-gdf {
 
 .main-content.collapsed {
     margin-left: 0;
-}
-
-button#toggleButton {
-    font-size: 20px;
-    padding: 10px;
-    cursor: pointer;
-    border: none;
-    background-color: #140f44;
-    color: white;
-    position: fixed;
-    top: 10px;
-    left: 10px;
 }
 
