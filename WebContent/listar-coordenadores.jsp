@@ -47,13 +47,14 @@
 </head>
 <body>
 	<%@ include file="componentes/sidebar-coordenador.jsp"%>
+	<%@ include file="componentes/nav.jsp"%>
 
 	<div class="wrapper">
 		<div class="container">
 			<h2>Listagem de Coordenadores</h2>  
-			<button onclick="window.location.href='coordenador-form.jsp'">Adicionar Novo Coordenador</button>
-			<button onclick="gerarPDF()">Gerar PDF</button>
-			<button onclick="window.location.href='index-coordenador.jsp'">Voltar à Página Inicial</button>
+			<button class="button-custom" onclick="window.location.href='coordenador-form.jsp'">Adicionar Coordenador</button>
+			<button class="button-custom" onclick="gerarPDF()">Gerar PDF</button>
+			<button class="button-custom  button-secondary" onclick="window.location.href='index-coordenador.jsp'">Voltar</button>
 	
 			<table border="1">
 				<thead>
