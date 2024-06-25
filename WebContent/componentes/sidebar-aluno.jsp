@@ -1,6 +1,5 @@
 <div class="sidebar" id="sidebar">
       <ul class="sidebar-list">
-          <li onclick="window.location.href='AtividadeServlet?action=listarPorAluno'">Ambiente de Pesquisa Estudantil</li>
           <li onclick="window.location.href='AtividadeServlet?action=listarPorAluno'">Entregar Atividade</li>
           <li onclick="window.location.href='AtividadeServlet?action=listarPorAluno'">Feedback</li>
           <li onclick="window.location.href='AtividadeServlet?action=listarPorAluno'">Avaliar Feedback</li>

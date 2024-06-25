@@ -1,6 +1,5 @@
 <div class="sidebar" id="sidebar">
 	<ul class="sidebar-list">
-		<p>Ambiente de Monitoramento de Pesquisa Estudantil</p>
 			<li onclick="window.location.href='RelatorioAnalisesServlet?action=listar'" onclick="window.location.href='relatorios-analises-form.jsp'">Relatórios e Análises</li>
 			<li onclick="window.location.href='AlunoServlet?action=listar'" onclick="window.location.href='listar-alunos.jsp'">Gestão de Alunos</li>
 			<li onclick="window.location.href='AlunoServlet?action=listar'" onclick="window.location.href='listar-projetos.jsp'">Gestão de Projetos</li>

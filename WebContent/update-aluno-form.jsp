@@ -18,7 +18,7 @@
 </head>
 <body>
 
-	<%@ include file="componentes/sidebar.jsp"%>
+	<%@ include file="componentes/sidebar-professor.jsp"%>
 
 	<div class="wrapper">
 		<div class="form-container">

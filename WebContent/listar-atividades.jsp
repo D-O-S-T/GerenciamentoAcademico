@@ -7,14 +7,16 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/componentes.css">
+	<link rel="stylesheet" href="css/pagina-padrao.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <title>Listagem de Atividades</title>
 </head>
 <body>
-	<%@ include file="componentes/sidebar-aluno.jsp" %>
+	<%@ include file="componentes/sidebar-professor.jsp" %>
 	<%@ include file="componentes/nav.jsp" %>
+	
     <h2>Listagem de Atividades</h2>
 
     <button onclick="window.location.href='atividade-form.jsp'">Adicionar Nova Atividade</button>
@@ -49,8 +51,8 @@
         </tbody>
     </table>
 
-    <button onclick="window.location.href='index-professor.jsp'">Voltar a Página Inicial</button>
-    <button onclick="window.location.href='EntregaServlet?action=listarProfessor'">Listar Entregas dos Alunos</button>
+    <button class="button-custom button-secondary" onclick="window.location.href='index-professor.jsp'">Voltar a Página Inicial</button>
+    <button class="button-custom" onclick="window.location.href='EntregaServlet?action=listarProfessor'">Listar Entregas dos Alunos</button>
 
 	<%@ include file="componentes/footer.jsp" %>
 </body>
