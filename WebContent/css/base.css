@@ -116,6 +116,12 @@ button:hover {
     background-color: #0056b3;
 }
 
+.form-container form .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* ------------------------------- UTILS ------------------------------- */
 .text-center {
     text-align: center;

@@ -23,6 +23,7 @@
 <title>Formulário de Projeto</title>
 </head>
 <body>
+
 	<%@ include file="componentes/sidebar.jsp"%>
 	
 	<div class="wrapper">
