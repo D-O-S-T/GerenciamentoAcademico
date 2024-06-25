@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/componentes.css">
 <link rel="stylesheet" href="css/login.css">
+<link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon-undf.png">
 </head>
 
 <body>

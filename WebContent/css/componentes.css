@@ -149,6 +149,7 @@ footer .logo-gdf {
     padding-top: 20px; /* Espaçamento superior para separação do topo */
 }
 
+/*TESTEI ISSO AQUI PARA CENTRALIZAR AS COISAS DA TABELA E BOTOES*/
 .side-bar2 {
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
