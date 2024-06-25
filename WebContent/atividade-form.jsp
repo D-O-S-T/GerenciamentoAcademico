@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/componentes.css">
 <link rel="stylesheet" href="css/form.css">
+<link rel="stylesheet" href="css/pagina-padrao.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -15,25 +16,29 @@
 </head>
 <body>
 	<%@ include file="componentes/sidebar-coordenador.jsp"%>
+	<%@ include file="componentes/nav.jsp"%>
 
 	<div class="wrapper">
-		<div class="form-container">
-			<h1>Inserir Atividade</h1>
-			<form action="AtividadeServlet?action=inserir" method="post">
-				<label for="titulo">Título:</label> <input type="text" id="titulo"
-					name="titulo" required><br>
-				<br> <label for="conteudo">Conteúdo:</label>
-				<textarea id="conteudo" name="conteudo" required></textarea>
-				<br>
-				<br> <label for="dataInicial">Data Inicial:</label> <input
-					type="date" id="dataInicial" name="dataInicial" required><br>
-				<br> <label for="dataFinal">Data Final:</label> <input
-					type="date" id="dataFinal" name="dataFinal" required><br>
-				<br> <input type="submit" value="Inserir Atividade">
-			</form>
+		<div class="container">
+			<div class="form-container">
+				<h1>Inserir Atividade</h1>
+				<form action="AtividadeServlet?action=inserir" method="post">
+					<label for="titulo">Título:</label> <input type="text" id="titulo"
+						name="titulo" required><br>
+					<br> <label for="conteudo">Conteúdo:</label>
+					<textarea id="conteudo" name="conteudo" required></textarea>
+					<br>
+					<br> <label for="dataInicial">Data Inicial:</label> <input
+						type="date" id="dataInicial" name="dataInicial" required><br>
+					<br> <label for="dataFinal">Data Final:</label> <input
+						type="date" id="dataFinal" name="dataFinal" required><br>
+					<br> <input type="submit" value="Inserir Atividade">
+				</form>
+				<a class="button-custom button-secondary" href="AtividadeServlet?action=listar">Voltar</a>
+			</div>
 		</div>
 	</div>
-
-	<a href="AtividadeServlet?action=listar">Voltar</a>
+	
+	<%@ include file="componentes/footer.jsp" %>
 </body>
 </html>

@@ -17,43 +17,46 @@
 	<%@ include file="componentes/sidebar-professor.jsp" %>
 	<%@ include file="componentes/nav.jsp" %>
 	
-    <h2>Listagem de Atividades</h2>
-
-    <button onclick="window.location.href='atividade-form.jsp'">Adicionar Nova Atividade</button>
-    
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Título</th>
-                <th>Conteúdo</th>
-                <th>Data Inicial</th>
-                <th>Data Final</th>
-                <th>Projeto</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="atividade" items="${listaAtividades}">
-                <tr>
-                    <td>${atividade.id}</td>
-                    <td>${atividade.titulo}</td>
-                    <td>${atividade.conteudo}</td>
-                    <td>${atividade.dataInicial}</td>
-                    <td>${atividade.dataFinal}</td>
-                    <td>${atividade.projetoTitulo}</td>
-                    <td>
-                        <a href="AtividadeServlet?action=editar&id=${atividade.id}">Editar</a>
-                        <a href="AtividadeServlet?action=excluir&id=${atividade.id}">Excluir</a>
-                    </td>
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
-
-    <button class="button-custom button-secondary" onclick="window.location.href='index-professor.jsp'">Voltar a Página Inicial</button>
-    <button class="button-custom" onclick="window.location.href='EntregaServlet?action=listarProfessor'">Listar Entregas dos Alunos</button>
-
+	<div class="wrapper">
+		<div class="container">
+		    <h2>Listagem de Atividades</h2>
+		
+		    <button class="button-custom" onclick="window.location.href='atividade-form.jsp'">Adicionar Nova Atividade</button>
+		    
+		    <table border="1">
+		        <thead>
+		            <tr>
+		                <th>ID</th>
+		                <th>Título</th>
+		                <th>Conteúdo</th>
+		                <th>Data Inicial</th>
+		                <th>Data Final</th>
+		                <th>Projeto</th>
+		                <th>Ações</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <c:forEach var="atividade" items="${listaAtividades}">
+		                <tr>
+		                    <td>${atividade.id}</td>
+		                    <td>${atividade.titulo}</td>
+		                    <td>${atividade.conteudo}</td>
+		                    <td>${atividade.dataInicial}</td>
+		                    <td>${atividade.dataFinal}</td>
+		                    <td>${atividade.projetoTitulo}</td>
+		                    <td>
+		                        <a href="AtividadeServlet?action=editar&id=${atividade.id}">Editar</a>
+		                        <a href="AtividadeServlet?action=excluir&id=${atividade.id}">Excluir</a>
+		                    </td>
+		                </tr>
+		            </c:forEach>
+		        </tbody>
+		    </table>
+		
+		    <button class="button-custom button-secondary" onclick="window.location.href='index-professor.jsp'">Voltar</button>
+		    <button class="button-custom" onclick="window.location.href='EntregaServlet?action=listarProfessor'">Listar Entregas dos Alunos</button>
+			</div>
+	</div>
 	<%@ include file="componentes/footer.jsp" %>
 </body>
 </html>
