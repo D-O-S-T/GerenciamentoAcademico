@@ -11,14 +11,30 @@
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
 
-            doc.text("Relatório de Análises", 10, 10);
-            doc.text("Total de Usuários: " + "<%= relatorioAnalises.getTotalUsuarios() %>", 10, 20);
-            doc.text("Total de Professores: " + "<%= relatorioAnalises.getTotalProfessores() %>", 10, 30);
-            doc.text("Total de Alunos: " + "<%= relatorioAnalises.getTotalAlunos() %>", 10, 40);
-            doc.text("Total de Coordenadores: " + "<%= relatorioAnalises.getTotalCoordenadores() %>", 10, 50);
-            doc.text("Total de Atividades: " + "<%= relatorioAnalises.getTotalAtividades() %>", 10, 60);
-            doc.text("Total de Projetos: " + "<%= relatorioAnalises.getTotalProjetos() %>", 10, 70);
-            doc.text("Total de Entregas: " + "<%= relatorioAnalises.getTotalEntregas() %>", 10, 80);
+            // Adicionando a barra azul claro no cabeçalho
+            doc.setFillColor(204, 229, 255); // Cor azul claro (RGB)
+            doc.rect(0, 0, 210, 20, 'F'); // Desenha um retângulo azul claro de largura total no topo
+
+            // Adicionando o cabeçalho "Universidade do Distrito Federal"
+            doc.setFontSize(16);
+            doc.setTextColor(0, 0, 0); // Cor do texto: preto
+            doc.text("Universidade do Distrito Federal", 105, 15, { align: "center" });
+
+            // Adicionando os detalhes do relatório
+            doc.setFontSize(12);
+            doc.text("Relatório de Análises", 105, 30, { align: "center" });
+            doc.text("Total de Usuários: " + "<%= relatorioAnalises.getTotalUsuarios() %>", 10, 50);
+            doc.text("Total de Professores: " + "<%= relatorioAnalises.getTotalProfessores() %>", 10, 60);
+            doc.text("Total de Alunos: " + "<%= relatorioAnalises.getTotalAlunos() %>", 10, 70);
+            doc.text("Total de Coordenadores: " + "<%= relatorioAnalises.getTotalCoordenadores() %>", 10, 80);
+            doc.text("Total de Atividades: " + "<%= relatorioAnalises.getTotalAtividades() %>", 10, 90);
+            doc.text("Total de Projetos: " + "<%= relatorioAnalises.getTotalProjetos() %>", 10, 100);
+            doc.text("Total de Entregas: " + "<%= relatorioAnalises.getTotalEntregas() %>", 10, 110);
+
+            // Adicionando "Brasília" e a data atual no rodapé
+            const dataAtual = new Date().toLocaleDateString('pt-BR');
+            doc.setFontSize(10);
+            doc.text("Brasília, " + dataAtual, 105, 280, { align: "center" });
 
             doc.save("relatorio-analises.pdf");
         }
