@@ -46,7 +46,7 @@
 </head>
 <body>
 <div class="wrapper">
-	<%@ include file="componentes/sidebar.jsp" %>
+	<%@ include file="componentes/sidebar-coordenador.jsp" %>
 	<div class="main-content">
 	
     <h2>Listagem de Projetos</h2>
@@ -54,7 +54,7 @@
     <button onclick="gerarPDF()">Gerar PDF</button>
     <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
     
-    <table class="tabela" border="1">
+    <table border="1">
         <thead>
             <tr>
                 <th>ID</th>

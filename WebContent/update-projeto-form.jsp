@@ -11,20 +11,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/form.css" />
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/componentes.css">
+<link rel="stylesheet" href="css/form.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
 <meta charset="UTF-8">
 <title>Editar Projeto</title>
 </head>
 <body>
-	<div class="conteiner">
+
+	<%@ include file="componentes/sidebar-coordenador.jsp"%>
+	
+	<div class="wrapper">
 
 		<div class="form-container">
 
-			<h1>Editar Projeto</h1>
+			<h2>Editar Projeto</h2>
 
 			<form action="ProjetoServlet" method="POST">
 				<input type="hidden" name="action" value="atualizar"> <input
@@ -104,6 +111,8 @@
 			<a href="ProjetoServlet?action=listar">Cancelar</a> <br>
 		</div>
 	</div>
+		<%@ include file="componentes/footer.jsp"%>
+	
 </body>
 </html>
 

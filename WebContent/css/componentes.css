@@ -69,36 +69,24 @@ footer .logo-gdf {
     width: 100%;
 }
 
-.side-bar{
-	display: flex;
-}
-
-.side-bar-padrao{
-	flex-direction: row;
-}
-
-/* Estilos para a tabela */
+/* ------------------------------- TABELA ------------------------------- */
 .tabela {
-    width: 50%;
-    border-collapse: separate; /* Utiliza separação entre as bordas das células */  
+    text-align: center; 
+    margin-top: 90px; /* Espaçamento superior para os elementos dentro de teste */
 }
 
-.tabela th, .tabela td {
-    padding: 10px; /* Espaçamento interno das células */
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-    font-weight: 200px;
-    font-size: 20px;
+.tabela table {
+    width: 100%; 
+    margin-top: 20px; 
+    border-collapse: collapse; /* Remove espaçamento entre as células da tabela */
 }
 
-.tabela th {
-    background-color: #8AC7E8;
-}
-.tabela tbody tr:hover {
-    background-color: #fff;
+.tabela button {
+    margin-top: 50px; /* Espaçamento superior para os botões */
+    margin-left: 20px;
 }
 
-/*Teste css sidebar*/
+/* ------------------------------- SIDEBAR ------------------------------- */
 .sidebar {
     width: 250px;
     height: 100vh;
@@ -112,7 +100,7 @@ footer .logo-gdf {
 .sidebar-list {
     list-style: none;
     padding: 0;
-    margin-top: 100px;
+    margin-top: calc(100px + var(--nav-height));
 }
 
 .sidebar-list li {
@@ -124,52 +112,48 @@ footer .logo-gdf {
     background-color: #428FCA;
 }
 
-.main-content {
-    margin-left: 250px;
-    padding: 20px;
-    transition: margin-left 0.3s;
-    flex-grow: 1;
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
 }
-
-.main-content.collapsed {
-    margin-left: 0;
+.hamburger-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0; 
+    transition: 0.4s;
 }
 
 button#toggleButton {
     font-size: 20px;
     padding: 10px;
+    margin-top: 80px; /* Margem igual à altura da navbar flutuante */
     cursor: pointer;
     border: none;
+    border-radius: 40px;
     background-color: #140f44;
     color: white;
     position: fixed;
     top: 10px;
     left: 10px;
 }
+     
+/* ------------------------------- FORMULÁRIOS ------------------------------- */
+input, textarea, select, button {
+    font-family: inherit;
+    font-size: inherit;
+}
 
-/* estilização da teabela */
-title{
-	margin-top: 10px;
+input, textarea, select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 
- .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Centraliza horizontalmente */
-            text-align: center; /* Alinha o texto ao centro */
-            margin-top: 10px; /* Espaçamento superior */
-        }
-
-        .content-wrapper h2 {
-            margin-bottom: 0px; /* Espaçamento inferior para o título */
-        }
-
-        .content-wrapper button {
-            margin-bottom: 20px; /* Espaçamento inferior para o botão */
-        }
-
-        .content-wrapper table {
-            width: 80%; /* Largura da tabela */
-            margin-top: 20px; /* Espaçamento superior para a tabela */
-        }

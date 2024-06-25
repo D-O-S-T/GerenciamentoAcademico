@@ -33,22 +33,18 @@ input[type="text"], input[type="date"], input[type="number"],input[type="email"]
     font-size: 14px;
 }
 
-.wrapper {
-	background-color: #f8f8f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-}
 
 .wrapper .form-container {
 	width: 100%;
     max-width: 500px;
     padding: 30px;
-    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     overflow: hidden;
-	
+}
+
+.form-container form .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
