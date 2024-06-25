@@ -3,12 +3,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/componentes.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <title>Lista de Entregas dos Alunos</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+<%@ include file="componentes/sidebar-aluno.jsp" %>
+	<%@ include file="componentes/nav.jsp" %>
+    <div class="side-bar2">
+        <div class="side-bar-padrao2">
     <h2>Lista de Entregas dos Alunos</h2>
+    <div class="teste2">
     <table border="1">
         <thead>
             <tr>
@@ -32,5 +42,9 @@
         </tbody>
     </table>
     <button onclick="window.location.href='AtividadeServlet?action=listar'">Voltar a Página de Atividades</button>
+</div>
+    </div>
+    </div>
+    <%@ include file="componentes/footer.jsp" %>
 </body>
 </html>
