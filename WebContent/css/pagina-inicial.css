@@ -7,7 +7,7 @@ main {
 	flex: 1; /* Força o footer pro final 1 */
     display: flex;
     flex-direction: column;
-    padding-top: 80px; /* Padding igual à altura da navbar flutuante */
+    padding-top: var(--nav-height); /* Padding igual à altura da navbar flutuante */
 }
 
 .buttons {

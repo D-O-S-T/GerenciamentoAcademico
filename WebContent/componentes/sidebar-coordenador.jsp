@@ -7,7 +7,7 @@
 			<li onclick="window.location.href='AlunoServlet?action=listar'" onclick="window.location.href='index-professor.jsp'">Gestão de Professores</li>
 			<li onclick="window.location.href='AlunoServlet?action=listar'" onclick="window.location.href='listar-coordenadores.jsp'">Gestão de Coordenadores</li>
 			<li onclick="window.location.href='RelatorioCoordenadorServlet?action=listar'" onclick="window.location.ref='listar-relatoriocoordenador.jsp'">Inserir Relatório</li>
-          	<li onclick="window.location.href='https://willowitzy.com/'">Suporte</li>
+          	<li onclick="window.location.href='https://github.com/D-O-S-T'">Suporte</li>
 	</ul>
 </div>
 <div class="main-content" id="main-content">

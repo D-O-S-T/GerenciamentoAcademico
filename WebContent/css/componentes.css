@@ -71,56 +71,22 @@ footer .logo-gdf {
 
 /* ------------------------------- TABELA ------------------------------- */
 .tabela {
-    width: 50%;
-    border-collapse: separate; /* Utiliza separação entre as bordas das células */  
+    text-align: center; 
+    margin-top: 90px; /* Espaçamento superior para os elementos dentro de teste */
 }
 
-.tabela th, .tabela td {
-    padding: 10px; /* Espaçamento interno das células */
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-    font-weight: 200px;
-    font-size: 20px;
-}
-
-.tabela th {
-    background-color: #8AC7E8;
-}
-.tabela tbody tr:hover {
-    background-color: #fff;
-}
-
-.content-wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center; 
-	text-align: center; 
-	margin-top: 10px; 
-}
-
-.content-wrapper h2 {
-	margin-bottom: 0px; 
-}
-
-.content-wrapper button {
-    margin-bottom: 20px; 
-}
-
-.content-wrapper table {
-    width: 80%; 
+.tabela table {
+    width: 100%; 
     margin-top: 20px; 
+    border-collapse: collapse; /* Remove espaçamento entre as células da tabela */
+}
+
+.tabela button {
+    margin-top: 50px; /* Espaçamento superior para os botões */
+    margin-left: 20px;
 }
 
 /* ------------------------------- SIDEBAR ------------------------------- */
-.side-bar {
-	display: flex;
-}
-
-.side-bar-padrao {
-	flex-direction: row;
-}
-
-/*Teste css sidebar*/
 .sidebar {
     width: 250px;
     height: 100vh;
@@ -131,58 +97,10 @@ footer .logo-gdf {
     transition: left 0.3s;
 }
 
-/*TESTE LEX*/
-.side-bar {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    height: 100vh; /* Garante que a barra lateral ocupe toda a altura da viewport */
-    background-color: #f0f0f0; /* Cor de fundo para verificar o alinhamento */
-}
-
-.side-bar {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: flex-start; /* Alinha os itens ao topo */
-    height: 100vh; /* Altura total da viewport */
-    background-color: #f0f0f0; /* Cor de fundo para verificar alinhamento */
-    padding-top: 20px; /* Espaçamento superior para separação do topo */
-}
-
-/*TESTEI ISSO AQUI PARA CENTRALIZAR AS COISAS DA TABELA E BOTOES*/
-.side-bar2 {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: flex-start; /* Alinha os itens ao topo */
-    height: 100vh; /* Altura total da viewport */
-    background-color: #f0f0f0; /* Cor de fundo para verificar alinhamento */
-    padding-top: 60px; /* Espaçamento superior para separação do topo */
-}
-
-.side-bar-padrao2 {
-    width: 100%; /* Ocupa toda a largura disponível */
-    max-width: 1000px; /* Define uma largura máxima */
-}
-
-.teste2 {
-    text-align: center; /* Alinha o texto centralmente */
-    margin-top: 90px; /* Espaçamento superior para os elementos dentro de teste */
-}
-
-.teste2 table {
-    width: 100%; /* Ocupa toda a largura disponível */
-    border-collapse: collapse; /* Remove espaçamento entre as células da tabela */
-}
-
-.teste2 button {
-    margin-top: 50px; /* Espaçamento superior para os botões */
-    margin-left: 20px;
-}
-
 .sidebar-list {
     list-style: none;
     padding: 0;
-    margin-top: 100px;
+    margin-top: calc(100px + var(--nav-height));
 }
 
 .sidebar-list li {
@@ -213,6 +131,7 @@ footer .logo-gdf {
 button#toggleButton {
     font-size: 20px;
     padding: 10px;
+    margin-top: 80px; /* Margem igual à altura da navbar flutuante */
     cursor: pointer;
     border: none;
     border-radius: 40px;
@@ -223,14 +142,18 @@ button#toggleButton {
     left: 10px;
 }
      
-.main-content {
-    margin-left: 250px;
-    padding: 20px;
-    transition: margin-left 0.3s;
-    flex-grow: 1;
+/* ------------------------------- FORMULÁRIOS ------------------------------- */
+input, textarea, select, button {
+    font-family: inherit;
+    font-size: inherit;
 }
 
-.main-content.collapsed {
-    margin-left: 0;
+input, textarea, select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
+
 

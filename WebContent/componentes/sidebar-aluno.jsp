@@ -4,7 +4,7 @@
           <li onclick="window.location.href='AtividadeServlet?action=listarPorAluno'">Entregar Atividade</li>
           <li onclick="window.location.href='AtividadeServlet?action=listarPorAluno'">Feedback</li>
           <li onclick="window.location.href='AtividadeServlet?action=listarPorAluno'">Avaliar Feedback</li>
-          <li onclick="window.location.href='https://willowitzy.com/'">Suporte</li>
+          <li onclick="window.location.href='https://github.com/D-O-S-T'">Suporte</li>
       </ul>
   </div>
   <div class="main-content" id="main-content">

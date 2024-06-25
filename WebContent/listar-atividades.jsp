@@ -15,10 +15,8 @@
 <body>
 	<%@ include file="componentes/sidebar-aluno.jsp" %>
 	<%@ include file="componentes/nav.jsp" %>
-    <div class="side-bar2">
-        <div class="side-bar-padrao2">
     <h2>Listagem de Atividades</h2>
-    <div class="teste2">
+
     <button onclick="window.location.href='atividade-form.jsp'">Adicionar Nova Atividade</button>
     
     <table border="1">
@@ -50,12 +48,10 @@
             </c:forEach>
         </tbody>
     </table>
-    <br>
+
     <button onclick="window.location.href='index-professor.jsp'">Voltar a Página Inicial</button>
     <button onclick="window.location.href='EntregaServlet?action=listarProfessor'">Listar Entregas dos Alunos</button>
-	</div>
-	</div>
-	</div>
+
 	<%@ include file="componentes/footer.jsp" %>
 </body>
 </html>

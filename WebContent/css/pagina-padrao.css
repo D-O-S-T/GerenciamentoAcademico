@@ -1,0 +1,40 @@
+.wrapper {
+	padding-top: calc(20px + var(--nav-height)); /* Padding igual à altura da navbar flutuante + 20px */
+	margin: 0 auto;
+}
+
+.container {
+    text-align: center; 
+}
+
+.button-custom {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--btn-primary);
+    /* padding: 0.75rem 1.5rem; */
+    /* background-color: var(--btn-form); */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Escurecer o botão no estado de hover */
+.button-custom:hover {
+    background-color: #0056b3; 
+}
+
+.button-secondary {
+    background-color: var(--btn-secondary);
+}
+
+/* Escurecer o botão no estado de hover */
+.button-secondary:hover {
+    background-color: #5a6268; 
+}

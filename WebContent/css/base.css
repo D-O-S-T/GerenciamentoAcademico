@@ -1,15 +1,21 @@
 @charset "UTF-8";
 
+:root {
+	--background: #f0f0f0; 
+	--nav-height: 80px;
+	--btn-primary: #007bff;
+	--btn-secondary: #6c757d;
+	--btn-form: #007bff;
+}
+
 body {
     font-family: "Open Sans", sans-serif;
-    background-color: #f2f2f2;
 	color: #333;
     display: flex;
     flex-direction: column;
     text-align: center;
     min-height: 100vh;
     margin-top: 50px;
-    
 }
 
 .analise {
@@ -105,39 +111,6 @@ th {
 img {
     max-width: 100%;
     height: auto;
-}
-
-/* ------------------------------- FORMULÁRIOS ------------------------------- */
-input, textarea, select, button {
-    font-family: inherit;
-    font-size: inherit;
-}
-
-input, textarea, select {
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-button {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.form-container form .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /* ------------------------------- UTILS ------------------------------- */

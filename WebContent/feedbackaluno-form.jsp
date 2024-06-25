@@ -19,57 +19,56 @@
 </head>
 <body>
 
-<%@ include file="componentes/sidebar-aluno.jsp"%>
+	<%@ include file="componentes/nav.jsp" %>
+	<%@ include file="componentes/sidebar-aluno.jsp"%>
 
-<div class="wrapper">
-    <div class="form-container">
-        <h1>Formulário de Feedback do Aluno</h1>
-
-        <!-- Verificar se existe uma mensagem de erro e exibi-la -->
-        <c:if test="${not empty erro}">
-            <p style="color: red;">${erro}</p>
-        </c:if>
-
-        <form action="FeedbackAlunoServlet?action=inserir" method="post">
-            <!-- Título do Feedback -->
-            <label for="titulo">Título:</label>
-            <input type="text" id="titulo" name="titulo" required><br>
-            <br>
-
-            <!-- Feedback -->
-            <label for="feedback">Feedback:</label><br>
-            <textarea id="feedback" name="feedback" rows="5" cols="40" required></textarea>
-            <br>
-            <br>
-
-            <!-- Professor (combobox) -->
-            <label for="professorId">Professor:</label><br>
-            <select id="professorId" name="professorId" required>
-                <option value="">Selecione um Professor</option>
-                <%
-                ProfessorDAO professorDAO = new ProfessorDAO();
-                List<Professor> listaProfessores = professorDAO.getTodosProfessores();
-                for (Professor professor : listaProfessores) {
-                %>
-                <option value="<%=professor.getId()%>"><%=professor.getNome()%></option>
-                <%
-                }
-                %>
-            </select><br>
-            <br>
-
-            <!-- Campo Escondido para Aluno ID -->
-            <input type="hidden" id="alunoId" name="alunoId" value="${sessionScope.usuarioId}">
-
-            <!-- Botão Enviar -->
-            <div class="button-container">
-                <input type="submit" value="Enviar">
-            </div>
-        </form>
-    </div>
-</div>
-
-<%@ include file="componentes/footer.jsp"%>
-
+	<div class="wrapper">
+	    <div class="form-container">
+	        <h1 style="font-size: 16px">Formulário de Feedback do Aluno</h1>
+	
+	        <!-- Verificar se existe uma mensagem de erro e exibi-la -->
+	        <c:if test="${not empty erro}">
+	            <p style="color: red;">${erro}</p>
+	        </c:if>
+	
+	        <form action="FeedbackAlunoServlet?action=inserir" method="post">
+	            <!-- Título do Feedback -->
+	            <label for="titulo">Título:</label>
+	            <input type="text" id="titulo" name="titulo" required><br>
+	            <br>
+	
+	            <!-- Feedback -->
+	            <label for="feedback">Feedback:</label><br>
+	            <textarea id="feedback" name="feedback" rows="5" cols="40" required></textarea>
+	            <br>
+	            <br>
+	
+	            <!-- Professor (combobox) -->
+	            <label for="professorId">Professor:</label><br>
+	            <select id="professorId" name="professorId" required>
+	                <option value="">Selecione um Professor</option>
+	                <%
+	                ProfessorDAO professorDAO = new ProfessorDAO();
+	                List<Professor> listaProfessores = professorDAO.getTodosProfessores();
+	                for (Professor professor : listaProfessores) {
+	                %>
+	                <option value="<%=professor.getId()%>"><%=professor.getNome()%></option>
+	                <%
+	                }
+	                %>
+	            </select><br>
+	            <br>
+	
+	            <!-- Campo Escondido para Aluno ID -->
+	            <input type="hidden" id="alunoId" name="alunoId" value="${sessionScope.usuarioId}">
+	
+	            <!-- Botão Enviar -->
+	            <div class="button-container">
+	                <input type="submit" value="Enviar">
+	            </div>
+	        </form>
+	    </div>
+	</div>
+	<%@ include file="componentes/footer.jsp"%>
 </body>
 </html>

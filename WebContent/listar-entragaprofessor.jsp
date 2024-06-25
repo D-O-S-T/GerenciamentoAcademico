@@ -17,33 +17,33 @@
 	<%@ include file="componentes/nav.jsp" %>
     <div class="side-bar2">
         <div class="side-bar-padrao2">
-    <h2>Lista de Entregas dos Alunos</h2>
-    <div class="teste2">
-    <table border="1">
-        <thead>
-            <tr>
-                
-                <th>Conteúdo</th>
-                <th>Data de Entrega</th>
-                <th>ID do Aluno</th>
-                <th>ID da Atividade</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="entrega" items="${listaEntregas}">
-                <tr>
-                    
-                    <td>${entrega.conteudo}</td>
-                    <td>${entrega.dataEntrega}</td>
-                    <td>${entrega.alunoDaEntregaId}</td>
-                    <td>${entrega.atividadeId}</td>
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
-    <button onclick="window.location.href='AtividadeServlet?action=listar'">Voltar a Página de Atividades</button>
-</div>
-    </div>
+		    <h2>Lista de Entregas dos Alunos</h2>
+		    <div class="teste2">
+			    <table border="1">
+			        <thead>
+			            <tr>
+			                
+			                <th>Conteúdo</th>
+			                <th>Data de Entrega</th>
+			                <th>ID do Aluno</th>
+			                <th>ID da Atividade</th>
+			            </tr>
+			        </thead>
+			        <tbody>
+			            <c:forEach var="entrega" items="${listaEntregas}">
+			                <tr>
+			                    
+			                    <td>${entrega.conteudo}</td>
+			                    <td>${entrega.dataEntrega}</td>
+			                    <td>${entrega.alunoDaEntregaId}</td>
+			                    <td>${entrega.atividadeId}</td>
+			                </tr>
+			            </c:forEach>
+			        </tbody>
+			    </table>
+			    <button onclick="window.location.href='AtividadeServlet?action=listar'">Voltar a Página de Atividades</button>
+			</div>
+    	</div>
     </div>
     <%@ include file="componentes/footer.jsp" %>
 </body>
