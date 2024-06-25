@@ -14,7 +14,7 @@
 </head>
 <body>
 <div style="display:flex; justify-content; align-itens: center;">
-	<%@ include file="componentes/sidebar.jsp" %>
+	<%@ include file="componentes/sidebar-aluno.jsp" %>
     <h2>Feedbacks do Aluno</h2>
     <c:choose>
         <c:when test="${not empty listaFeedbacksAluno}">

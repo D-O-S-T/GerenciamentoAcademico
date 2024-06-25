@@ -49,6 +49,7 @@
     <h2>Listagem de Alunos</h2>
     <button onclick="window.location.href='aluno-form.jsp'">Adicionar Novo Aluno</button>
     <button onclick="gerarPDF()">Gerar PDF</button>
+    <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
 
     <table class="tabela" border="1">
         <thead>
@@ -81,7 +82,6 @@
     </table>
     
     <br>
-    <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
     </div>
     </div>
     <%@ include file="componentes/footer.jsp" %>

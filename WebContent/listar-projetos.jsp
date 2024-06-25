@@ -52,6 +52,7 @@
     <h2>Listagem de Projetos</h2>
     <button onclick="window.location.href='projeto-form.jsp'">Adicionar Novo Projeto</button>
     <button onclick="gerarPDF()">Gerar PDF</button>
+    <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
     
     <table class="tabela" border="1">
         <thead>
@@ -87,7 +88,6 @@
         </tbody>
     </table>
     
-    <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
     </div>
     </div>
     

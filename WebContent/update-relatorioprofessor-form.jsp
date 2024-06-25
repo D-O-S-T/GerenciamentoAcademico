@@ -43,8 +43,8 @@
                 <textarea id="relatorio" name="relatorio" rows="4" cols="50" required>${relatorioProfessor.relatorio}</textarea>
                 
                 <!-- ID do Professor -->
-                <label for="professor_id">ID do Professor:</label>
-                <input type="number" id="professor_id" name="professor_id" value="${relatorioProfessor.professorId}" required>
+                <!-- <label type="hidden" for="professor_id">ID do Professor:</label>  -->
+                <input type="hidden" id="professor_id" name="professor_id" value="${relatorioProfessor.professorId}" required>
                 
                 <input type="submit" value="Atualizar">
             </form>

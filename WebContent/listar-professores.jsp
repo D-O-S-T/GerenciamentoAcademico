@@ -52,6 +52,7 @@
         <div class="main-content">
             <button onclick="window.location.href='professor-form.jsp'">Adicionar Novo Professor</button>
             <button onclick="gerarPDF()">Gerar PDF</button>
+            <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
             
             <table border="1">
                 <thead>
@@ -81,7 +82,6 @@
                 </tbody>
             </table>
         
-            <button onclick="window.location.href='index-coordenador.jsp'">Voltar a Página Inicial</button>
         </div> <!-- Fin da div main-content -->
     </div> <!-- Fim do wrapper -->
 
