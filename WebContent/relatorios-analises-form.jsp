@@ -55,6 +55,7 @@
 	<%@ include file="componentes/sidebar.jsp"%>
 
 	<div class="analise">
+		<div class="analise-container">
 		<h1>Relatório de Análises</h1>
 		<p>Total de Usuários: ${relatorioAnalises.totalUsuarios}</p>
 		<p>Total de Professores: ${relatorioAnalises.totalProfessores}</p>
@@ -65,8 +66,10 @@
 		<p>Total de Entregas: ${relatorioAnalises.totalEntregas}</p>
 		<button onclick="window.location.href='index-coordenador.jsp'">Voltar
 			a Página Inicial</button>
-		<button onclick="gerarPDF()">Gerar PDF</button>
+		<button onclick="gerarPDF()">Gerar PDF</button></div>
+		
 	</div>
+	
 	<%@ include file="componentes/footer.jsp"%>
 
 </body>
