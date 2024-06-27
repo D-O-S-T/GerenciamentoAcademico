@@ -20,6 +20,8 @@
 	<div class="wrapper">
 		<div class="container">
 		    <h2>Feedbacks do Aluno</h2>
+		    <button class="button-custom" onclick="window.location.href='feedbackaluno-form.jsp'">Adicionar Feedback</button>
+		    <button class="button-custom button-secondary" onclick="window.location.href='index-aluno.jsp'">Voltar</button>
 		    <c:choose>
 		        <c:when test="${not empty listaFeedbacksAluno}">
 		            <table border="1">
@@ -51,8 +53,7 @@
 		            <p>Nenhum feedback encontrado para este aluno.</p>
 		        </c:otherwise>
 		    </c:choose>
-		    <button class="button-custom" onclick="window.location.href='feedbackaluno-form.jsp'">Adicionar Feedback</button>
-		    <button class="button-custom button-secondary" onclick="window.location.href='index-aluno.jsp'">Voltar</button>
+		    
      	</div>
      </div>
      <%@ include file="componentes/footer.jsp" %>

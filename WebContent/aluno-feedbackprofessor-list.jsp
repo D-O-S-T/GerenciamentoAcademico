@@ -19,6 +19,7 @@
 	<div class="wrapper">
 	        <div class="container">
 	            <h2 class="">Listagem de Feedbacks de Professores</h2>
+	            <button class="button-custom button-secondary" onclick="window.location.href='index-aluno.jsp'">Voltar</button>
 	            <table class="tabela" border="1">
 	                <thead>
 	                    <tr>
@@ -39,7 +40,7 @@
 	                </c:forEach>
 	            </tbody>
 	        </table>
-	        <button class="button-custom button-secondary" onclick="window.location.href='index-aluno.jsp'">Voltar</button>
+	        
 	    </div>
 	</div>
 	<%@ include file="componentes/footer.jsp" %>

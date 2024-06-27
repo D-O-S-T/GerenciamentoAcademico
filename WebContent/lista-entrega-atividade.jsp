@@ -19,7 +19,9 @@
     
     <div class="wrapper">
         <div class="container">          
-            <h2>Entregas de Atividades</h2>     
+            <h2>Entregas de Atividades</h2>  
+            <button class="button-custom" onclick="window.location.href='EntregaServlet?action=listar'">Visualizar suas Entregas</button>
+            <button class="button-custom button-secondary" onclick="window.location.href='index-aluno.jsp'">Voltar</button>   
             <div class="tabela">
                 <table border="1">
                     <thead>
@@ -50,8 +52,7 @@
                 </table>
                 <br>
                 
-                <button class="button-custom" onclick="window.location.href='EntregaServlet?action=listar'">Visualizar suas Entregas</button>
-                <button class="button-custom button-secondary" onclick="window.location.href='index-aluno.jsp'">Voltar</button>
+                
             </div>
         </div>
     </div>
