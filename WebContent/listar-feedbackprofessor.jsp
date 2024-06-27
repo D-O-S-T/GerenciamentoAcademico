@@ -22,6 +22,7 @@
         <div class="container">
     		<h2>Listagem de Feedbacks de Professores</h2>
     		<button class="button-custom" onclick="window.location.href='feedbackprofessor-form.jsp'">Adicionar Feedback</button>
+    		<button class="button-custom button-secondary" onclick="window.location.href='index-professor.jsp'">Voltar</button>
     
 		    <table border="1">
 		        <thead>
@@ -48,7 +49,7 @@
 		            </c:forEach>
 		        </tbody>
 		    </table>
-    		<button class="button-custom button-secondary" onclick="window.location.href='index-professor.jsp'">Voltar</button>
+    		
     	</div>
     </div>
      <%@ include file="componentes/footer.jsp" %>

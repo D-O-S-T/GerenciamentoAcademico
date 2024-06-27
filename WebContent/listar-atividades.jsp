@@ -22,6 +22,8 @@
 		    <h2>Listagem de Atividades</h2>
 		
 		    <button class="button-custom" onclick="window.location.href='atividade-form.jsp'">Adicionar Nova Atividade</button>
+		    <button class="button-custom" onclick="window.location.href='EntregaServlet?action=listarProfessor'">Listar Entregas dos Alunos</button>
+		    <button class="button-custom button-secondary" onclick="window.location.href='index-professor.jsp'">Voltar</button>
 		    
 		    <table border="1">
 		        <thead>
@@ -53,8 +55,8 @@
 		        </tbody>
 		    </table>
 		
-		    <button class="button-custom button-secondary" onclick="window.location.href='index-professor.jsp'">Voltar</button>
-		    <button class="button-custom" onclick="window.location.href='EntregaServlet?action=listarProfessor'">Listar Entregas dos Alunos</button>
+		    
+		    
 			</div>
 	</div>
 	<%@ include file="componentes/footer.jsp" %>

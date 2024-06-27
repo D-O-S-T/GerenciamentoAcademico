@@ -23,6 +23,7 @@
     	<h2>Listagem de Relatórios de Professores</h2> 
 		  <div class="teste2">
 		    <button class="button-custom" onclick="window.location.href='relatorioprofessor-form.jsp'">Adicionar Novo Relatório</button>
+		    <button class="button-custom button-secondary" onclick="window.location.href='index-professor.jsp'">Voltar</button>
 		    <table border="1">
 		        <thead>
 		            <tr>
@@ -47,7 +48,7 @@
 		        </tbody>
 		    </table>
 		    
-		    <button class="button-custom button-secondary" onclick="window.location.href='index-professor.jsp'">Voltar</button>
+		    
 		    </div>
 		</div>
     </div>
