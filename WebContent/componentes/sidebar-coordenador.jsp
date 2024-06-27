@@ -1,11 +1,11 @@
 <div class="sidebar" id="sidebar">
 	<ul class="sidebar-list">
-			<li onclick="window.location.href='RelatorioAnalisesServlet?action=listar'" onclick="window.location.href='relatorios-analises-form.jsp'">Relatórios e Análises</li>
-			<li onclick="window.location.href='AlunoServlet?action=listar'" onclick="window.location.href='listar-alunos.jsp'">Gestão de Alunos</li>
-			<li onclick="window.location.href='AlunoServlet?action=listar'" onclick="window.location.href='listar-projetos.jsp'">Gestão de Projetos</li>
-			<li onclick="window.location.href='AlunoServlet?action=listar'" onclick="window.location.href='index-professor.jsp'">Gestão de Professores</li>
-			<li onclick="window.location.href='AlunoServlet?action=listar'" onclick="window.location.href='listar-coordenadores.jsp'">Gestão de Coordenadores</li>
-			<li onclick="window.location.href='RelatorioCoordenadorServlet?action=listar'" onclick="window.location.ref='listar-relatoriocoordenador.jsp'">Inserir Relatório</li>
+			<li onclick="window.location.href='RelatorioAnalisesServlet?action=listar'" >Relatórios e Análises</li>
+			<li onclick="window.location.href='AlunoServlet?action=listar'" >Gestão de Alunos</li>
+			<li onclick="window.location.href='ProjetoServlet?action=listar'" >Gestão de Projetos</li>
+			<li onclick="window.location.href='ProfessorServlet?action=listar'" >Gestão de Professores</li>
+			<li onclick="window.location.href='CoordenadorServlet?action=listar'">Gestão de Coordenadores</li>
+			<li onclick="window.location.href='RelatorioCoordenadorServlet?action=listar'">Inserir Relatório</li>
           	<li onclick="window.location.href='https://github.com/D-O-S-T'">Suporte</li>
 	</ul>
 </div>

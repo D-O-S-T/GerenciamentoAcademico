@@ -50,7 +50,7 @@
 	<%@ include file="componentes/nav.jsp" %>
 		
 <div class="wrapper">
-	<div class="container"></div>
+	<div class="container">
 		<div class="main-content">
 		    <h2>Listagem de Projetos</h2>
 		    <button class="button-custom" onclick="window.location.href='projeto-form.jsp'">Adicionar Projeto</button>

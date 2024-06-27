@@ -46,7 +46,7 @@
 	</script>
 </head>
 <body>
-	<%@ include file="componentes/sidebar-professor.jsp"%>
+	<%@ include file="componentes/sidebar-coordenador.jsp"%>
 	<%@ include file="componentes/nav.jsp"%>
 
 	<div class="wrapper">
