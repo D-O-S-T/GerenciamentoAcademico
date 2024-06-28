@@ -1,6 +1,6 @@
 # SGA-IC
 
-![Banner](https://raw.githubusercontent.com/D-O-S-T/GerenciamentoAcademico/0f7152972bbf9a9a6ab7b65329f468b534a2ee23/WebContent/imagens/undf.png)
+![Banner](https://i.imgur.com/xgt1z6m.png)
 
 ## Descrição
 Este projeto é um Sistema de Gestão Acadêmica voltado para projetos de Iniciação Científica, utilizando Servlets, JSP e Java para funcionalidades baseadas na web. 
