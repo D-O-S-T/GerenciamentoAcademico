@@ -23,7 +23,7 @@ p {
 }
 
 .wrapper {
-	max-width: 400px;
+	max-width: 480px;
 	background-color: #fff;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	padding: 30px;
@@ -73,7 +73,7 @@ p {
 	z-index: 0;
 	border-radius: 5px;
 	transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-	background: #123ce3;
+	background: #1f61ad;
 }
 
 input[type="radio"] {
@@ -100,16 +100,14 @@ input[type="radio"] {
 
 .form-container .form-inner form {
 	width: 50%;	
-	width: 400px;
-	margin: 20px auto;
-	text-align: left;
-	/* Para que os labels e inputs fiquem alinhados à esquerda */
+	transition: all 0.6s cubic-bezier(0.68, -0,55, 0.265, 1.55);
 }
 
 .form-inner form .field {
 	height: 50px;
 	width: 100%;
 	margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 .form-inner form .field input {
@@ -125,7 +123,7 @@ input[type="radio"] {
 }
 
 .form-inner form .field input:focus {
-	border-color: rgb(18, 60, 227);
+	border-color: #1f61ad;
 }
 
 .form-inner form .senha-link {
@@ -160,8 +158,8 @@ input[type="text"], input[type="password"], select {
 	font-size: 14px;
 }
 
-input[type="submit"] {
-	background-color: #123ce3;
+.submit-acessar, .submit-redefinir {
+	background-color: #1f61ad;
 	color: white;
 	padding: 12px 20px;
 	font-weight: 500;
@@ -172,13 +170,24 @@ input[type="submit"] {
 	width: 80%;
 	display: block;
 	margin: 0 auto;
+	transition: background-color 0.3s ease;
+}
+
+.submit-redefinir {
+	margin: 20px auto;
 }
 
 input[type="submit"]:hover {
-	background-color: rgb(18, 60, 227);
+	background-color: #292e6e;
 }
 
 .error-message {
 	font-size: 14px;
 	color: red;
+}
+
+.success-message {
+	font-size: 14px;
+    color: green;
+    /* font-weight: bold; */
 }

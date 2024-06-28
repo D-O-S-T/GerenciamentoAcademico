@@ -69,5 +69,46 @@ public class IndexDAO {
         }
         return null;
     }
-}
+    
+    public boolean atualizarSenhaProfessor(String login, String novaSenha) {
+        String sql = "UPDATE professor SET senha = ? WHERE login = ?";
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, novaSenha);
+            stmt.setString(2, login);
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
+    public boolean atualizarSenhaAluno(String login, String novaSenha) {
+        String sql = "UPDATE aluno SET senha = ? WHERE login = ?";
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, novaSenha);
+            stmt.setString(2, login);
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean atualizarSenhaCoordenador(String login, String novaSenha) {
+        String sql = "UPDATE coordenador SET senha = ? WHERE login = ?";
+        try (Connection conn = DatabaseUtil.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, novaSenha);
+            stmt.setString(2, login);
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+}
