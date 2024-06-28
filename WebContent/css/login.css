@@ -3,7 +3,98 @@ body {
 	height: 100vh; /* Garante a altura total da viewport */
     place-items: center;
     margin: 0; /* Remove margem padrão do body */
+    background: linear-gradient(45deg, #2d2d6d, #1f61ad, #3878b8, #4393ce, #90ccf1, #140f44);
+    background-size: 600% 600%;
+    animation: gradientAnimation 20s ease infinite;
+    overflow: hidden; 
 }
+
+/* ----------------------------------- DIAMANTES ----------------------------------- */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.diamond-shapes {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: calc(100% + 100px);
+    height: calc(100% + 100px);
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.diamond {
+    position: absolute;
+    width: 50px; /* Adjust size of diamonds as needed */
+    height: 50px; /* Adjust size of diamonds as needed */
+    background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+    border-radius: 5px;
+    animation: diamondAnimation 10s linear infinite;
+}
+
+.diamond:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.diamond:nth-child(2) {
+    top: 30%;
+    left: 60%;
+    animation-delay: 2s; /* Delay for staggered animation */
+}
+
+.diamond:nth-child(3) {
+    top: 50%;
+    left: 40%;
+    animation-delay: 1s; /* Delay for staggered animation */
+}
+
+.diamond:nth-child(4) {
+    top: 70%;
+    left: 80%;
+    animation-delay: 3s; /* Delay for staggered animation */
+}
+
+.diamond:nth-child(5) {
+    top: 90%;
+    left: 10%;
+    animation-delay: 4s; /* Delay for staggered animation */
+}
+
+@keyframes diamondAnimation {
+    0% {
+        transform: rotate(0deg) translateY(-100%);
+        opacity: 0;
+    }
+    25% {
+        transform: rotate(180deg) translateY(0%);
+        opacity: 1;
+    }
+    50% {
+        transform: rotate(360deg) translateY(100%);
+        opacity: 0;
+    }
+    75% {
+        transform: rotate(540deg) translateY(0%);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(720deg) translateY(-100%);
+        opacity: 0;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------- */
 
 .logo {
 	max-width: 100%;

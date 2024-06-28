@@ -12,6 +12,14 @@
 <link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon-undf.png">
 </head>
 <body>
+    <div class="diamond-shapes">
+        <div class="diamond"></div>
+        <div class="diamond"></div>
+		<div class="diamond"></div>
+		<div class="diamond"></div>
+		<div class="diamond"></div>                             
+    </div>
+    
 	<div class="wrapper">
 		<img src="imagens/undf.png" alt="Logo UnDF" class="logo" />
 		<h1>SGA-IC</h1>
