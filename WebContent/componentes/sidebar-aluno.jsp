@@ -4,6 +4,7 @@
           <li onclick="window.location.href='FeedbackAlunoServlet?action=listar'">Feedback</li>
           <li onclick="window.location.href='ListarFeedbackAlunoServlet?action=listar'">Ver Feedback</li>
           <li onclick="window.location.href='https://github.com/D-O-S-T'">Suporte</li>
+          <li onclick="window.location.href='index.jsp'">Sair</li>
       </ul>
   </div>
   <div class="main-content" id="main-content">

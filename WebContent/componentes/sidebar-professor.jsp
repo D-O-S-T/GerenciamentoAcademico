@@ -4,6 +4,7 @@
 			<li onclick="window.location.href='RelatorioProfessorServlet?action=listar'" >Ver Relatórios</li>
 			<li onclick="window.location.href='AtividadeServlet?action=listar'" >Atividades</li>
           	<li onclick="window.location.href='https://github.com/D-O-S-T'">Suporte</li>
+          	<li onclick="window.location.href='index.jsp'">Sair</li>
 	</ul>
 </div>
 <div class="main-content" id="main-content">

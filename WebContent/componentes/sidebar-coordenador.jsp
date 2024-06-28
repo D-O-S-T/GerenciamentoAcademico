@@ -7,6 +7,7 @@
 			<li onclick="window.location.href='CoordenadorServlet?action=listar'">Gestão de Coordenadores</li>
 			<li onclick="window.location.href='RelatorioCoordenadorServlet?action=listar'">Inserir Relatório</li>
           	<li onclick="window.location.href='https://github.com/D-O-S-T'">Suporte</li>
+          	<li onclick="window.location.href='index.jsp'" >Sair</li>
 	</ul>
 </div>
 <div class="main-content" id="main-content">
