@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/componentes.css">
 <link rel="stylesheet" href="css/form.css">
+<link rel="stylesheet" href="css/pagina-padrao.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
