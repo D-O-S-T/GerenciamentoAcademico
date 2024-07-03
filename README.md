@@ -12,10 +12,13 @@ O sistema facilita tarefas comuns de gerenciamento em ambientes acadêmicos, com
 ## Funcionalidades
 O sistema é dividido em três perfis de acesso diferentes, o nível de acesso é definido no login, que pode ser de professor, coordenador ou aluno :
 
-![Captura de tela 2024-07-02 213703](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/9b05dfe0-9a11-4185-9317-70e09565de55)
+![Captura de tela 2024-07-02 213527](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/40a06fb5-035a-449d-be49-098c388184e4)
+
 
 
 ## Perfil do professor :
+
+![Captura de tela 2024-07-02 213703](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/9b05dfe0-9a11-4185-9317-70e09565de55)
 
 
 **Inserir Feedback para alunos**: O Professor pode inserir um feedback sobre o aluno incluido em seu o projeto, o qual o aluno referido terá acesso.
@@ -67,7 +70,7 @@ O sistema é dividido em três perfis de acesso diferentes, o nível de acesso �
 
 ![Captura de tela 2024-07-02 215235](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/7459463d-b81a-47ab-8bf4-b3bef6d32709)
 
-![Captura de tela 2024-07-02 213527](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/40a06fb5-035a-449d-be49-098c388184e4)
+
 
 
 
