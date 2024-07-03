@@ -1,3 +1,4 @@
+![Captura de tela 2024-07-02 215542](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/ad66ee73-f9c5-4f32-8fcc-68dfff7cbbf6)
 # SGA-IC
 
 ![Banner](https://i.imgur.com/xgt1z6m.png)
