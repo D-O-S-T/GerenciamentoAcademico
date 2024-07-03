@@ -27,7 +27,13 @@ O sistema é dividido em três perfis de acesso diferentes, o nível de acesso �
 
 **Gestão de Atividades**: O Professor pode inserir uma atividade referente ao projeto e ver uma lista dos alunos que já entregaram a atividade.
 
-**Relatório** : O Professor pode enviar um relatório, o qual a Coordenação terá acesso.
+![Captura de tela 2024-07-02 222618](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/f7b4c06b-13a5-44af-99e4-2626ca6a0bd7)
+
+
+**Relatório** : O Professor pode enviar um relatório sobre o projeto e seus alunos, o qual a Coordenação terá acesso.
+
+![Captura de tela 2024-07-02 222724](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/98efd218-ec99-4ae6-8726-eab8c5edbe44)
+
 
 ## Perfil do Coordenador:
 
