@@ -38,7 +38,7 @@ O sistema é dividido em três perfis de acesso diferentes, o nível de acesso �
 
 **Gestão de Alunos**: listagem de alunos que permite adicionar novos estudantes, editar dados de estudantes já existentes, excluir e gerar um pdf.
 
-![Captura de tela 2024-07-02 215542](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/bee56267-6294-4794-bf43-abe022d4b489)![Captura de tela 2024-07-02 220249]
+![Captura de tela 2024-07-02 215542](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/bee56267-6294-4794-bf43-abe022d4b489)
 
 
 **Gestão de Projetos**: listagem de projetos que permite adicionar novos projetos, editar dados de projetos já existentes, visualizar quais são os professores e alunos bolsistas e voluntários, excluir projeto e gerar um pdf.
@@ -62,7 +62,7 @@ O sistema é dividido em três perfis de acesso diferentes, o nível de acesso �
 
 
 ## Perfil do Aluno:
-**Entregar a atividade**: permite ao aluno entregar a atividade que foi cadastrada pelo professor de seu projeto.
+**Entregar a atividade**: permite ao aluno entregar a atividade que foi cadastrada pelo professor de seu projeto. A entrega é então automaticamente listada para o Professor.
 
 **Inserir feedback**: permite ao aluno inserir um feedback sobre o professor.
 
@@ -70,7 +70,6 @@ O sistema é dividido em três perfis de acesso diferentes, o nível de acesso �
 
 
 ![Captura de tela 2024-07-02 215235](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/7459463d-b81a-47ab-8bf4-b3bef6d32709)
-
 
 
 
