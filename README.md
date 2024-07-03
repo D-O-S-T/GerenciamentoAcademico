@@ -1,4 +1,4 @@
-![Captura de tela 2024-07-02 215542](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/ad66ee73-f9c5-4f32-8fcc-68dfff7cbbf6)
+
 # SGA-IC
 
 ![Banner](https://i.imgur.com/xgt1z6m.png)
@@ -13,6 +13,8 @@ O sistema é dividido em três perfis de acesso diferentes :
 
 
 ## Perfil do professor :
+
+
 **Inserir Feedback para alunos**: O Professor pode inserir um feedback sobre o aluno incluido em seu o projeto, o qual o aluno referido terá acesso.
 
 **Gestão de Atividades**: O Professor pode inserir uma atividade referente ao projeto e ver uma lista dos alunos que já entregaram a atividade.
@@ -20,6 +22,9 @@ O sistema é dividido em três perfis de acesso diferentes :
 **Relatório** : O Professor pode enviar um relatório, o qual a Coordenação terá acesso.
 
 ## Perfil do Coordenador:
+
+![Captura de tela 2024-07-02 215948](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/4f75c282-97c7-4dbd-b67d-60168b7d7c4f)
+
 **Análises e Extratos**: dashboard que permite ver e gerar um pdf contendo o número total de usuários, professores, alunos, coordenadores, atividades, projetos e entregas
 
 **Gestão de Alunos**: listagem de alunos que permite adicionar novos estudantes, editar dados de estudantes já existentes, excluir e gerar um pdf.
@@ -43,6 +48,8 @@ O sistema é dividido em três perfis de acesso diferentes :
 ![Captura de tela 2024-07-02 215235](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/7459463d-b81a-47ab-8bf4-b3bef6d32709)
 ![Captura de tela 2024-07-02 213703](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/9b05dfe0-9a11-4185-9317-70e09565de55)
 ![Captura de tela 2024-07-02 213527](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/40a06fb5-035a-449d-be49-098c388184e4)
+
+
 
 
 ## Como Utilizar
