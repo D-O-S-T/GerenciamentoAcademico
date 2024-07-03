@@ -31,7 +31,7 @@ O sistema é dividido em três perfis de acesso diferentes :
 
 **Relatórios**: permite ao coordenador adicionar, editar ou excluir um relatório sobre um projeto, o qual será listado para todos os coordenadores terem acesso.
 
-##Perfil do Aluno:
+## Perfil do Aluno:
 **Entregar a atividade**: permite ao aluno entregar a atividade que foi cadastrada pelo professor de seu projeto.
 
 **Inserir feedback**: permite ao aluno inserir um feedback sobre o professor.
