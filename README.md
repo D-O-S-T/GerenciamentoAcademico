@@ -7,8 +7,7 @@
 ## Descrição
 Este projeto é um Sistema de Gestão Acadêmica voltado para projetos de Iniciação Científica, utilizando Servlets, JSP e Java para funcionalidades baseadas na web. 
 
-O sistema facilita tarefas comuns de gerenciamento em ambientes acadêmicos, como registro de alunos, gestão de cursos e solicitações de bolsas.
-
+O sistema facilita tarefas comuns de gerenciamento em ambientes acadêmicos, como registro de alunos, gestão de projetos, atividades, relatórios e muito mais.
 ## Funcionalidades
 O sistema é dividido em três perfis de acesso diferentes, o nível de acesso é definido no login, que pode ser de professor, coordenador ou aluno :
 
