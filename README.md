@@ -134,9 +134,10 @@ Clone este repositório para sua máquina local usando Git.
 </details>
 
 <details>
-<summary>Solicitações de Bolsas</summary>
+<summary>Relatórios</summary>
 
 - Relatórios podem ser feitos pelos professores e coordenadores sobre o projeto.
+- Listagens de atividades passadas por professores e entregues pelos alunos.
 </details>
 
 <details>
