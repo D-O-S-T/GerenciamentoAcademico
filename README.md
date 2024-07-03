@@ -23,6 +23,9 @@ O sistema é dividido em três perfis de acesso diferentes, o nível de acesso �
 
 **Inserir Feedback para alunos**: O Professor pode inserir um feedback sobre o aluno incluido em seu o projeto, o qual o aluno referido terá acesso.
 
+![Captura de tela 2024-07-02 221550](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/43a7bd6a-910b-4528-8735-337b2fec8e96)
+
+
 **Gestão de Atividades**: O Professor pode inserir uma atividade referente ao projeto e ver uma lista dos alunos que já entregaram a atividade.
 
 **Relatório** : O Professor pode enviar um relatório, o qual a Coordenação terá acesso.
@@ -69,7 +72,11 @@ O sistema é dividido em três perfis de acesso diferentes, o nível de acesso �
 **Feedbacks Recebidos**: permite ao aluno ler os feedbacks que o professor enviou a ele.
 
 
+
 ![Captura de tela 2024-07-02 215235](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/7459463d-b81a-47ab-8bf4-b3bef6d32709)
+
+![Captura de tela 2024-07-02 221649](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/303fc4f5-7f24-4a19-b433-cd7dfa21912c)
+
 
 
 
