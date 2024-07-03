@@ -33,7 +33,8 @@ O sistema é dividido em três perfis de acesso diferentes, o nível de acesso �
 
 **Análises e Extratos**: dashboard que permite ver e gerar um pdf contendo o número total de usuários, professores, alunos, coordenadores, atividades, projetos e entregas.
 
-(https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/9a7bba90-4ab1-44e8-818e-f7bcffe4be59)
+![Captura de tela 2024-07-02 220949](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/e1d6f0de-6ec0-46b8-8090-d04926cf943b)
+
 
 **Gestão de Alunos**: listagem de alunos que permite adicionar novos estudantes, editar dados de estudantes já existentes, excluir e gerar um pdf.
 
@@ -69,6 +70,8 @@ O sistema é dividido em três perfis de acesso diferentes, o nível de acesso �
 
 
 ![Captura de tela 2024-07-02 215235](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/7459463d-b81a-47ab-8bf4-b3bef6d32709)
+
+
 
 
 
