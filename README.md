@@ -10,7 +10,9 @@ Este projeto é um Sistema de Gestão Acadêmica voltado para projetos de Inicia
 O sistema facilita tarefas comuns de gerenciamento em ambientes acadêmicos, como registro de alunos, gestão de cursos e solicitações de bolsas.
 
 ## Funcionalidades
-O sistema é dividido em três perfis de acesso diferentes :
+O sistema é dividido em três perfis de acesso diferentes, o nível de acesso é definido no login, que pode ser de professor, coordenador ou aluno :
+
+![Captura de tela 2024-07-02 213703](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/9b05dfe0-9a11-4185-9317-70e09565de55)
 
 
 ## Perfil do professor :
@@ -26,20 +28,34 @@ O sistema é dividido em três perfis de acesso diferentes :
 
 ![Captura de tela 2024-07-02 215948](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/4f75c282-97c7-4dbd-b67d-60168b7d7c4f)
 
-**Análises e Extratos**: dashboard que permite ver e gerar um pdf contendo o número total de usuários, professores, alunos, coordenadores, atividades, projetos e entregas
+**Análises e Extratos**: dashboard que permite ver e gerar um pdf contendo o número total de usuários, professores, alunos, coordenadores, atividades, projetos e entregas.
+
+(https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/9a7bba90-4ab1-44e8-818e-f7bcffe4be59)
 
 **Gestão de Alunos**: listagem de alunos que permite adicionar novos estudantes, editar dados de estudantes já existentes, excluir e gerar um pdf.
 
-![Captura de tela 2024-07-02 215542](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/bee56267-6294-4794-bf43-abe022d4b489)![Captura de tela 2024-07-02 220249](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/9a7bba90-4ab1-44e8-818e-f7bcffe4be59)
+![Captura de tela 2024-07-02 215542](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/bee56267-6294-4794-bf43-abe022d4b489)![Captura de tela 2024-07-02 220249]
 
 
 **Gestão de Projetos**: listagem de projetos que permite adicionar novos projetos, editar dados de projetos já existentes, visualizar quais são os professores e alunos bolsistas e voluntários, excluir projeto e gerar um pdf.
 
+![Captura de tela 2024-07-02 220444](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/c76ea755-d9cc-474a-8a1a-b6d522cbb1dd)
+
+
 **Gestão de Professores**: listagem de professores que permite adicionar novos professores, editar dados de professor, excluir e gerar um pdf.
+
+![Captura de tela 2024-07-02 220513](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/7ff627ae-6e3c-4c3f-bb53-f323a26cf5cb)
+
 
 **Gestão de Coordenadores**: listagem de coordenadores, permite adicionar novos coordenadores, editar dados de coordenadores, excluir e gerar um pdf.
 
+![Captura de tela 2024-07-02 220536](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/cd1ec7a3-6870-4c09-b430-e4eadc8e0f3a)
+
+
 **Relatórios**: permite ao coordenador adicionar, editar ou excluir um relatório sobre um projeto, o qual será listado para todos os coordenadores terem acesso.
+
+![Captura de tela 2024-07-02 220600](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/4b01ac9b-1435-4525-8dc4-8db57b1ed099)
+
 
 ## Perfil do Aluno:
 **Entregar a atividade**: permite ao aluno entregar a atividade que foi cadastrada pelo professor de seu projeto.
@@ -50,7 +66,7 @@ O sistema é dividido em três perfis de acesso diferentes :
 
 
 ![Captura de tela 2024-07-02 215235](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/7459463d-b81a-47ab-8bf4-b3bef6d32709)
-![Captura de tela 2024-07-02 213703](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/9b05dfe0-9a11-4185-9317-70e09565de55)
+
 ![Captura de tela 2024-07-02 213527](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/40a06fb5-035a-449d-be49-098c388184e4)
 
 
