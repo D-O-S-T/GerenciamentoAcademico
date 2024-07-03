@@ -1,4 +1,5 @@
 
+
 # SGA-IC
 
 ![Banner](https://i.imgur.com/xgt1z6m.png)
@@ -28,6 +29,9 @@ O sistema é dividido em três perfis de acesso diferentes :
 **Análises e Extratos**: dashboard que permite ver e gerar um pdf contendo o número total de usuários, professores, alunos, coordenadores, atividades, projetos e entregas
 
 **Gestão de Alunos**: listagem de alunos que permite adicionar novos estudantes, editar dados de estudantes já existentes, excluir e gerar um pdf.
+
+![Captura de tela 2024-07-02 215542](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/bee56267-6294-4794-bf43-abe022d4b489)![Captura de tela 2024-07-02 220249](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/9a7bba90-4ab1-44e8-818e-f7bcffe4be59)
+
 
 **Gestão de Projetos**: listagem de projetos que permite adicionar novos projetos, editar dados de projetos já existentes, visualizar quais são os professores e alunos bolsistas e voluntários, excluir projeto e gerar um pdf.
 
