@@ -71,6 +71,10 @@ O sistema é dividido em três perfis de acesso diferentes, o nível de acesso �
 
 
 ## Perfil do Aluno:
+
+![Captura de tela 2024-07-02 222856](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/6a05c5d4-e04a-416c-92b9-c7fe4c47e7e4)
+
+
 **Entregar a atividade**: permite ao aluno entregar a atividade que foi cadastrada pelo professor de seu projeto. A entrega é então automaticamente listada para o Professor.
 
 **Inserir feedback**: permite ao aluno inserir um feedback sobre o professor.
