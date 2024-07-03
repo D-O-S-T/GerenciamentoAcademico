@@ -127,7 +127,7 @@ Clone este repositório para sua máquina local usando Git.
 </details>
 
 <details>
-<summary>Gestão de Cursos</summary>
+<summary>Gestão de Projetos</summary>
 
 - Adicionar novos projetos.
 - Gerenciar detalhes dos projetos.
