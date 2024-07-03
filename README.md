@@ -45,7 +45,8 @@ O sistema é dividido em três perfis de acesso diferentes, o nível de acesso �
 
 **Gestão de Projetos**: listagem de projetos que permite adicionar novos projetos, editar dados de projetos já existentes, visualizar quais são os professores e alunos bolsistas e voluntários, excluir projeto e gerar um pdf.
 
-![Captura de tela 2024-07-02 220444](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/c76ea755-d9cc-474a-8a1a-b6d522cbb1dd)
+![Captura de tela 2024-07-02 222416](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/ec7b8138-d437-46ea-bd1b-f1e71ec9148c)
+
 
 
 **Gestão de Professores**: listagem de professores que permite adicionar novos professores, editar dados de professor, excluir e gerar um pdf.
