@@ -129,14 +129,14 @@ Clone este repositório para sua máquina local usando Git.
 <details>
 <summary>Gestão de Cursos</summary>
 
-- Adicionar novos cursos.
-- Gerenciar detalhes dos cursos.
+- Adicionar novos projetos.
+- Gerenciar detalhes dos projetos.
 </details>
 
 <details>
 <summary>Solicitações de Bolsas</summary>
 
-- Alunos podem solicitar bolsas de estudo através da interface web.
+- Relatórios podem ser feitos pelos professores e coordenadores sobre o projeto.
 </details>
 
 <details>
