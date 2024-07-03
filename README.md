@@ -9,12 +9,12 @@ O sistema facilita tarefas comuns de gerenciamento em ambientes acadêmicos, com
 
 ## Funcionalidades
 O sistema é dividido em três perfis de acesso diferentes :
-Perfil do professor :
+##Perfil do professor :
 **Inserir Feedback para alunos**: O Professor pode inserir um feedback sobre o aluno incluido em seu o projeto, o qual o aluno referido terá acesso.
 **Gestão de Atividades**: O Professor pode inserir uma atividade referente ao projeto e ver uma lista dos alunos que já entregaram a atividade.
 **Relatório** : O Professor pode enviar um relatório, o qual a Coordenação terá acesso.
 
-Perfil do Coordenador:
+##Perfil do Coordenador:
 **Análises e Extratos**: dashboard que permite ver e gerar um pdf contendo o número total de usuários, professores, alunos, coordenadores, atividades, projetos e entregas
 **Gestão de Alunos**: listagem de alunos que permite adicionar novos estudantes, editar dados de estudantes já existentes, excluir e gerar um pdf.
 **Gestão de Projetos**: listagem de projetos que permite adicionar novos projetos, editar dados de projetos já existentes, visualizar quais são os professores e alunos bolsistas e voluntários, excluir projeto e gerar um pdf.
@@ -22,7 +22,7 @@ Perfil do Coordenador:
 **Gestão de Coordenadores**: listagem de coordenadores, permite adicionar novos coordenadores, editar dados de coordenadores, excluir e gerar um pdf.
 **Relatórios**: permite ao coordenador adicionar, editar ou excluir um relatório sobre um projeto, o qual será listado para todos os coordenadores terem acesso.
 
-Perfil do Aluno:
+##Perfil do Aluno:
 **Entregar a atividade**: permite ao aluno entregar a atividade que foi cadastrada pelo professor de seu projeto.
 **Inserir feedback**: permite ao aluno inserir um feedback sobre o professor.
 **Feedbacks Recebidos**: permite ao aluno ler os feedbacks que o professor enviou a ele.
