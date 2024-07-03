@@ -8,9 +8,30 @@ Este projeto é um Sistema de Gestão Acadêmica voltado para projetos de Inicia
 O sistema facilita tarefas comuns de gerenciamento em ambientes acadêmicos, como registro de alunos, gestão de cursos e solicitações de bolsas.
 
 ## Funcionalidades
-1. **Registro de Alunos**: Permite aos coordenadores cadastrar alunos com informações básicas como nome, CPF, endereço e detalhes de contato.
-2. **Gestão de Cursos**: Permite aos coordenadores e professores criar e gerenciar cursos, incluindo detalhes como nome e duração.
-3. **Solicitações de Bolsas**: Os alunos podem solicitar bolsas de estudo por meio do sistema.
+O sistema é dividido em três perfis de acesso diferentes :
+Perfil do professor :
+**Inserir Feedback para alunos**: O Professor pode inserir um feedback sobre o aluno incluido em seu o projeto, o qual o aluno referido terá acesso.
+**Gestão de Atividades**: O Professor pode inserir uma atividade referente ao projeto e ver uma lista dos alunos que já entregaram a atividade.
+**Relatório** : O Professor pode enviar um relatório, o qual a Coordenação terá acesso.
+
+Perfil do Coordenador:
+**Análises e Extratos**: dashboard que permite ver e gerar um pdf contendo o número total de usuários, professores, alunos, coordenadores, atividades, projetos e entregas
+**Gestão de Alunos**: listagem de alunos que permite adicionar novos estudantes, editar dados de estudantes já existentes, excluir e gerar um pdf.
+**Gestão de Projetos**: listagem de projetos que permite adicionar novos projetos, editar dados de projetos já existentes, visualizar quais são os professores e alunos bolsistas e voluntários, excluir projeto e gerar um pdf.
+**Gestão de Professores**: listagem de professores que permite adicionar novos professores, editar dados de professor, excluir e gerar um pdf.
+**Gestão de Coordenadores**: listagem de coordenadores, permite adicionar novos coordenadores, editar dados de coordenadores, excluir e gerar um pdf.
+**Relatórios**: permite ao coordenador adicionar, editar ou excluir um relatório sobre um projeto, o qual será listado para todos os coordenadores terem acesso.
+
+Perfil do Aluno:
+**Entregar a atividade**: permite ao aluno entregar a atividade que foi cadastrada pelo professor de seu projeto.
+**Inserir feedback**: permite ao aluno inserir um feedback sobre o professor.
+**Feedbacks Recebidos**: permite ao aluno ler os feedbacks que o professor enviou a ele.
+
+
+![Captura de tela 2024-07-02 215235](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/7459463d-b81a-47ab-8bf4-b3bef6d32709)
+![Captura de tela 2024-07-02 213703](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/9b05dfe0-9a11-4185-9317-70e09565de55)
+![Captura de tela 2024-07-02 213527](https://github.com/D-O-S-T/GerenciamentoAcademico/assets/165727441/40a06fb5-035a-449d-be49-098c388184e4)
+
 
 ## Como Utilizar
 ### 1. Clonar o Repositório
@@ -71,5 +92,4 @@ Clone este repositório para sua máquina local usando Git.
 - Permite adicionar, editar, excluir e atualizar registros conforme as permissões do usuário.
 </details>
 
-## Licença
-Este projeto é de código aberto e está disponível sob a Licença MIT. Consulte o arquivo [LICENSE](https://github.com/D-O-S-T/GerenciamentoAcademico/blob/fase3/LICENSE.txt) para mais detalhes.
+
